@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="UniformUWP.ProcessOrder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UniformUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <Button Name="New ProcessOrder" Margin="2,2,0,0"/>
+            <Button Name="Existing ProcessOrder" Margin="0,0,2,2"/>
+        </StackPanel>
+    </Grid>
+</Page>
