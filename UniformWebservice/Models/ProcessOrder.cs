@@ -13,7 +13,7 @@ namespace UniformWebservice.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProcessOrderNo { get; set; }
 
-        public DateTime DateTime { get; set; }
+        public DateTime DateTime { get; /*set;*/ } //TODO virker det at udkommentere ?
 
         public int? ProductNo { get; set; }
 

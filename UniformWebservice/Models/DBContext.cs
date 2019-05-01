@@ -10,6 +10,7 @@ namespace UniformWebservice.Models
         public DBContext()
             : base("name=DBContext")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Batch> Batches { get; set; }
