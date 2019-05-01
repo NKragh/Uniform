@@ -9,21 +9,49 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Pivot>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Button Content="New ProcessOrder" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
-            <Button Content="Existing ProcessOrder" Grid.Column="2" Grid.Row="1"  Height="200" Width="200"/>
+        <PivotItem>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Content="New ProcessOrder" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
+                <Button Content="Existing ProcessOrder" Grid.Column="2" Grid.Row="1"  Height="200" Width="200"/>
 
-        </Grid>
+            </Grid>
+        </PivotItem>
+        <PivotItem>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <TextBlock Text="ProcessNumber" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="1" Height="50" Width="200"/>
+                <TextBlock Text="EmployeeNumber" Grid.Column="1" Grid.Row="2" Height="200" Width="200"/>
+                <TextBox />
+                <TextBlock Text="BranchCode" Grid.Column="1" Grid.Row="3" Height="200" Width="200"/>
+
+                <TextBlock Text="ProductNumber" Grid.Column="1" Grid.Row="4" Height="200" Width="200"/>
+            </Grid>
+        </PivotItem>
     </Pivot>
 </Page>
