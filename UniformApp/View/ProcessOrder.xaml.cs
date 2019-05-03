@@ -36,5 +36,10 @@ namespace UniformApp.View
         {
             ContentPivot.SelectedIndex = 2;
         }
+
+        private void SelectButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
