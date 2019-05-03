@@ -36,5 +36,11 @@ namespace UniformApp.View
         {
             ContentPivot.SelectedIndex = 2;
         }
+
+
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentPivot.SelectedIndex = 0;
+        }
     }
 }
