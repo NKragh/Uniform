@@ -26,5 +26,15 @@ namespace UniformApp.View
         {
             this.InitializeComponent();
         }
+
+        private void NewButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentPivot.SelectedIndex = 1;
+        }
+
+        private void ExistingButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ContentPivot.SelectedIndex = 2;
+        }
     }
 }
