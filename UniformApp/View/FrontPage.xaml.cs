@@ -20,27 +20,11 @@ namespace UniformApp.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ProcessOrder : Page
+    public sealed partial class FrontPage : Page
     {
-        public ProcessOrder()
+        public FrontPage()
         {
             this.InitializeComponent();
-        }
-
-        private void NewButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            ContentPivot.SelectedIndex = 1;
-        }
-
-        private void ExistingButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            ContentPivot.SelectedIndex = 2;
-        }
-
-
-        private void BackButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            ContentPivot.SelectedIndex = 0;
         }
     }
 }
