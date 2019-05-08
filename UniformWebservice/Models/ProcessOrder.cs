@@ -13,16 +13,19 @@ namespace UniformWebservice.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProcessOrderNo { get; set; }
 
-        public DateTime DateTime { get; /*set;*/ } //TODO virker det at udkommentere ?
+        public DateTime ProcessDate { get; set; }
+
+        [Required]
+        [StringLength(1)]
+        public string BatchCode { get; set; }
+
+        public bool IsComplete { get; set; }
+
+        public int ColumnNo { get; set; }
 
         public int? ProductNo { get; set; }
 
         public int? EmployeeNo { get; set; }
-
-        [StringLength(1)]
-        public string BatchCode { get; set; }
-
-        public virtual Batch Batch { get; set; }
 
         public virtual Employee Employee { get; set; }
 

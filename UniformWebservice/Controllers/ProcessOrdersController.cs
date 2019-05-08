@@ -14,19 +14,19 @@ namespace UniformWebservice.Controllers
 {
     public class ProcessOrdersController : ApiController
     {
-        private DBContext db = new DBContext();
+        private UniformContext db = new UniformContext();
 
         // GET: api/ProcessOrders
-        public IQueryable<ProcessOrder> GetProcessOrders()
+        public IQueryable<ProcessOrder> GetProcessOrder()
         {
-            return db.ProcessOrders;
+            return db.ProcessOrder;
         }
 
         // GET: api/ProcessOrders/5
         [ResponseType(typeof(ProcessOrder))]
         public IHttpActionResult GetProcessOrder(int id)
         {
-            ProcessOrder processOrder = db.ProcessOrders.Find(id);
+            ProcessOrder processOrder = db.ProcessOrder.Find(id);
             if (processOrder == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace UniformWebservice.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ProcessOrders.Add(processOrder);
+            db.ProcessOrder.Add(processOrder);
 
             try
             {
@@ -104,13 +104,13 @@ namespace UniformWebservice.Controllers
         [ResponseType(typeof(ProcessOrder))]
         public IHttpActionResult DeleteProcessOrder(int id)
         {
-            ProcessOrder processOrder = db.ProcessOrders.Find(id);
+            ProcessOrder processOrder = db.ProcessOrder.Find(id);
             if (processOrder == null)
             {
                 return NotFound();
             }
 
-            db.ProcessOrders.Remove(processOrder);
+            db.ProcessOrder.Remove(processOrder);
             db.SaveChanges();
 
             return Ok(processOrder);
@@ -127,7 +127,7 @@ namespace UniformWebservice.Controllers
 
         private bool ProcessOrderExists(int id)
         {
-            return db.ProcessOrders.Count(e => e.ProcessOrderNo == id) > 0;
+            return db.ProcessOrder.Count(e => e.ProcessOrderNo == id) > 0;
         }
     }
 }
