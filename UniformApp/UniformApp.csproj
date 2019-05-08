@@ -123,6 +123,7 @@
     <Compile Include="View\FrontPage.xaml.cs">
       <DependentUpon>FrontPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Handler\ProcesOrderHandler.cs" />
     <Compile Include="View\ProcessOrder.xaml.cs">
       <DependentUpon>ProcessOrder.xaml</DependentUpon>
     </Compile>
