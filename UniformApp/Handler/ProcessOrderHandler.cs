@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,26 +10,16 @@ namespace UniformApp.Handler
 {
     class ProcessOrderHandler
     {
-        public ProcessOrderViewModel ProcessOrderViewModel { get; set; }
+        public ProcessOrderViewModel ProcessOrderProcessOrderViewModel { get; set; }
 
-        public ProcessOrderHandler(ProcessOrderViewModel viewModel)
+        public ProcessOrderHandler(ProcessOrderViewModel processOrderViewModel)
         {
-            ProcessOrderViewModel = viewModel;
-        }
-        
-        public bool CreateProcessOrder()
-        {
-            return true;
+            ProcessOrderProcessOrderViewModel = processOrderViewModel;
         }
 
-        public bool DeleteProcessOrder()
+        public void CreateProcessOrder()
         {
-            return true;
-        }
-
-        public bool EditProcessOrder()
-        {
-            return true;
+            Debug.WriteLine("Its Working.gif!");
         }
     }
 }
