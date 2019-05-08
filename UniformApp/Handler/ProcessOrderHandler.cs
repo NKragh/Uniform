@@ -16,19 +16,16 @@ namespace UniformApp.Handler
             ProcessOrderViewModel = viewModel;
         }
         
-        public bool CreateProcessOrder()
+        public void CreateProcessOrder()
         {
-            return true;
         }
 
-        public bool DeleteProcessOrder()
+        public void DeleteProcessOrder()
         {
-            return true;
         }
 
-        public bool EditProcessOrder()
+        public void EditProcessOrder()
         {
-            return true;
         }
     }
 }
