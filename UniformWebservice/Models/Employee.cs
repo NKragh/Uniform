@@ -12,7 +12,7 @@ namespace UniformWebservice.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            ProcessOrders = new HashSet<ProcessOrder>();
+            ProcessOrder = new HashSet<ProcessOrder>();
         }
 
         [Key]
@@ -26,6 +26,6 @@ namespace UniformWebservice.Models
         public byte Level { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProcessOrder> ProcessOrders { get; set; }
+        public virtual ICollection<ProcessOrder> ProcessOrder { get; set; }
     }
 }
