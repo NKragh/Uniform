@@ -14,7 +14,6 @@ namespace UniformApp.ViewModel
         public ICommand CreateProcessOrderCommand { get; set; }
         public ICommand DeleteProcessOrderCommand { get; set; }
         public ICommand EditProcessOrderCommand { get; set; }
-        public ICommand SaveProcessOrderCommand { get; set; }
 
         public ProcessOrderViewModel()
         {
