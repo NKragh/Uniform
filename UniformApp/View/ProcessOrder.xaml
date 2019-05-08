@@ -68,41 +68,7 @@
                 </Grid.RowDefinitions>
 
                 <ListView Grid.Column="1" Grid.Row="1">
-                    <!--
-                    <ListView.HeaderTemplate>
-                        <DataTemplate>
-                            <Grid Background="{ThemeResource TextSelectionHighlightColorThemeBrush}">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="408"/>
-                                    <ColumnDefinition Width="360"/>
-                                    <ColumnDefinition Width="360"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="ProcessOrderNumber" />
-                                <TextBlock Grid.Column="1" Text="Oprettelses Dato" />
-                                <TextBlock Grid.Column="2" Text="Ændrings Dato" />
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.HeaderTemplate>
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:Name="TableDataTemplate" >
-                            <Grid Height="48" AutomationProperties.Name="opgaergronpaer">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="48"/>
-                                    <ColumnDefinition Width="360"/>
-                                    <ColumnDefinition Width="360"/>
-                                    <ColumnDefinition Width="360"/>
-                                </Grid.ColumnDefinitions>
-                                <Ellipse Height="32" Width="32" VerticalAlignment="Center">
-
-                                </Ellipse>
-                                <TextBlock Grid.Column="1" VerticalAlignment="Center"  Text="graenipgbsrn"/>
-                                <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="gernios"/>
-                                <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="nietsb"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate> -->
-
-                    <ListViewItem>
+                   <ListViewItem>
                         <Button Content="Vælg eksisterende procesorder" Grid.Column="2" Grid.Row="2" Height="200" Width="200"/>
                     </ListViewItem>
                 </ListView>
