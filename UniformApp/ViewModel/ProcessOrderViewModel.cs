@@ -9,12 +9,14 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using UniformApp.Annotations;
 using UniformApp.Handler;
+using UniformApp.Model;
 using UniformApp.View;
 
 namespace UniformApp.ViewModel
 {
     class ProcessOrderViewModel : INotifyPropertyChanged
     {
+        public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public ProcessOrderHandler ProcessOrderHandler { get; set; }
 
         public ICommand CreateProcessOrderCommand { get; set; }
@@ -22,23 +24,22 @@ namespace UniformApp.ViewModel
         public ICommand EditProcessOrderCommand { get; set; }
 
         private ProcessOrder _newProcessOrder;
-        
+
         public ProcessOrder NewProcessOrder
         {
-            get{ return _newProcessOrder;}
+            get { return _newProcessOrder; }
             set
             {
                 _newProcessOrder = value;
             }
         }
-        
+
         public ProcessOrderViewModel()
         {
+            ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             ProcessOrderHandler = new ProcessOrderHandler(this);
 
-            CreateProcessOrderCommand =
-                new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
-
+            CreateProcessOrderCommand =new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
 
             _newProcessOrder = new ProcessOrder();
         }
