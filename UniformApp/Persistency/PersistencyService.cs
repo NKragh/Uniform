@@ -38,14 +38,46 @@ namespace UniformApp.Persistency
                     {
 
                         string res = await response.Content.ReadAsStringAsync();
-                        var content = JsonConvert.DeserializeObject(res);
+                        res = res.Replace("\"","");
+                        res = res.Replace(",", ":");
+                        string[] resarr = res.Split('{','}');
+                        
 
+                        ProcessOrder po123 = new ProcessOrder();
+                        List<string> resarr2 = new List<string>();
+                        for (int i = 1; i < resarr.Length; i +=2)
+                        {
+                            resarr2.Add(resarr[i]);
+                        }
 
+                        List<string> resarr3 = new List<string>();
 
+                        foreach (string s in resarr2)
+                        {
+                            string[] temparr = s.Split(':');
+                            for (int i = 1; i < temparr.Length; i+=2)
+                            {
+                                resarr3.Add(temparr[i]);
+                            }
+                        }
 
+                        
+                        for (int i = 0; i < resarr3.Count; i+=8)
+                        {
+                            ProcessOrder tempProcessOrder = new ProcessOrder();
+                            tempProcessOrder.ProcessOrderNo = Convert.ToInt32(resarr3[i]);
+                            tempProcessOrder.BatchCode = (resarr3[i+1]);
+                            tempProcessOrder.IsComplete = Convert.ToBoolean(resarr3[i+2]);
+                            tempProcessOrder.ColumnNo = Convert.ToInt32(resarr3[i+3]);
+                            tempProcessOrder.ProductNo = Convert.ToInt32(resarr3[i+4]);
+                            tempProcessOrder.Employee = Convert.ToInt32(resarr3[i+5]);
+                            targetList.Add(tempProcessOrder);
+                        }
+
+                        
+                        //var content = JsonConvert.DeserializeObject<ProcessOrder>(res);
+                        
                         //var o = response.Content.ReadAsAsync<ProcessOrder>(new[] {new JsonMediaTypeFormatter()});
-
-
 
                         //var fuckoff = response.Content.ReadAsStreamAsync().Result;
                         //Encoding encode =
@@ -56,19 +88,12 @@ namespace UniformApp.Persistency
 
                         //int Count = sr.Read(read, 0, 1024);
                         //List<ProcessOrder> processOrders = new List<ProcessOrder>();
-
-
-
-
-
-
-
+                        
                         //IEnumerable<ProcessOrder> procesorderData = response.Content.ReadAsAsync<IEnumerable<ProcessOrder>>().Result;
                         //foreach (var p in procesorderData)
                         //{
                         //    ProcessOrder po = new ProcessOrder(Convert.ToInt32(p.Attribute));
                         //}
-
 
                         //ProcessOrder blah = response.Content.ReadAsJsonAsync<ProcessOrder>().Result;
                         //Console.WriteLine(blah);
@@ -82,7 +107,7 @@ namespace UniformApp.Persistency
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine(e.ToString());
+                    Debug.WriteLine(e.Message);
                 }
 
                 return targetList;
