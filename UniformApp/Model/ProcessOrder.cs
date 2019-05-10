@@ -24,7 +24,7 @@ namespace UniformApp.Model
         public int ProductNo { get => _productNo; set => _productNo = value; }
         public int Employee { get => _employee; set => _employee = value; }
 
-        public ProcessOrder(int processOrderNo, DateTime processDate, string batchCode, bool isComplete, int columnNo, int productNo, int employee)
+        public ProcessOrder(int processOrderNo, string batchCode, bool isComplete, int columnNo, int productNo, int employee)
         {
             ProcessOrderNo = processOrderNo;
             ProcessDate = processDate;

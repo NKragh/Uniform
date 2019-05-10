@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -23,20 +22,6 @@ namespace UniformApp.ViewModel
         public ICommand EditProcessOrderCommand { get; set; }
         public ICommand ReadProcessOrderCommand { get; set; }
 
-        private ProcessOrder _newProcessOrder;
-        private string path;
-        public ObservableCollection<ProcessOrder> processOrders = new ObservableCollection<ProcessOrder>();
-
-        public ProcessOrder NewProcessOrder
-        {
-            get { return new ProcessOrder(); }
-            set
-            {
-                _newProcessOrder = value;
-                OnPropertyChanged();
-            }
-        }
-        
         public ProcessOrderViewModel()
         {
             ProcessOrderHandler poHandler = new ProcessOrderHandler(this);
@@ -51,7 +36,6 @@ namespace UniformApp.ViewModel
 
             //relaycommands
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

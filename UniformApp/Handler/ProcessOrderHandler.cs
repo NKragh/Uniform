@@ -4,18 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniformApp.ViewModel;
-using System.Net.Http;
-using UniformApp.Model;
-using System.Diagnostics;
 
 namespace UniformApp.Handler
 {
     class ProcessOrderHandler
     {
         public ProcessOrderViewModel ProcessOrderViewModel { get; set; }
-        public HttpClientHandler handler = new HttpClientHandler();
-
-        const string path = "http://localhost:55478/";
 
         public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
