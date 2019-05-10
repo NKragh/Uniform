@@ -41,7 +41,7 @@
                                 <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding Employee, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -103,7 +103,7 @@
                                 <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding Employee, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}"/>
                             </StackPanel>
                         </DataTemplate>
 

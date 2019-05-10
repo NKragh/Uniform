@@ -70,7 +70,7 @@ namespace UniformApp.Persistency
                             tempProcessOrder.IsComplete = Convert.ToBoolean(resarr3[i+2]);
                             tempProcessOrder.ColumnNo = Convert.ToInt32(resarr3[i+3]);
                             tempProcessOrder.ProductNo = Convert.ToInt32(resarr3[i+4]);
-                            tempProcessOrder.Employee = Convert.ToInt32(resarr3[i+5]);
+                            tempProcessOrder.EmployeeNo = Convert.ToInt32(resarr3[i+5]);
                             targetList.Add(tempProcessOrder);
                         }
 
