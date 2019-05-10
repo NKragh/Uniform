@@ -26,5 +26,10 @@ namespace UniformApp.View
         {
             this.InitializeComponent();
         }
+
+        private void Råvarenummer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
