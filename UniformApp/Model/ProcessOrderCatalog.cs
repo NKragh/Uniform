@@ -29,7 +29,7 @@ namespace UniformApp.Model
         private async void LoadProcessOrdersAsync()
         {
             var processOrders = await Persistency.PersistencyService
-                .ReadProcessOrder<ProcessOrder>();
+                .ReadProcessOrder<ProcessOrder>("ProcessOrders");
             if (processOrders.Count != 0)
             {
                 foreach (var p in processOrders)
