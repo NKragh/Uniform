@@ -17,6 +17,7 @@ namespace UniformApp.Handler
         public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
             ProcessOrderViewModel = viewModel;
+            
         }
 
         public void CreateProcessOrder()
