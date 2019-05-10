@@ -1,16 +1,16 @@
 ﻿<Page
-    x:Class="UniformApp.View.ProcessOrder"
+    x:Class="UniformApp.View.ProcessOrderPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UniformApp.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodel="using:UniformApp.ViewModel"
+    xmlns:viewModel="using:UniformApp.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.DataContext>
-        <viewmodel:ProcessOrderViewModel/>
+        <viewModel:ProcessOrderViewModel/>
     </Page.DataContext>
 
     <Pivot Name = "ContentPivot">
@@ -28,9 +28,26 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Name="NewButton" Content="New ProcessOrder" Grid.Column="2" Grid.Row="1" Height="50" Width="200" Click="NewButton_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" />
-                <Button Name="ExistingButton" Content="Existing ProcessOrder" Grid.Column="3" Grid.Row="1"  Height="50" Width="200" Click="ExistingButton_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center"/>
-                <Button Command="{Binding ReadProcessOrderCommand}"/>
+                <Button Name="NewButton" Content="New ProcessOrder" Grid.Column="1" Grid.Row="1" 
+                        Height="50" Width="200" Click="NewButton_OnClick"/>
+                <Button Name="ExistingButton" Content="Existing ProcessOrder" Grid.Column="2" Grid.Row="1"  
+                        Height="50" Width="200" Click="ExistingButton_OnClick"/>
+                <ListView ItemsSource="{Binding ProcessOrderCatalog.ProcessOrderList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding ProcessDate, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding BatchCode, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
             </Grid>
         </PivotItem>
         <PivotItem Name="Pivot2">
@@ -59,7 +76,7 @@
                 <TextBlock Text="ProductNumber" Grid.Column="1" Grid.Row="4" Height="50" Width="200"/>
                 <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200"/>
 
-                <Button Name="OpretKnap" Content="Opret" Grid.Column="3" Grid.Row="5" Height="50" Width="100"/>
+                <Button Name="OpretKnap" Content="Opret" Command="{Binding CreateProcessOrderCommand}" Grid.Column="3" Grid.Row="5" Height="50" Width="100"/>
                 <Button Name="BackButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
             </Grid>
         </PivotItem>
@@ -88,7 +105,22 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
+                <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ProcessOrderCatalog.ProcessOrderList, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}"/>
+                                <!--<TextBlock Text="{Binding ProcessDate, Mode=TwoWay}"/>-->
+                                <TextBlock Text="{Binding BatchCode, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}"/>
+                            </StackPanel>
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
                 <Button Content="Vælg" Grid.Column="3" Grid.Row="2" Height="50" Width="100"/>
                 <Button Name="BackButton2" Content="Tilbage" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
             </Grid>-->
