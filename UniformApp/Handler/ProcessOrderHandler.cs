@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using UniformApp.Model;
 using UniformApp.ViewModel;
 using System.Net.Http;
 using UniformApp.Model;
@@ -20,50 +17,56 @@ namespace UniformApp.Handler
 
         const string path = "http://localhost:55478/";
 
-        //const string Path = "http://localhost:55478";
-
-        public ProcessOrderHandler(ProcessOrderViewModel processOrderViewModel)
+        public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
-            ProcessOrderViewModel = processOrderViewModel;
+            ProcessOrderViewModel = viewModel;
         }
 
-        public void CreateProcessOrder()
+        public async void CreateProcessOrderAsync(ProcessOrder processOrder)
         {
-            Debug.WriteLine("Its Working.gif!");
+            //HttpResponseMessage response = await client.PostAsJsonAsync("api/ProcessOrders", processOrder);
+            //response.EnsureSuccessStatusCode();
+
+            // return URI of the created resource.
+            //return response.Headers.Location;
+        }
+        public async void ReadProcessOrder()
+        {
+            ProcessOrder processOrder = null;
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                Task<HttpResponseMessage> rTask = client.GetAsync("api/ProcessOrders");
+                await rTask;
+                if (rTask.Result.IsSuccessStatusCode)
+                {
+                    var cTask = rTask.Result.Content.ReadAsAsync<IEnumerable<ProcessOrder>>();
+                    await cTask;
+                    foreach (var c in cTask.Result)
+                    {
+                        ProcessOrderViewModel.processOrders.Add(c);
+                    }
+                    //Debug.WriteLine(cTask);
+                }
+
+            }
+            //HttpResponseMessage response = await client.GetAsync(path);
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    processOrder = await response.Content.ReadAsAsync<ProcessOrder>();
+            //}
+            //return processOrder;
+        }
+        public async void UpdateProcessOrder()
+        {
+        }
+        public async void DeleteProcessOrder()
+        {
         }
 
-        //public async void ReadProcessOrder()
-        //{
-        //    HttpClientHandler handler = new HttpClientHandler();
-        //    handler.UseDefaultCredentials = true; //possible not working
-        //    using (var client = new HttpClient(handler))
-        //    {
-        //        client.BaseAddress = new Uri(Path);
-        //        client.DefaultRequestHeaders.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
-        //        try
-        //        {
-        //            var response = client.GetAsync("api/ProcessOrders").Result;
-        //            //await rTask;
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                IEnumerable<ProcessOrder> procesorderData =
-        //                    response.Content.ReadAsAsync<IEnumerable<ProcessOrder>>()
-        //                        .Result;
-        //                foreach (var p in procesorderData)
-        //                {
-        //                    ProcessOrderViewModel.ProcessOrderCatalog.ProcessOrderList.Add(p);
-        //                }
-        //            }
-        //        }
-        //        catch (Exception)
-        //        {
-        //            throw new NotImplementedException();
-        //        }
-
-
-        //    }
-        //}
+        
     }
 }

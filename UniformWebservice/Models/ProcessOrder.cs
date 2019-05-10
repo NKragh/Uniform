@@ -13,7 +13,7 @@ namespace UniformWebservice.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProcessOrderNo { get; set; }
 
-        //public DateTime ProcessDate { get; set; }
+        public DateTime ProcessDate { get; set; }
 
         [Required]
         [StringLength(1)]
