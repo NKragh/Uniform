@@ -24,7 +24,11 @@ namespace UniformApp.Model
         public int ProductNo { get => _productNo; set => _productNo = value; }
         public int Employee { get => _employee; set => _employee = value; }
 
+<<<<<<< HEAD
         public ProcessOrder(int processOrderNo, DateTime processDate, string batchCode, bool isComplete, int columnNo, int productNo, int employee)
+=======
+        public ProcessOrder(int processOrderNo, string batchCode, bool isComplete, int columnNo, int productNo, int employee)
+>>>>>>> parent of 1c6f0b8... Bleh
         {
             ProcessOrderNo = processOrderNo;
             ProcessDate = processDate;
