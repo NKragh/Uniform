@@ -129,8 +129,8 @@
     <Compile Include="View\FrontPage.xaml.cs">
       <DependentUpon>FrontPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProcessOrder.xaml.cs">
-      <DependentUpon>ProcessOrder.xaml</DependentUpon>
+    <Compile Include="View\ProcessOrderPage.xaml.cs">
+      <DependentUpon>ProcessOrderPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
