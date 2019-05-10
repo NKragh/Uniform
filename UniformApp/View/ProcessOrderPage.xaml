@@ -92,7 +92,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--<Grid>
+           <!-- <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -110,7 +110,7 @@
                         <DataTemplate>
                             <StackPanel>
                                 <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}"/>
-                                <!--<TextBlock Text="{Binding ProcessDate, Mode=TwoWay}"/>-->
+                                <TextBlock Text="{Binding ProcessDate, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding BatchCode, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
