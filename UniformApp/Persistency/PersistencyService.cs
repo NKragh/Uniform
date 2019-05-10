@@ -16,10 +16,10 @@ namespace UniformApp.Persistency
 {
     class PersistencyService
     {
-        public static async Task<List<ProcessOrder>> ReadProcessOrder<T>()
+        public static async Task<List<T>> ReadProcessOrder<T>(string typeInput)
         {
             string Path = "http://localhost:55478";
-            List<ProcessOrder> targetList = new List<ProcessOrder>();
+            List<T> targetList = new List<T>();
 
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true; //possible not working
@@ -32,51 +32,55 @@ namespace UniformApp.Persistency
 
                 try
                 {
-                    var response = client.GetAsync("api/ProcessOrders").Result;
-                    //await rTask;
-                    if (response.IsSuccessStatusCode)
+                    var response = client.GetStringAsync($"api/{typeInput}").Result;
+                    if (response != null)
                     {
+                        var content = JsonConvert.DeserializeObject<List<T>>(response);
+                        targetList.AddRange(content);
 
-                        string res = await response.Content.ReadAsStringAsync();
-                        res = res.Replace("\"","");
-                        res = res.Replace(",", ":");
-                        string[] resarr = res.Split('{','}');
-                        
+                        #region OldButGold
 
-                        ProcessOrder po123 = new ProcessOrder();
-                        List<string> resarr2 = new List<string>();
-                        for (int i = 1; i < resarr.Length; i +=2)
-                        {
-                            resarr2.Add(resarr[i]);
-                        }
 
-                        List<string> resarr3 = new List<string>();
 
-                        foreach (string s in resarr2)
-                        {
-                            string[] temparr = s.Split(':');
-                            for (int i = 1; i < temparr.Length; i+=2)
-                            {
-                                resarr3.Add(temparr[i]);
-                            }
-                        }
+                        //string res = response;
+                        //res = res.Replace("\"","");
+                        //res = res.Replace(",", ":");
+                        //string[] resarr = res.Split('{','}');
 
-                        
-                        for (int i = 0; i < resarr3.Count; i+=8)
-                        {
-                            ProcessOrder tempProcessOrder = new ProcessOrder();
-                            tempProcessOrder.ProcessOrderNo = Convert.ToInt32(resarr3[i]);
-                            tempProcessOrder.BatchCode = (resarr3[i+1]);
-                            tempProcessOrder.IsComplete = Convert.ToBoolean(resarr3[i+2]);
-                            tempProcessOrder.ColumnNo = Convert.ToInt32(resarr3[i+3]);
-                            tempProcessOrder.ProductNo = Convert.ToInt32(resarr3[i+4]);
-                            tempProcessOrder.Employee = Convert.ToInt32(resarr3[i+5]);
-                            targetList.Add(tempProcessOrder);
-                        }
 
-                        
-                        //var content = JsonConvert.DeserializeObject<ProcessOrder>(res);
-                        
+                        //ProcessOrder po123 = new ProcessOrder();
+                        //List<string> resarr2 = new List<string>();
+                        //for (int i = 1; i < resarr.Length; i +=2)
+                        //{
+                        //    resarr2.Add(resarr[i]);
+                        //}
+
+                        //List<string> resarr3 = new List<string>();
+
+                        //foreach (string s in resarr2)
+                        //{
+                        //    string[] temparr = s.Split(':');
+                        //    for (int i = 1; i < temparr.Length; i+=2)
+                        //    {
+                        //        resarr3.Add(temparr[i]);
+                        //    }
+                        //}
+
+
+                        //for (int i = 0; i < resarr3.Count; i+=8)
+                        //{
+                        //    ProcessOrder tempProcessOrder = new ProcessOrder();
+                        //    tempProcessOrder.ProcessOrderNo = Convert.ToInt32(resarr3[i]);
+                        //    tempProcessOrder.BatchCode = (resarr3[i+1]);
+                        //    tempProcessOrder.IsComplete = Convert.ToBoolean(resarr3[i+2]);
+                        //    tempProcessOrder.ColumnNo = Convert.ToInt32(resarr3[i+3]);
+                        //    tempProcessOrder.ProductNo = Convert.ToInt32(resarr3[i+4]);
+                        //    tempProcessOrder.Employee = Convert.ToInt32(resarr3[i+5]);
+                        //    targetList.Add(tempProcessOrder);
+                        //}
+
+
+
                         //var o = response.Content.ReadAsAsync<ProcessOrder>(new[] {new JsonMediaTypeFormatter()});
 
                         //var fuckoff = response.Content.ReadAsStreamAsync().Result;
@@ -88,7 +92,7 @@ namespace UniformApp.Persistency
 
                         //int Count = sr.Read(read, 0, 1024);
                         //List<ProcessOrder> processOrders = new List<ProcessOrder>();
-                        
+
                         //IEnumerable<ProcessOrder> procesorderData = response.Content.ReadAsAsync<IEnumerable<ProcessOrder>>().Result;
                         //foreach (var p in procesorderData)
                         //{
@@ -103,6 +107,9 @@ namespace UniformApp.Persistency
                         //{
                         //targetList.Add(procesorderData);
                         //}
+
+
+                        #endregion
                     }
                 }
                 catch (Exception e)
