@@ -8,15 +8,11 @@
     mc:Ignorable="d"
     Background="Green">
 
-    <Pivot Name= "TorqueCheck">
-        <PivotItem Name="Skruelågs check">
+    <Pivot Name= "CheckPivot">
+        <PivotItem Name="TorqueCheck">
             <Grid>
 
-                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
-                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
-                <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
-                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
-
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -33,7 +29,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                
+
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
+                <TextBlock Text="ROYAL UNIBREW" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
 
                 <TextBlock Text="Skruelågsinformationer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
                 <Button Name="Råvarenummer" Content="Råvarenummer" Grid.Row="2" Grid.Column="0" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="white" FontSize="35"/>
