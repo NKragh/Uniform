@@ -17,11 +17,10 @@
         <PivotItem Name="Pivot1">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="121*"/>
-                    <ColumnDefinition Width="248*"/>
-                    <ColumnDefinition Width="369*"/>
-                    <ColumnDefinition Width="369*"/>
-                    <ColumnDefinition Width="369*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -42,7 +41,7 @@
                                 <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding Employee, Mode=TwoWay}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -81,18 +80,7 @@
             </Grid>
         </PivotItem>
         <PivotItem Name="Pivot3">
-            <ListView ItemsSource="{Binding processOrders, Mode=TwoWay}">
-                <ListView.ItemTemplate>
-                    <!--<Button Click="{Binding }" Content="Vælg eksisterende procesorder" Grid.Column="2" Grid.Row="2" Height="50" Width="auto"/>-->
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}" Foreground="AliceBlue"/>
-                            <TextBlock Text="{Binding BatchCode, Mode=TwoWay}" Foreground="AliceBlue"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <!--<Grid>
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -115,7 +103,7 @@
                                 <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
                                 <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}"/>
+                                <TextBlock Text="{Binding Employee, Mode=TwoWay}"/>
                             </StackPanel>
                         </DataTemplate>
 
@@ -123,8 +111,7 @@
                 </ListView>
                 <Button Content="Vælg" Grid.Column="3" Grid.Row="2" Height="50" Width="100"/>
                 <Button Name="BackButton2" Content="Tilbage" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
-            </Grid>-->
-
+            </Grid>
         </PivotItem>
     </Pivot>
 </Page>
