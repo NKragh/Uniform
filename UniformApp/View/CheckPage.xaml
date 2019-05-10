@@ -9,9 +9,60 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Pivot>
+        <PivotItem Name="Checkpage">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1"/>
+                <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1"/>
+                <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1"/>
+                <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1"/>
+                <Button Name="ShiftCheck" Content="Shift Check" Grid.Column="1" Grid.Row="2"/>
+                <Button Name="TorqueCheck" Content="Torque Check" Grid.Column="2" Grid.Row="2"/>
+                <Button Name="PressureCheck" Content="Pressure Check" Grid.Column="3" Grid.Row="2"/>
+                <Button Name="PETCheck" Content="Pet Check" Grid.Column="4" Grid.Row="2"/>
 
-    <Grid>
+            </Grid>
+        </PivotItem>
 
-    </Grid>
+        <PivotItem Name="WeightCheckPage">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock></TextBlock>
+            </Grid>
+        </PivotItem>
     </Pivot>
 </Page>
