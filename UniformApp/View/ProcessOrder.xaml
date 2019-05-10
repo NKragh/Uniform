@@ -28,32 +28,9 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-<<<<<<< HEAD:UniformApp/View/ProcessOrder.xaml
                 <Button Name="NewButton" Content="New ProcessOrder" Grid.Column="2" Grid.Row="1" Height="50" Width="200" Click="NewButton_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" />
                 <Button Name="ExistingButton" Content="Existing ProcessOrder" Grid.Column="3" Grid.Row="1"  Height="50" Width="200" Click="ExistingButton_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center"/>
                 <Button Command="{Binding ReadProcessOrderCommand}"/>
-=======
-                <Button Name="NewButton" Content="New ProcessOrder" Grid.Column="1" Grid.Row="1" 
-                        Height="50" Width="200" Click="NewButton_OnClick"/>
-                <Button Name="ExistingButton" Content="Existing ProcessOrder" Grid.Column="2" Grid.Row="1"  
-                        Height="50" Width="200" Click="ExistingButton_OnClick"/>
-                <ListView ItemsSource="{Binding ProcessOrderCatalog.ProcessOrderList}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding ProcessDate, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding BatchCode, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding Employee, Mode=TwoWay}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-
-                </ListView>
->>>>>>> parent of 1c6f0b8... Bleh:UniformApp/View/ProcessOrderPage.xaml
             </Grid>
         </PivotItem>
         <PivotItem Name="Pivot2">
@@ -111,26 +88,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-<<<<<<< HEAD:UniformApp/View/ProcessOrder.xaml
                 
-=======
-                <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ProcessOrderCatalog.ProcessOrderList, Mode=TwoWay}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}"/>
-                                <!--<TextBlock Text="{Binding ProcessDate, Mode=TwoWay}"/>-->
-                                <TextBlock Text="{Binding BatchCode, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding IsComplete, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding ProductNo, Mode=TwoWay}"/>
-                                <TextBlock Text="{Binding Employee, Mode=TwoWay}"/>
-                            </StackPanel>
-                        </DataTemplate>
-
-                    </ListView.ItemTemplate>
-                </ListView>
->>>>>>> parent of 1c6f0b8... Bleh:UniformApp/View/ProcessOrderPage.xaml
                 <Button Content="Vælg" Grid.Column="3" Grid.Row="2" Height="50" Width="100"/>
                 <Button Name="BackButton2" Content="Tilbage" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
             </Grid>-->
