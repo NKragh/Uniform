@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,54 +10,48 @@ using GalaSoft.MvvmLight.Command;
 using UniformApp.Annotations;
 using UniformApp.Handler;
 using UniformApp.Model;
+using UniformApp.View;
 
 namespace UniformApp.ViewModel
 {
     class ProcessOrderViewModel : INotifyPropertyChanged
     {
+        public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public ProcessOrderHandler ProcessOrderHandler { get; set; }
-       
+
         public ICommand CreateProcessOrderCommand { get; set; }
         public ICommand DeleteProcessOrderCommand { get; set; }
         public ICommand EditProcessOrderCommand { get; set; }
-        public ICommand ReadProcessOrderCommand { get; set; }
 
         private ProcessOrder _newProcessOrder;
-        private string path;
-        public ObservableCollection<ProcessOrder> processOrders = new ObservableCollection<ProcessOrder>();
 
         public ProcessOrder NewProcessOrder
         {
-            get { return new ProcessOrder(); }
+            get { return _newProcessOrder; }
             set
             {
                 _newProcessOrder = value;
-                OnPropertyChanged();
             }
         }
-        
+
         public ProcessOrderViewModel()
         {
-            ProcessOrderHandler poHandler = new ProcessOrderHandler(this);
-            path = "http://localhost:55478/";
-            //CreateProcessOrderCommand = new RelayCommand (poHandler.CreateProcessOrderAsync);
-            ReadProcessOrderCommand = new RelayCommand(poHandler.ReadProcessOrder);
-            DeleteProcessOrderCommand = new RelayCommand(poHandler.DeleteProcessOrder);
-            EditProcessOrderCommand = new RelayCommand(poHandler.UpdateProcessOrder);
+            ProcessOrderCatalog = ProcessOrderCatalog.Instance;
+            ProcessOrderHandler = new ProcessOrderHandler(this);
 
-            //ProcessOrder = NewProcessOrder();
-            processOrders.Add(new ProcessOrder(123, DateTime.Now, "Hejsa", true, 12,123456, 654321));
+            CreateProcessOrderCommand =new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
 
-            //relaycommands
+            _newProcessOrder = new ProcessOrder();
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged(
+            [CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this,
+                new PropertyChangedEventArgs(propertyName));
         }
     }
 }
