@@ -11,29 +11,17 @@ using GalaSoft.MvvmLight.Command;
 using UniformApp.Annotations;
 using UniformApp.Handler;
 using UniformApp.Model;
-using UniformApp.View;
 
 namespace UniformApp.ViewModel
 {
     class ProcessOrderViewModel : INotifyPropertyChanged
     {
-        public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public ProcessOrderHandler ProcessOrderHandler { get; set; }
-
+       
         public ICommand CreateProcessOrderCommand { get; set; }
         public ICommand DeleteProcessOrderCommand { get; set; }
         public ICommand EditProcessOrderCommand { get; set; }
-
-        private ProcessOrder _newProcessOrder;
-
-        public ProcessOrder NewProcessOrder
-        {
-            get { return _newProcessOrder; }
-            set
-            {
-                _newProcessOrder = value;
-            }
-        }
+        public ICommand ReadProcessOrderCommand { get; set; }
 
         private ProcessOrder _newProcessOrder;
         private string path;
@@ -51,23 +39,26 @@ namespace UniformApp.ViewModel
         
         public ProcessOrderViewModel()
         {
-            ProcessOrderCatalog = ProcessOrderCatalog.Instance;
-            ProcessOrderHandler = new ProcessOrderHandler(this);
+            ProcessOrderHandler poHandler = new ProcessOrderHandler(this);
+            path = "http://localhost:55478/";
+            //CreateProcessOrderCommand = new RelayCommand (poHandler.CreateProcessOrderAsync);
+            ReadProcessOrderCommand = new RelayCommand(poHandler.ReadProcessOrder);
+            DeleteProcessOrderCommand = new RelayCommand(poHandler.DeleteProcessOrder);
+            EditProcessOrderCommand = new RelayCommand(poHandler.UpdateProcessOrder);
 
-            CreateProcessOrderCommand =new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
+            //ProcessOrder = NewProcessOrder();
+            processOrders.Add(new ProcessOrder(123, DateTime.Now, "Hejsa", true, 12,123456, 654321));
 
-            _newProcessOrder = new ProcessOrder();
+            //relaycommands
         }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(
-            [CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this,
-                new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
