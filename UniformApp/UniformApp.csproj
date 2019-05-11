@@ -132,7 +132,7 @@
     <Compile Include="View\ProcessOrderPage.xaml.cs">
       <DependentUpon>ProcessOrderPage.xaml</DependentUpon>
     </Compile>
-	<Compile Include="View\CheckPage.xaml.cs">
+    <Compile Include="View\CheckPage.xaml.cs">
       <DependentUpon>CheckPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -143,6 +143,7 @@
     <None Include="UniformApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Royal-Unibrew-Large.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -165,7 +166,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	<Page Include="View\CheckPage.xaml">
+    <Page Include="View\CheckPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
