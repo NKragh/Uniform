@@ -150,5 +150,59 @@
                 <Button Name="ResetData" Content="Nulstil" Grid.Row="3" Grid.Column="3" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Foreground="Black" FontSize="30" FontWeight="Bold"/>
             </Grid>
         </PivotItem>
+        <PivotItem Name="PETCheckPage">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="1" Height="150" Width="150"/>
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="6" Height="150" Width="150"/>
+
+                <TextBlock Text="ROYAL UNIBREW" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="60"/>
+                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20"/>
+                <TextBlock Text="Kontrolvejning; tom flaske" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
+
+                <Button Name="ProcessOrderNumber2" Content="Procesordrenummer" Grid.Row="2" Grid.Column="0" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+                <Button Name="Time2" Content="Tid" Grid.Row="2" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
+                <Button Name="ShapeNumber2" Content="Form nummer" Grid.Row="2" Grid.Column="2" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
+                <Button Name="PresetNumber2" Content="Preform råvarenummer" Grid.Row="2" Grid.Column="3" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+                <Button Name="Bottom" Content="Bund" Grid.Row="2" Grid.Column="4" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
+                <Button Name="Middle" Content="Midt" Grid.Row="2" Grid.Column="5" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
+                <Button Name="Top" Content="Top" Grid.Row="2" Grid.Column="6" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
+                <Button Name="Comment" Content="Bemærkninger" Grid.Row="2" Grid.Column="7" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
+
+                <TextBox PlaceholderText="####" Grid.Row="2" Grid.Column="0" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="##:##" Grid.Row="2" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="2" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="3" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi"  Grid.Row="2" Grid.Column="4" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi"  Grid.Row="2" Grid.Column="5" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi"  Grid.Row="2" Grid.Column="6" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi"  Grid.Row="2" Grid.Column="7" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+
+                <Button Name="EmployeeINIT" Content="Operatør" Grid.Row="3" Grid.Column="0" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
+                <TextBox PlaceholderText="####" Grid.Row="3" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Foreground="Black" FontSize="25"/>
+
+                <Button Name="REGISTRER3" Content="REGISTRER" Grid.Row="3" Grid.Column="4" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGreen" Foreground="Black" FontSize="30" FontWeight="Bold"/>
+                <Button Name="ResetData2" Content="Nulstil" Grid.Row="3" Grid.Column="3" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Foreground="Black" FontSize="30" FontWeight="Bold"/>
+
+            </Grid>
+        </PivotItem>
     </Pivot>
 </Page>
