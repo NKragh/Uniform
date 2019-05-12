@@ -16,13 +16,15 @@ namespace UniformApp.Persistency
 {
     class PersistencyService
     {
-        public static async Task<List<T>> ReadProcessOrder<T>(string typeInput)
-        {
-            string Path = "http://localhost:55478";
-            List<T> targetList = new List<T>();
+        private const string Path = "http://localhost:55478";
 
+        public static async Task<List<T>> ReadObjectsFromDatabaseAsync<T>(string typeInput)
+        {
+            //TODO kan være vi skal flytte den ud af metoden / finde ud af noget med det defaultCredentials
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true; //possible not working
+            List<T> targetList = new List<T>();
+
 
             using (var client = new HttpClient(handler))
             {
@@ -118,19 +120,35 @@ namespace UniformApp.Persistency
                 }
 
                 return targetList;
-
-
             }
         }
-    }
 
-    public static class HTTPClientExtensions
-    {
-        public static async Task<T> ReadAsJsonAsync<T>(this HttpContent content)
+        //TODO: find på bedre navne til både metoder og parametre -.-
+        public static async Task<T> ReadSingleObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
-            var dataAsString = await content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<T>(dataAsString);
+            //TODO hoooow?
+            //T returnObject = new T();
+            throw new NotImplementedException();
+        }
+
+        public static async Task<T> SaveObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static async Task<T> DeleteObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
+        {
+            throw new NotImplementedException();
         }
     }
+
+    //public static class HTTPClientExtensions
+    //{
+    //    public static async Task<T> ReadAsJsonAsync<T>(this HttpContent content)
+    //    {
+    //        var dataAsString = await content.ReadAsStringAsync();
+    //        return JsonConvert.DeserializeObject<T>(dataAsString);
+    //    }
+    //}
 
 }

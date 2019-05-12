@@ -11,7 +11,7 @@
     <AssemblyName>UniformApp</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -132,7 +132,7 @@
     <Compile Include="View\ProcessOrderPage.xaml.cs">
       <DependentUpon>ProcessOrderPage.xaml</DependentUpon>
     </Compile>
-	<Compile Include="View\CheckPage.xaml.cs">
+    <Compile Include="View\CheckPage.xaml.cs">
       <DependentUpon>CheckPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -165,7 +165,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	<Page Include="View\CheckPage.xaml">
+    <Page Include="View\CheckPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

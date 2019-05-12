@@ -12,7 +12,6 @@ namespace UniformApp.Model
     class ProcessOrderCatalog
     {
         private static ProcessOrderCatalog _instance = new ProcessOrderCatalog();
-
         public static ProcessOrderCatalog Instance
         {
             get => _instance;
@@ -26,10 +25,10 @@ namespace UniformApp.Model
             LoadProcessOrdersAsync();
         }
 
+        //TODO skal igennem handleren?
         private async void LoadProcessOrdersAsync()
         {
-            var processOrders = await Persistency.PersistencyService
-                .ReadProcessOrder<ProcessOrder>("ProcessOrders");
+            var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrders");
             if (processOrders.Count != 0)
             {
                 foreach (var p in processOrders)
@@ -39,7 +38,7 @@ namespace UniformApp.Model
             }
             else
             {
-                ProcessOrderList.Add(new ProcessOrder(1,/*DateTime.Now,*/"1",true,1,1,1));
+                ProcessOrderList.Add(new ProcessOrder(1,/*DateTime.Now,*/"1", true, 1, 1, 1));
                 ProcessOrderList.Add(new ProcessOrder(2, /*DateTime.Now,*/ "2", true, 2, 2, 2));
             }
         }
