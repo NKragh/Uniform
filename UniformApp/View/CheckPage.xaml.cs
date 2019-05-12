@@ -26,5 +26,10 @@ namespace UniformApp.View
         {
             this.InitializeComponent();
         }
+
+        private void BackButton3_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 0;
+        }
     }
 }
