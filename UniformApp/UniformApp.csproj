@@ -122,6 +122,7 @@
     <Compile Include="Handler\ProcessOrderHandler.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />
+    <Compile Include="Model\WeightCheck.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
