@@ -24,6 +24,9 @@ namespace UniformApp.Handler
         {
             Debug.WriteLine("Its Working.gif!");
         }
+
+        #region 1337 H4X
+
         //public async void ReadProcessOrder()
         //{
         //    ProcessOrder processOrder = null;
@@ -54,6 +57,9 @@ namespace UniformApp.Handler
         //    //}
         //    //return processOrder;
         //}
+
+        #endregion
+
         public async void UpdateProcessOrder()
         {
         }
