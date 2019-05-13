@@ -20,12 +20,15 @@ namespace UniformApp.Handler
 
         public void CreateProcessOrder()
         {
-            throw new NotImplementedException();
+            var test = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderViewModel
+                .NewProcessOrder);
+            Debug.WriteLine(test);
         }
 
         public void ReadProcessOrder()
         {
-            var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrders");
+            //var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrders");
+            throw new NotImplementedException();
         }
 
         public void UpdateProcessOrder()

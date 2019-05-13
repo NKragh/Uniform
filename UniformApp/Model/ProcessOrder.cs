@@ -11,7 +11,7 @@ namespace UniformApp.Model
         private int _processOrderNo;
         //private DateTime _processDate;
         private string _batchCode;
-        private bool _isComplete;
+        private bool _isComplete = false;
         private int _columnNo;
         private int _productNo;
         private int _employeeNo;

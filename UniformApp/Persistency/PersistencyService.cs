@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -18,12 +19,11 @@ namespace UniformApp.Persistency
     {
         private const string Path = "http://localhost:55478";
 
-        public static async Task<List<T>> ReadObjectsFromDatabaseAsync<T>(string typeInput)
+        public static async Task<bool> CreateObjectToDatabaseAsync<T>(string typeInput, ProcessOrder objectInput)
         {
-            //TODO kan være vi skal flytte den ud af metoden / finde ud af noget med det defaultCredentials
             HttpClientHandler handler = new HttpClientHandler();
-            handler.UseDefaultCredentials = true; //possible not working
-            List<T> targetList = new List<T>();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
 
 
             using (var client = new HttpClient(handler))
@@ -34,11 +34,46 @@ namespace UniformApp.Persistency
 
                 try
                 {
-                    var response = client.GetStringAsync($"api/{typeInput}").Result;
+                    var content = JsonConvert.SerializeObject(objectInput);
+
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var response = client.PostAsync($"api/{typeInput}", byteContent).Result;
+                    Debug.WriteLine(response);
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                    return false;
+                }
+            }
+            //return returnList;
+            return true;
+        }
+
+        //TODO: find på bedre navne til både metoder og parametre -.-
+        public static async Task<List<T>> ReadObjectsFromDatabaseAsync<T>(string typeInput)
+        {
+            //TODO kan være vi skal flytte den ud af metoden / finde ud af noget med det defaultCredentials
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(Path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = client.GetStringAsync($"api/{typeInput}/").Result;
                     if (response != null)
                     {
                         var content = JsonConvert.DeserializeObject<List<T>>(response);
-                        targetList.AddRange(content);
+                        returnList.AddRange(content);
 
                         #region OldButGold
 
@@ -110,6 +145,14 @@ namespace UniformApp.Persistency
                         //targetList.Add(procesorderData);
                         //}
 
+                        //public static class HTTPClientExtensions
+                        //{
+                        //    public static async Task<T> ReadAsJsonAsync<T>(this HttpContent content)
+                        //    {
+                        //        var dataAsString = await content.ReadAsStringAsync();
+                        //        return JsonConvert.DeserializeObject<T>(dataAsString);
+                        //    }
+                        //}
 
                         #endregion
                     }
@@ -118,20 +161,43 @@ namespace UniformApp.Persistency
                 {
                     Debug.WriteLine(e.Message);
                 }
-
-                return targetList;
+                return returnList;
             }
         }
 
-        //TODO: find på bedre navne til både metoder og parametre -.-
-        public static async Task<T> ReadSingleObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
+        /* Note: Skal ikke bruges i vores system, men burde virke på denne måde.
+
+        public static async Task<object> ReadSingleObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
-            //TODO hoooow?
-            //T returnObject = new T();
             throw new NotImplementedException();
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            var content = new object();
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(Path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = client.GetStringAsync($"api/{typeInput}/{identifierInput}").Result;
+                    content = JsonConvert.DeserializeObject<T>(response);
+                    //returnObject.Add(content);
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+
+                return content;
+            }
         }
 
-        public static async Task<T> SaveObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput)
+        */
+
+        public static async Task<T> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput)
         {
             throw new NotImplementedException();
         }
@@ -142,13 +208,5 @@ namespace UniformApp.Persistency
         }
     }
 
-    //public static class HTTPClientExtensions
-    //{
-    //    public static async Task<T> ReadAsJsonAsync<T>(this HttpContent content)
-    //    {
-    //        var dataAsString = await content.ReadAsStringAsync();
-    //        return JsonConvert.DeserializeObject<T>(dataAsString);
-    //    }
-    //}
 
 }
