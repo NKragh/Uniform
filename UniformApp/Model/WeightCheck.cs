@@ -23,7 +23,40 @@ namespace UniformApp.Model
         public DateTime CheckTime
         {
             get { return DateTime.Now; }
-            set { _checkTime = value; }
+            set { CheckTime1 = value; }
+        }
+
+        public int ProcessNo { get => _processNo; set => _processNo = value; }
+        public DateTime CheckTime1 { get => _checkTime; set => _checkTime = value; }
+        public float Weight1 { get => _weight1; set => _weight1 = value; }
+        public float Weight2 { get => _weight2; set => _weight2 = value; }
+        public float Weight3 { get => _weight3; set => _weight3 = value; }
+        public float Weight4 { get => _weight4; set => _weight4 = value; }
+        public float Weight5 { get => _weight5; set => _weight5 = value; }
+        public float Weight6 { get => _weight6; set => _weight6 = value; }
+        public string Comments { get => _comments; set => _comments = value; }
+        public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
+        public int ProductNo { get => _productNo; set => _productNo = value; }
+
+        public WeightCheck(int processNo, DateTime checkTime1, float weight1, float weight2, float weight3,
+            float weight4, float weight5, float weight6, string comments, int employeeNo, int productNo)
+        {
+            ProcessNo = processNo;
+            CheckTime1 = checkTime1;
+            Weight1 = weight1;
+            Weight2 = weight2;
+            Weight3 = weight3;
+            Weight4 = weight4;
+            Weight5 = weight5;
+            Weight6 = weight6;
+            Comments = comments;
+            EmployeeNo = employeeNo;
+            ProductNo = productNo;
+        }
+
+        public WeightCheck()
+        {
+
         }
     }
 }
