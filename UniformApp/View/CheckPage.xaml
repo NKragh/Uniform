@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="DarkGreen">
 
     <Pivot Name="CheckPagePivot">
         <PivotItem Name="Pivot1"> <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
@@ -194,9 +194,7 @@
                 <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
                 <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
 
-                <TextBlock Text="Labortorie Prøve" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
-                <Button Name="SampleInput" Content="Prøve Indtastning" Grid.Row="2" Grid.Column="2" Height="70" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
-                <TextBox PlaceholderText="Indtast Prøve Værdier" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black" PlaceholderForeground="Black"/>
+                
 
                 <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
                 <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
@@ -234,7 +232,36 @@
                 <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
                 <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
 
+                <TextBlock Text="Labortorie Prøve" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
+                <Button Name="SampleInput" Content="Prøve Indtastning" Grid.Row="2" Grid.Column="2" Height="60" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+                <TextBox PlaceholderText="Indtast Prøve Værdier" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black" PlaceholderForeground="Black"/>
 
+                <Button Name="BackButton4" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
+
+                <Button Name="OpretKnap4" Content="Godkend" Command="{Binding CreateProcessOrderCommand}" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="3" Height="50" Width="100"/>
+
+            </Grid>
+        </PivotItem>
+        <PivotItem>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
 
             </Grid>
         </PivotItem>
