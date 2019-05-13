@@ -8,7 +8,208 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Pivot Name="CheckPagePivot">
+        <PivotItem Name="Pivot1"> <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1"/>
+                <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1"/>
+                <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1"/>
+                <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1"/>
+                <Button Name="ShiftCheck" Content="Shift Check" Grid.Column="1" Grid.Row="2"/>
+                <Button Name="TorqueCheck" Content="Torque Check" Grid.Column="2" Grid.Row="2"/>
+                <Button Name="PressureCheck" Content="Pressure Check" Grid.Column="3" Grid.Row="2"/>
+                <Button Name="PETCheck" Content="Pet Check" Grid.Column="4" Grid.Row="2"/>
 
-    </Grid>
+                <Button Name="BackButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
+
+
+            </Grid>
+        </PivotItem>
+
+        <PivotItem Name="WeightCheckPage">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="ProcessOrder" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
+
+                <TextBlock Text="CheckTime" Grid.Column="1" Grid.Row="2" Height="200" Width="200"/>
+
+                <TextBlock Text="Weight1" Grid.Column="1" Grid.Row="3" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200"/>
+
+                <TextBlock Text="Weight2" Grid.Column="1" Grid.Row="4" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200"/>
+
+                <TextBlock Text="Weight3" Grid.Column="1" Grid.Row="5" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="5" Height="20" Width="200"/>
+
+                <TextBlock Text="Weight4" Grid.Column="1" Grid.Row="6" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="6" Height="20" Width="200"/>
+
+                <TextBlock Text="Weight5" Grid.Column="1" Grid.Row="7" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="7" Height="20" Width="200"/>
+
+                <TextBlock Text="Weight6" Grid.Column="1" Grid.Row="8" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="8" Height="20" Width="200"/>
+
+                <TextBlock Text="Droptest" Grid.Column="1" Grid.Row="9" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="9" Height="20" Width="200"/>
+
+                <TextBlock Text="Comment" Grid.Column="1" Grid.Row="10" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="10" Height="20" Width="200"/>
+
+
+                <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="11" Height="200" Width="200"/>
+
+                <TextBlock Text="ProductNo" Grid.Column="1" Grid.Row="12" Height="200" Width="200"/>
+
+                <Button Name="BackButton1" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
+                <Button Name="OpretKnap" Content="Opret" Command="{Binding CreateProcessOrderCommand}" Grid.Column="3" Grid.Row="13" Height="50" Width="100"/>
+
+
+            </Grid>
+        </PivotItem>
+
+        <PivotItem Name="TasteCheckPage">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="ProcessNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
+                <TextBlock Text="CheckTime" Grid.Column="1" Grid.Row="2" Height="200" Width="200"/>
+                <TextBlock Text="TankNo" Grid.Column="1" Grid.Row="3" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200"/>
+                <TextBlock Text="TasteOk" Grid.Column="1" Grid.Row="4" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200"/>
+                <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="5" Height="200" Width="200"/>
+
+                <Button Name="BackButton2" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
+                <Button Name="OpretKnap2" Content="Opret" Command="{Binding CreateProcessOrderCommand}" Grid.Column="3" Grid.Row="6" Height="50" Width="100"/>
+
+
+            </Grid>
+        </PivotItem>
+
+        <PivotItem>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="ProcessNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
+                <TextBlock Text="CheckTime" Grid.Column="1" Grid.Row="2" Height="200" Width="200"/>
+                <TextBlock Text="ExpirationDate" Grid.Column="1" Grid.Row="3" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200"/>
+                <TextBlock Text="Comment" Grid.Column="1" Grid.Row="4" Height="200" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200"/>
+                <TextBlock Text="PalletNo" Grid.Column="1" Grid.Row="5" Height="200" Width="200"/>
+                <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="6" Height="200" Width="200"/>
+                <TextBlock Text="LabelNo" Grid.Column="1" Grid.Row="7" Height="200" Width="200"/>
+
+                <Button Name="BackButton3" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
+                <Button Name="OpretKnap3" Content="Opret" Command="{Binding CreateProcessOrderCommand}" Grid.Column="3" Grid.Row="8" Height="50" Width="100"/>
+
+
+            </Grid>
+        </PivotItem>
+
+        <PivotItem Name="TorqueCheckPage">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
+                <TextBlock Text="ROYAL UNIBREW" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
+
+                <TextBlock Text="Skruelågsinformationer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
+                <Button Name="TorqueNumber" Content="Råvarenummer" Grid.Row="2" Grid.Column="0" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="white" FontSize="35"/>
+                <Button Name="MinimumValue" Content="Minimumsværdi" Grid.Row="2" Grid.Column="1" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+                <Button Name="MiddleValue" Content="Middelværdi" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+                <Button Name="MaximumValue" Content="Maximumsværdi" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+
+                <TextBox PlaceholderText="Indtast råvarenummer" Grid.Row="2" Grid.Column="0" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black"/>
+                <TextBox PlaceholderText="Indtast råvarenummer" Grid.Row="2" Grid.Column="1" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black"/>
+                <TextBox PlaceholderText="Indtast råvarenummer" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black"/>
+                <TextBox PlaceholderText="Indtast råvarenummer" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black"/>
+
+                <Button Name="REGISTRER" Content="REGISTRER" Grid.Row="2" Grid.Column="4" Height="100" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="35" Background="Red" Foreground="Black"/>
+            </Grid>
+        </PivotItem>
+    </Pivot>
 </Page>
