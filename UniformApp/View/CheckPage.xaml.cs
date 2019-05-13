@@ -27,9 +27,9 @@ namespace UniformApp.View
             this.InitializeComponent();
         }
 
-        private void Råvarenummer_Click(object sender, RoutedEventArgs e)
+        private void BackButton3_OnClick(object sender, RoutedEventArgs e)
         {
-
+            CheckPagePivot.SelectedIndex = 0;
         }
     }
 }

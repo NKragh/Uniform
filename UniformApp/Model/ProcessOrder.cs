@@ -14,7 +14,7 @@ namespace UniformApp.Model
         private bool _isComplete;
         private int _columnNo;
         private int _productNo;
-        private int _employee;
+        private int _employeeNo;
 
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
         //public DateTime ProcessDate { get => _processDate; set => _processDate = value; }
@@ -22,9 +22,9 @@ namespace UniformApp.Model
         public bool IsComplete { get => _isComplete; set => _isComplete = value; }
         public int ColumnNo { get => _columnNo; set => _columnNo = value; }
         public int ProductNo { get => _productNo; set => _productNo = value; }
-        public int Employee { get => _employee; set => _employee = value; }
+        public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
 
-        public ProcessOrder(int processOrderNo, string batchCode, bool isComplete, int columnNo, int productNo, int employee)
+        public ProcessOrder(int processOrderNo, string batchCode, bool isComplete, int columnNo, int productNo, int employeeNo)
         {
             ProcessOrderNo = processOrderNo;
             //ProcessDate = processDate;
@@ -32,7 +32,7 @@ namespace UniformApp.Model
             IsComplete = isComplete;
             ColumnNo = columnNo;
             ProductNo = productNo;
-            Employee = employee;
+            EmployeeNo = employeeNo; 
         }
 
         public ProcessOrder()
