@@ -28,6 +28,7 @@ namespace UniformApp.Model
         //TODO skal igennem handleren?
         private async void LoadProcessOrdersAsync()
         {
+            
             var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrders");
             if (processOrders.Count != 0)
             {

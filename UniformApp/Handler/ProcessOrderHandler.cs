@@ -13,7 +13,6 @@ namespace UniformApp.Handler
     class ProcessOrderHandler
     {
         public ProcessOrderViewModel ProcessOrderViewModel { get; set; }
-
         public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
             ProcessOrderViewModel = viewModel;
@@ -26,7 +25,7 @@ namespace UniformApp.Handler
 
         public void ReadProcessOrder()
         {
-            throw new NotImplementedException();
+            var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrders");
         }
 
         public void UpdateProcessOrder()
