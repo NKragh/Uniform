@@ -8,5 +8,7 @@ namespace UniformApp.Common
 {
     interface ICheckable
     {
+        int ProcessNo { get; set; }
+        DateTime CheckTime { get; }
     }
 }
