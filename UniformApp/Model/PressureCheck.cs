@@ -16,6 +16,9 @@ namespace UniformApp.Model
         private int _employeeNo;
         private int _preformNo;
 
+        /// <summary>
+        /// User stories hertil; Som operatør vil jeg kunne indtaste data for trykkontrol så jeg kan kontrollere om grænsen er overskredet på min- eller maxvalue.
+        /// </summary>
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
         public DateTime CheckTime { get => _checkTime; set => _checkTime = value; }
         public int FormNo { get => _formNo; set => _formNo = value; }
