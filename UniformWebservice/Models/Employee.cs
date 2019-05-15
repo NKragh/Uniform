@@ -12,7 +12,10 @@ namespace UniformWebservice.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
+            PressureCheck = new HashSet<PressureCheck>();
             ProcessOrder = new HashSet<ProcessOrder>();
+            ShiftCheck = new HashSet<ShiftCheck>();
+            WeightCheck = new HashSet<WeightCheck>();
         }
 
         [Key]
@@ -26,6 +29,15 @@ namespace UniformWebservice.Models
         public byte Level { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PressureCheck> PressureCheck { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProcessOrder> ProcessOrder { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ShiftCheck> ShiftCheck { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WeightCheck> WeightCheck { get; set; }
     }
 }
