@@ -120,7 +120,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\ICheckable.cs" />
+    <Compile Include="Handler\PressureCheckHandler.cs" />
     <Compile Include="Handler\ProcessOrderHandler.cs" />
+    <Compile Include="Model\PressureCheck.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />
     <Compile Include="Model\WeightCheck.cs" />
@@ -146,6 +148,7 @@
     <None Include="UniformApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Royal-Unibrew-Large.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
