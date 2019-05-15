@@ -32,7 +32,7 @@ namespace UniformApp.ViewModel
 
         public CheckPageViewModel()
         {
-            PressureCheckHandler = new PressureCheckHandler();
+            PressureCheckHandler = new PressureCheckHandler(this);
 
             CreatePressureCheckCommand = new RelayCommand(PressureCheckHandler.CreatePressureCheck);
 
@@ -41,6 +41,7 @@ namespace UniformApp.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //Notifies clients that a property value has changed.
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

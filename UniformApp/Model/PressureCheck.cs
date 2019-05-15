@@ -38,6 +38,8 @@ namespace UniformApp.Model
             EmployeeNo = employeeNo;
             PreformNo = preformNo;
         }
+
+        //Instantiating class without parameters  
         public PressureCheck()
         {
             

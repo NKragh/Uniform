@@ -9,8 +9,9 @@ using UniformApp.ViewModel;
 namespace UniformApp.Handler
 {
     class PressureCheckHandler
-    {           
-         public CheckPageViewModel CheckPageViewModel { get; set; }
+    {
+        //Binding with Handler with ViewModel
+        public CheckPageViewModel CheckPageViewModel { get; set; }
 
         public PressureCheckHandler(CheckPageViewModel viewModel)
         {
