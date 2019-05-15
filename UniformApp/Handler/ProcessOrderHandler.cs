@@ -70,14 +70,7 @@ namespace UniformApp.Handler
         //    //    processOrder = await response.Content.ReadAsAsync<ProcessOrder>();
         //    //}
         //    //return processOrder;
-        //}
-        public async void UpdateProcessOrder()
-        {
-        }
-        public async void DeleteProcessOrder()
-        {
-        }
-
+        //
         
     }
 }

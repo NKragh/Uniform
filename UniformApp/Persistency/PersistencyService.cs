@@ -228,7 +228,6 @@ namespace UniformApp.Persistency
         {
             throw new NotImplementedException();
         }
-    }
 
         /// <summary>
         /// Delete an object from the database.
@@ -239,9 +238,7 @@ namespace UniformApp.Persistency
         /// <returns></returns>
         public static async Task<T> DeleteObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
-            var dataAsString = await content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<T>(dataAsString);
+            throw new NotImplementedException();
         }
     }
-
 }
