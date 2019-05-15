@@ -123,6 +123,7 @@
     <Compile Include="Handler\ProcessOrderHandler.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />
+    <Compile Include="Model\ShiftCheck.cs" />
     <Compile Include="Model\tempCheck.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
