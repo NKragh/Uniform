@@ -19,6 +19,13 @@ namespace UniformApp.Persistency
     {
         private const string Path = "http://localhost:55478";
 
+        /// <summary>
+        /// Post an object to the database.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="objectInput">Object to add to database.</param>
+        /// <returns></returns>
         public static async Task<bool> CreateObjectToDatabaseAsync<T>(string typeInput, ProcessOrder objectInput)
         {
             HttpClientHandler handler = new HttpClientHandler();
@@ -53,6 +60,12 @@ namespace UniformApp.Persistency
             return true;
         }
 
+        /// <summary>
+        /// Get all objects from database.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <returns></returns>
         //TODO: find på bedre navne til både metoder og parametre -.-
         public static async Task<List<T>> ReadObjectsFromDatabaseAsync<T>(string typeInput)
         {
@@ -69,7 +82,7 @@ namespace UniformApp.Persistency
 
                 try
                 {
-                    var response = client.GetStringAsync($"api/{typeInput}/").Result;
+                    var response = client.GetStringAsync($"api/{typeInput}s/").Result;
                     if (response != null)
                     {
                         var content = JsonConvert.DeserializeObject<List<T>>(response);
@@ -165,14 +178,19 @@ namespace UniformApp.Persistency
             }
         }
 
-        /* Note: Skal ikke bruges i vores system, men burde virke på denne måde.
 
-        public static async Task<object> ReadSingleObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
+        /// <summary>
+        /// Read single object from database indexed by identifier.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="identifierInput">Index of object to get</param>
+        /// <returns></returns>
+        public static async Task<object> ReadObjectsFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
-            throw new NotImplementedException();
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
-            var content = new object();
+            List<T> returnList = new List<T>();
 
             using (var client = new HttpClient(handler))
             {
@@ -182,26 +200,42 @@ namespace UniformApp.Persistency
 
                 try
                 {
-                    var response = client.GetStringAsync($"api/{typeInput}/{identifierInput}").Result;
-                    content = JsonConvert.DeserializeObject<T>(response);
-                    //returnObject.Add(content);
+                    var response = client.GetStringAsync($"api/{typeInput}s/{identifierInput}").Result;
+                    if (response != null)
+                    {
+                        var content = JsonConvert.DeserializeObject<List<T>>(response);
+                        returnList.AddRange(content);
+                    }
                 }
                 catch (Exception e)
                 {
                     Debug.WriteLine(e.Message);
                 }
-
-                return content;
+                return returnList;
             }
+            //*/
         }
 
-        */
-
-        public static async Task<T> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput)
+        /// <summary>
+        /// Put an object in indexed location.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="objectInput">Object with new values.</param>
+        /// <param name="identifierInput">Index of object to update.</param>
+        /// <returns></returns>
+        public static async Task<T> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput, int identifierInput)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Delete an object from the database.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="identifierInput">Index to be deleted.</param>
+        /// <returns></returns>
         public static async Task<T> DeleteObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
             throw new NotImplementedException();
