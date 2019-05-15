@@ -8,5 +8,14 @@ namespace UniformApp.Handler
 {
     class TasteCheckHandler
     {
+        public void CreateTasteCheckHandler()
+        {
+
+        }
+
+        public void ReadTasteCheckHandler()
+        {
+
+        }
     }
 }
