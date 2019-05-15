@@ -224,9 +224,40 @@ namespace UniformApp.Persistency
         /// <param name="objectInput">Object with new values.</param>
         /// <param name="identifierInput">Index of object to update.</param>
         /// <returns></returns>
-        public static async Task<T> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput, int identifierInput)
+        public static async Task<bool> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput, int identifierInput)
         {
-            throw new NotImplementedException();
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
+
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(Path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var content = JsonConvert.SerializeObject(objectInput);
+
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var response = client.PutAsync($"api/{typeInput}s", byteContent).Result;
+                    Debug.WriteLine(response);
+                    //return response.IsSuccessStatusCode;
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                    return false;
+                }
+            }
+            //return returnList;
+            return true;
+
         }
 
         /// <summary>
