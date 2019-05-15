@@ -1,0 +1,8 @@
+﻿CREATE TABLE PressureCheck(
+ProcessNo INT NOT NULL PRIMARY KEY,
+CheckTime TIME NOT NULL PRIMARY KEY, DEFAULT(gettime()),
+FormNo INT NOT NULL PRIMARY KEY,
+BreakPoint VARCHAR NOT NULL,
+EmployeeNo INT FOREIGN KEY REFERENCES Employee(EmployeeNo),
+PreformNo INT FOREIGN KEY REFERENCES Preform(PreformNo)
+);
