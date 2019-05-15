@@ -13,6 +13,7 @@ namespace UniformWebservice.Models
         public Product()
         {
             ProcessOrder = new HashSet<ProcessOrder>();
+            WeightCheck = new HashSet<WeightCheck>();
         }
 
         [Key]
@@ -37,5 +38,8 @@ namespace UniformWebservice.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProcessOrder> ProcessOrder { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WeightCheck> WeightCheck { get; set; }
     }
 }
