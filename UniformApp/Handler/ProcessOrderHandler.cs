@@ -17,28 +17,14 @@ namespace UniformApp.Handler
         public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
             ProcessOrderViewModel = viewModel;
+            
         }
 
         public void CreateProcessOrder()
         {
-            throw new NotImplementedException();
+            Debug.WriteLine("Its Working.gif!");
         }
-
-        public void ReadProcessOrder()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateProcessOrder()
-        {
-            throw new NotImplementedException();
-        }
-        public void DeleteProcessOrder()
-        {
-            throw new NotImplementedException();
-        }
-
-        //public async void ReadObjectsFromDatabaseAsync()
+        //public async void ReadProcessOrder()
         //{
         //    ProcessOrder processOrder = null;
         //    using (var client = new HttpClient(handler))
@@ -68,5 +54,13 @@ namespace UniformApp.Handler
         //    //}
         //    //return processOrder;
         //}
+        public async void UpdateProcessOrder()
+        {
+        }
+        public async void DeleteProcessOrder()
+        {
+        }
+
+        
     }
 }
