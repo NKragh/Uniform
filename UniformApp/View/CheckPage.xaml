@@ -206,7 +206,7 @@
 
             </Grid>
         </PivotItem>
-        <PivotItem Name="ShiftCheckPivot">
+        <PivotItem Name="SampleCheckPivot">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -237,7 +237,7 @@
 
             </Grid>
         </PivotItem>
-        <PivotItem>
+        <PivotItem Name="ShiftCheckPivot">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
