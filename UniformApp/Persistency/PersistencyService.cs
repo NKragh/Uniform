@@ -40,7 +40,7 @@ namespace UniformApp.Persistency
                     var byteContent = new ByteArrayContent(buffer);
                     byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                    var response = client.PostAsync($"api/{typeInput}", byteContent).Result;
+                    var response = client.PostAsync($"api/{typeInput}s", byteContent).Result;
                     Debug.WriteLine(response);
                 }
                 catch (Exception e)
