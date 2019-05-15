@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -18,12 +19,18 @@ namespace UniformApp.Persistency
     {
         private const string Path = "http://localhost:55478";
 
-        public static async Task<List<T>> ReadObjectsFromDatabaseAsync<T>(string typeInput)
+        /// <summary>
+        /// Post an object to the database.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="objectInput">Object to add to database.</param>
+        /// <returns></returns>
+        public static async Task<bool> CreateObjectToDatabaseAsync<T>(string typeInput, ProcessOrder objectInput)
         {
-            //TODO kan være vi skal flytte den ud af metoden / finde ud af noget med det defaultCredentials
             HttpClientHandler handler = new HttpClientHandler();
-            handler.UseDefaultCredentials = true; //possible not working
-            List<T> targetList = new List<T>();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
 
 
             using (var client = new HttpClient(handler))
@@ -34,11 +41,52 @@ namespace UniformApp.Persistency
 
                 try
                 {
-                    var response = client.GetStringAsync($"api/{typeInput}").Result;
+                    var content = JsonConvert.SerializeObject(objectInput);
+
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var response = client.PostAsync($"api/{typeInput}s", byteContent).Result;
+                    Debug.WriteLine(response);
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                    return false;
+                }
+            }
+            //return returnList;
+            return true;
+        }
+
+        /// <summary>
+        /// Get all objects from database.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <returns></returns>
+        //TODO: find på bedre navne til både metoder og parametre -.-
+        public static async Task<List<T>> ReadObjectsFromDatabaseAsync<T>(string typeInput)
+        {
+            //TODO kan være vi skal flytte den ud af metoden / finde ud af noget med det defaultCredentials
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(Path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = client.GetStringAsync($"api/{typeInput}s/").Result;
                     if (response != null)
                     {
                         var content = JsonConvert.DeserializeObject<List<T>>(response);
-                        targetList.AddRange(content);
+                        returnList.AddRange(content);
 
                         #region OldButGold
 
@@ -110,6 +158,14 @@ namespace UniformApp.Persistency
                         //targetList.Add(procesorderData);
                         //}
 
+                        //public static class HTTPClientExtensions
+                        //{
+                        //    public static async Task<T> ReadAsJsonAsync<T>(this HttpContent content)
+                        //    {
+                        //        var dataAsString = await content.ReadAsStringAsync();
+                        //        return JsonConvert.DeserializeObject<T>(dataAsString);
+                        //    }
+                        //}
 
                         #endregion
                     }
@@ -118,37 +174,73 @@ namespace UniformApp.Persistency
                 {
                     Debug.WriteLine(e.Message);
                 }
-
-                return targetList;
+                return returnList;
             }
         }
 
-        //TODO: find på bedre navne til både metoder og parametre -.-
-        public static async Task<T> ReadSingleObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
+
+        /// <summary>
+        /// Read single object from database indexed by identifier.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="identifierInput">Index of object to get</param>
+        /// <returns></returns>
+        public static async Task<object> ReadObjectsFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
-            //TODO hoooow?
-            //T returnObject = new T();
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(Path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = client.GetStringAsync($"api/{typeInput}s/{identifierInput}").Result;
+                    if (response != null)
+                    {
+                        var content = JsonConvert.DeserializeObject<List<T>>(response);
+                        returnList.AddRange(content);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+                return returnList;
+            }
+            //*/
+        }
+
+        /// <summary>
+        /// Put an object in indexed location.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="objectInput">Object with new values.</param>
+        /// <param name="identifierInput">Index of object to update.</param>
+        /// <returns></returns>
+        public static async Task<T> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput, int identifierInput)
+        {
             throw new NotImplementedException();
         }
 
-        public static async Task<T> SaveObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// Delete an object from the database.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="typeInput">Type of object as string.</param>
+        /// <param name="identifierInput">Index to be deleted.</param>
+        /// <returns></returns>
         public static async Task<T> DeleteObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
             throw new NotImplementedException();
         }
     }
 
-    //public static class HTTPClientExtensions
-    //{
-    //    public static async Task<T> ReadAsJsonAsync<T>(this HttpContent content)
-    //    {
-    //        var dataAsString = await content.ReadAsStringAsync();
-    //        return JsonConvert.DeserializeObject<T>(dataAsString);
-    //    }
-    //}
 
 }
