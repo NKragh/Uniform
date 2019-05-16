@@ -10,13 +10,13 @@ namespace UniformApp.Model
     class tempCheck : ICheckable
     {
         //model klasser skal implementere ICheckable som properties med backing field - det er del af options hvis du implementer vha. ReSharper Ultimate (alt+enter)
-        private int _processNo;
+        private int _processOrderNo;
         private DateTime _checkTime;
 
-        public int ProcessNo
+        public int ProcessOrderNo
         {
-            get => _processNo;
-            set => _processNo = value;
+            get => _processOrderNo;
+            set => _processOrderNo = value;
         }
 
         public DateTime CheckTime
