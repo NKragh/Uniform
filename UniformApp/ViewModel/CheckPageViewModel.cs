@@ -63,6 +63,20 @@ namespace UniformApp.ViewModel
             set { _newTasteCheck = value; }
         }
 
+        public ShiftCheckHandler ShiftCheckHandler { get; set; }
+
+        public ICommand CreateShiftCheckCommand { get; set; }
+        public ICommand ReadShiftCheckCommand { get; set; }
+        public ICommand UpdateShiftCheckCommand { get; set; }
+        public ICommand DeleteShiftCheckCommand { get; set; }
+
+        private ShiftCheck _newShiftCheck;
+
+        public ShiftCheck NewShiftCheck
+        {
+            get { return _newShiftCheck; }
+            set { _newShiftCheck = value; }
+        }
 
         public CheckPageViewModel()
         {
@@ -77,16 +91,25 @@ namespace UniformApp.ViewModel
             TasteCheckHandler = new TasteCheckHandler();
             CreateTasteCheckCommand = new RelayCommand(TasteCheckHandler.CreateTasteCheckHandler);
             _newTasteCheck = new TasteCheck();
+
+            ShiftCheckHandler = new ShiftCheckHandler();
+
+            CreateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.CreateShiftCheck);
+            ReadShiftCheckCommand = new RelayCommand(ShiftCheckHandler.ReadShiftCheck);
+            UpdateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.UpdateShiftCheck);
+            DeleteShiftCheckCommand = new RelayCommand(ShiftCheckHandler.DeleteShiftCheck);
+
+            _newShiftCheck = new ShiftCheck();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+
+       public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
 
     }
 }
