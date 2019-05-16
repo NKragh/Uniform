@@ -32,7 +32,7 @@ namespace UniformWebservice.Models
 
         public int? EmployeeNo { get; set; }
 
-        public DateTime ProcessOrderDate { get; set; }
+        public DateTime ProcessOrderDate { get; /*set;*/ }
 
         public virtual Employee Employee { get; set; }
 

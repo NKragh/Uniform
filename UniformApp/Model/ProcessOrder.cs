@@ -9,7 +9,7 @@ namespace UniformApp.Model
     class ProcessOrder
     {
         private int _processOrderNo;
-        private DateTime _processOrderDate;
+        private DateTime _processOrderDate /*= DateTime.Now*/;
         private string _batchCode;
         private bool _isComplete = false;
         private int _columnNo;
@@ -17,7 +17,7 @@ namespace UniformApp.Model
         private int _employeeNo;
 
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
-        public DateTime ProcessOrderDate { get => _processOrderDate; set => _processOrderDate = value; }
+        public DateTime ProcessOrderDate { get => _processOrderDate; /*set => _processOrderDate = value; */}
         public string BatchCode { get => _batchCode; set => _batchCode = value; }
         public bool IsComplete { get => _isComplete; set => _isComplete = value; }
         public int ColumnNo { get => _columnNo; set => _columnNo = value; }

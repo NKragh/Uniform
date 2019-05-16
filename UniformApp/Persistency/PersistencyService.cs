@@ -19,6 +19,7 @@ namespace UniformApp.Persistency
     {
         private const string Path = "http://localhost:55478";
 
+
         /// <summary>
         /// Post an object to the database.
         /// </summary>
@@ -26,7 +27,7 @@ namespace UniformApp.Persistency
         /// <param name="typeInput">Type of object as string.</param>
         /// <param name="objectInput">Object to add to database.</param>
         /// <returns></returns>
-        public static async Task<bool> CreateObjectToDatabaseAsync<T>(string typeInput, ProcessOrder objectInput)
+        public static async Task<bool> CreateObjectToDatabaseAsync<T>(string typeInput, Object objectInput)
         {
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
