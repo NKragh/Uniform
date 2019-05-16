@@ -11,6 +11,15 @@ namespace UniformApp.Model
 {
     class ProcessOrderCatalog
     {
+
+        private ProcessOrder _targetProcessOrder;
+
+        public ProcessOrder TargetProcessOrder
+        {
+            get { return _targetProcessOrder; }
+            set { _targetProcessOrder = value; }
+        }
+
         private static ProcessOrderCatalog _instance = new ProcessOrderCatalog();
 
         public static ProcessOrderCatalog Instance

@@ -98,7 +98,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ProcessOrderCatalog.ProcessOrderList, Mode=TwoWay}">
+                <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ProcessOrderCatalog.ProcessOrderList, Mode=TwoWay}" SelectedItem="{Binding ProcessOrderCatalog.TargetProcessOrder, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
