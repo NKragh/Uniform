@@ -22,7 +22,7 @@ namespace UniformApp.Handler
 
         public void CreateShiftCheck()
         {
-           
+           var Create = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck", CheckPageViewModel.)
         }
 
         public void ReadShiftCheck()
