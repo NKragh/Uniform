@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UniformApp.Model;
 using UniformApp.ViewModel;
 
 namespace UniformApp.Handler
@@ -22,12 +23,15 @@ namespace UniformApp.Handler
 
         public void CreateShiftCheck()
         {
-            throw new NotImplementedException();
+            var Create =
+                Persistency.PersistencyService
+                    .CreateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck",
+                        ShiftCheckViewModel.NewShiftCheck);
         }
 
         public void ReadShiftCheck()
         {
-            throw new NotImplementedException();
+            var Read
         }
 
         public void UpdateShiftCheck()

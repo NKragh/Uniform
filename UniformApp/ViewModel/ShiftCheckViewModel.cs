@@ -36,6 +36,9 @@ namespace UniformApp.ViewModel
             ShiftCheckHandler = new ShiftCheckHandler(this);
 
             CreateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.CreateShiftCheck);
+            ReadShiftCheckCommand = new RelayCommand(ShiftCheckHandler.ReadShiftCheck);
+            UpdateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.UpdateShiftCheck);
+            DeleteShiftCheckCommand = new RelayCommand(ShiftCheckHandler.DeleteShiftCheck);
 
             _newShiftCheck = new ShiftCheck();
         }
