@@ -34,6 +34,7 @@ namespace UniformApp.Model
 
         public LabelCheck()
         {
+
         }
     }
 }
