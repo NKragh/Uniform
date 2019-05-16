@@ -289,6 +289,4 @@ namespace UniformApp.Persistency
             }
         }
     }
-
-
 }

@@ -58,5 +58,11 @@ namespace UniformWebservice.Models
                 .Property(e => e.FluidCode)
                 .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<UniformWebservice.TasteCheck> TasteChecks { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.LabelCheck> LabelChecks { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.Label> Labels { get; set; }
     }
 }
