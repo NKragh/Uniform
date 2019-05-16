@@ -123,9 +123,14 @@
     <Compile Include="Common\ICheckable.cs" />
     <Compile Include="Handler\ProcessOrderHandler.cs" />
     <Compile Include="Handler\ShiftCheckHandler.cs" />
+    <Compile Include="Model\ShiftCheck.cs" />
+    <Compile Include="Handler\TasteCheckHandler.cs" />
+    <Compile Include="Handler\WeightCheckHandler.cs" />
+    <Compile Include="Model\PressureCheck.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />
-    <Compile Include="Model\ShiftCheck.cs" />
+    <Compile Include="Model\TasteCheck.cs" />
+    <Compile Include="Model\WeightCheck.cs" />
     <Compile Include="Model\tempCheck.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />

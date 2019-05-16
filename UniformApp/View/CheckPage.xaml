@@ -5,12 +5,15 @@
     xmlns:local="using:UniformApp.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:UniformApp.ViewModel"
     mc:Ignorable="d"
     Background="DarkGreen">
 
+<Page.DataContext>
+    <viewmodel:CheckPageViewModel/>
+</Page.DataContext>
     <Pivot Name="CheckPagePivot">
-        <PivotItem Name="Pivot1">
-            <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
+        <PivotItem Name="MenuPage"> <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -26,14 +29,14 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1"/>
-                <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1"/>
-                <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1"/>
-                <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1"/>
-                <Button Name="ShiftCheck" Content="Shift Check" Grid.Column="1" Grid.Row="2"/>
-                <Button Name="TorqueCheck" Content="Torque Check" Grid.Column="2" Grid.Row="2"/>
-                <Button Name="PressureCheck" Content="Pressure Check" Grid.Column="3" Grid.Row="2"/>
-                <Button Name="PETCheck" Content="Pet Check" Grid.Column="4" Grid.Row="2"/>
+                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1" Click="WeightCheck_OnClick"/>
+                <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1" Click="TasteCheck_OnClick"/>
+                <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1" Click="LabelCheck_OnClick"/>
+                <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1" Click="SampleCheck_OnClick"/>
+                <Button Name="ShiftCheck" Content="Shift Check" Grid.Column="1" Grid.Row="2" Click="ShiftCheck_OnClick"/>
+                <Button Name="TorqueCheck" Content="Torque Check" Grid.Column="2" Grid.Row="2" Click="TorqueCheck_OnClick"/>
+                <Button Name="PressureCheck" Content="Pressure Check" Grid.Column="3" Grid.Row="2" Click="PressureCheck_OnClick"/>
+                <Button Name="PETCheck" Content="Pet Check" Grid.Column="4" Grid.Row="2" Click="PETCheck_OnClick"/>
 
                 <Button Name="BackButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
 
@@ -48,7 +51,6 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -67,42 +69,27 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="ProcessOrder" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
-
                 <TextBlock Text="CheckTime" Grid.Column="1" Grid.Row="2" Height="200" Width="200"/>
-
                 <TextBlock Text="Weight1" Grid.Column="1" Grid.Row="3" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200"/>
-
+                <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200" Text="{Binding NewWeightCheck.Weight1, Mode=TwoWay}"/>
                 <TextBlock Text="Weight2" Grid.Column="1" Grid.Row="4" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200"/>
-
+                <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200" Text="{Binding NewWeightCheck.Weight2, Mode=TwoWay}"/>
                 <TextBlock Text="Weight3" Grid.Column="1" Grid.Row="5" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="5" Height="20" Width="200"/>
-
+                <TextBox Grid.Column="2" Grid.Row="5" Height="20" Width="200" Text="{Binding NewWeightCheck.Weight3, Mode=TwoWay}"/>
                 <TextBlock Text="Weight4" Grid.Column="1" Grid.Row="6" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="6" Height="20" Width="200"/>
-
+                <TextBox Grid.Column="2" Grid.Row="6" Height="20" Width="200" Text="{Binding NewWeightCheck.Weight4, Mode=TwoWay}"/>
                 <TextBlock Text="Weight5" Grid.Column="1" Grid.Row="7" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="7" Height="20" Width="200"/>
-
+                <TextBox Grid.Column="2" Grid.Row="7" Height="20" Width="200" Text="{Binding NewWeightCheck.Weight5, Mode=TwoWay}"/>
                 <TextBlock Text="Weight6" Grid.Column="1" Grid.Row="8" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="8" Height="20" Width="200"/>
-
+                <TextBox Grid.Column="2" Grid.Row="8" Height="20" Width="200" Text="{Binding NewWeightCheck.Weight6, Mode=TwoWay}"/>
                 <TextBlock Text="Droptest" Grid.Column="1" Grid.Row="9" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="9" Height="20" Width="200"/>
-
+                <TextBox Grid.Column="2" Grid.Row="9" Height="20" Width="200" Text="{Binding NewWeightCheck.Droptest, Mode=TwoWay}"/>
                 <TextBlock Text="Comment" Grid.Column="1" Grid.Row="10" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="10" Height="20" Width="200"/>
-
-
+                <TextBox Grid.Column="2" Grid.Row="10" Height="20" Width="200" Text="{Binding NewWeightCheck.Comments, Mode=TwoWay}"/>
                 <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="11" Height="200" Width="200"/>
-
                 <TextBlock Text="ProductNo" Grid.Column="1" Grid.Row="12" Height="200" Width="200"/>
-
                 <Button Name="BackButton1" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
-                <Button Name="OpretKnap" Content="Opret" Command="{Binding CreateProcessOrderCommand}" Grid.Column="3" Grid.Row="13" Height="50" Width="100"/>
-
-
+                <Button Name="OpretKnap" Content="Opret" Command="{Binding CreateWeightCheckCommand}" Grid.Column="3" Grid.Row="13" Height="50" Width="100"/>
             </Grid>
         </PivotItem>
 
@@ -123,22 +110,22 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="ProcessNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
+                <TextBlock Text="ProcessOrderNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
                 <TextBlock Text="CheckTime" Grid.Column="1" Grid.Row="2" Height="200" Width="200"/>
                 <TextBlock Text="TankNo" Grid.Column="1" Grid.Row="3" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200" Text="{Binding NewTasteCheck.TankNo, Mode=TwoWay}"/>
                 <TextBlock Text="TasteOk" Grid.Column="1" Grid.Row="4" Height="200" Width="200"/>
-                <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200"/>
+                <TextBox Grid.Column="2" Grid.Row="4" Height="20" Width="200" Text="{Binding NewTasteCheck.TasteOk, Mode=TwoWay}"/>
                 <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="5" Height="200" Width="200"/>
 
                 <Button Name="BackButton2" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
-                <Button Name="OpretKnap2" Content="Opret" Command="{Binding CreateProcessOrderCommand}" Grid.Column="3" Grid.Row="6" Height="50" Width="100"/>
+                <Button Name="OpretKnap2" Content="Opret" Command="{Binding CreateTasteCheckCommand}" Grid.Column="3" Grid.Row="6" Height="50" Width="100"/>
 
 
             </Grid>
         </PivotItem>
 
-        <PivotItem>
+        <PivotItem Name="LabelCheckPage">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -157,7 +144,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="ProcessNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
+                <TextBlock Text="ProcessOrderNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200"/>
                 <TextBlock Text="CheckTime" Grid.Column="1" Grid.Row="2" Height="200" Width="200"/>
                 <TextBlock Text="ExpirationDate" Grid.Column="1" Grid.Row="3" Height="200" Width="200"/>
                 <TextBox Grid.Column="2" Grid.Row="3" Height="20" Width="200"/>
@@ -174,6 +161,8 @@
             </Grid>
         </PivotItem>
 
+        <PivotItem Name="SampleCheckPage"/>
+        <PivotItem Name="ShiftCheckPage"/>
         <PivotItem Name="TorqueCheckPage">
             <Grid>
                 <Grid.ColumnDefinitions>

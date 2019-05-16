@@ -16,6 +16,7 @@ namespace UniformApp.Handler
         public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
             ProcessOrderViewModel = viewModel;
+            
         }
 
         public void CreateProcessOrder()
@@ -69,6 +70,7 @@ namespace UniformApp.Handler
         //    //    processOrder = await response.Content.ReadAsAsync<ProcessOrder>();
         //    //}
         //    //return processOrder;
-        //}
+        //
+        
     }
 }

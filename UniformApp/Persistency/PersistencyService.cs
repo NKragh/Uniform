@@ -241,6 +241,4 @@ namespace UniformApp.Persistency
             throw new NotImplementedException();
         }
     }
-
-
 }
