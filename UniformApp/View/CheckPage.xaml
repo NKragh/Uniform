@@ -13,7 +13,7 @@
     <viewmodel:CheckPageViewModel/>
 </Page.DataContext>
     <Pivot Name="CheckPagePivot">
-        <PivotItem Name="Pivot1"> <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
+        <PivotItem Name="MenuPage"> <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -29,14 +29,14 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1"/>
-                <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1"/>
-                <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1"/>
-                <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1"/>
-                <Button Name="ShiftCheck" Content="Shift Check" Grid.Column="1" Grid.Row="2"/>
-                <Button Name="TorqueCheck" Content="Torque Check" Grid.Column="2" Grid.Row="2"/>
-                <Button Name="PressureCheck" Content="Pressure Check" Grid.Column="3" Grid.Row="2"/>
-                <Button Name="PETCheck" Content="Pet Check" Grid.Column="4" Grid.Row="2"/>
+                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1" Click="WeightCheck_OnClick"/>
+                <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1" Click="TasteCheck_OnClick"/>
+                <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1" Click="LabelCheck_OnClick"/>
+                <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1" Click="SampleCheck_OnClick"/>
+                <Button Name="ShiftCheck" Content="Shift Check" Grid.Column="1" Grid.Row="2" Click="ShiftCheck_OnClick"/>
+                <Button Name="TorqueCheck" Content="Torque Check" Grid.Column="2" Grid.Row="2" Click="TorqueCheck_OnClick"/>
+                <Button Name="PressureCheck" Content="Pressure Check" Grid.Column="3" Grid.Row="2" Click="PressureCheck_OnClick"/>
+                <Button Name="PETCheck" Content="Pet Check" Grid.Column="4" Grid.Row="2" Click="PETCheck_OnClick"/>
 
                 <Button Name="BackButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
 
@@ -125,7 +125,7 @@
             </Grid>
         </PivotItem>
 
-        <PivotItem>
+        <PivotItem Name="LabelCheckPage">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -161,6 +161,8 @@
             </Grid>
         </PivotItem>
 
+        <PivotItem Name="SampleCheckPage"/>
+        <PivotItem Name="ShiftCheckPage"/>
         <PivotItem Name="TorqueCheckPage">
             <Grid>
                 <Grid.ColumnDefinitions>

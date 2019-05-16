@@ -29,9 +29,9 @@ namespace UniformApp.Model
             _employeeNo = employeeNo;
         }
 
-        public WeightCheck()
+       public TasteCheck()
         {
 
-        }
+        } 
     }
 }
