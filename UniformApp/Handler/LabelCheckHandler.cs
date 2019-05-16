@@ -8,5 +8,9 @@ namespace UniformApp.Handler
 {
     class LabelCheckHandler
     {
+        public void CreateLabelCheck()
+        {
+
+        }
     }
 }

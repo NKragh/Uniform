@@ -119,11 +119,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Handler\LabelCheckHandler.cs" />
     <Compile Include="Handler\PressureCheckHandler.cs" />
     <Compile Include="Common\ICheckable.cs" />
     <Compile Include="Handler\ProcessOrderHandler.cs" />
     <Compile Include="Handler\TasteCheckHandler.cs" />
     <Compile Include="Handler\WeightCheckHandler.cs" />
+    <Compile Include="Model\LabelCheck.cs" />
     <Compile Include="Model\PressureCheck.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />

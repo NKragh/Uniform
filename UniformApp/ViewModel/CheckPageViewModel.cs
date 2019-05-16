@@ -16,21 +16,6 @@ namespace UniformApp.ViewModel
     class CheckPageViewModel : INotifyPropertyChanged
     {
 
-        public PressureCheckHandler PressureCheckHandler { get; set; }
-
-        public ICommand CreatePressureCheckCommand { get; set; }
-        public ICommand ReadPressureCheckCommand { get; set; }
-        public ICommand UpdatePressureCheckCommand { get; set; }
-        public ICommand DeletePressureCheckCommand { get; set; }
-
-        private PressureCheck _newPressureCheck;
-
-        public PressureCheck NewPressureCheck
-        {
-            get { return _newPressureCheck; }
-            set { _newPressureCheck = value; }
-        }
-
 
         public WeightCheckHandler WeightCheckHandler { get; set; }
 
@@ -64,11 +49,40 @@ namespace UniformApp.ViewModel
         }
 
 
+        public LabelCheckHandler LabelCheckHandler { get; set; }
+
+        public ICommand CreateLabelCheckCommand { get; set; }
+        public ICommand ReadLabelCheckCommand { get; set; }
+        public ICommand UpdateLabelCheckCommand { get; set; }
+        public ICommand DeleteLabelCheckCommand { get; set; }
+
+        private LabelCheck _newLabelCheck;
+
+        public LabelCheck NewLabelCheck
+        {
+            get { return _newLabelCheck; }
+            set { _newLabelCheck = value; }
+        }
+
+
+        public PressureCheckHandler PressureCheckHandler { get; set; }
+
+        public ICommand CreatePressureCheckCommand { get; set; }
+        public ICommand ReadPressureCheckCommand { get; set; }
+        public ICommand UpdatePressureCheckCommand { get; set; }
+        public ICommand DeletePressureCheckCommand { get; set; }
+
+        private PressureCheck _newPressureCheck;
+
+        public PressureCheck NewPressureCheck
+        {
+            get { return _newPressureCheck; }
+            set { _newPressureCheck = value; }
+        }
+
+
         public CheckPageViewModel()
         {
-            PressureCheckHandler = new PressureCheckHandler();
-            CreatePressureCheckCommand = new RelayCommand(PressureCheckHandler.CreatePressureCheck);
-            _newPressureCheck = new PressureCheck();
 
             WeightCheckHandler = new WeightCheckHandler();
             CreateWeightCheckCommand = new RelayCommand(WeightCheckHandler.CreateWeightCheck);
@@ -77,6 +91,14 @@ namespace UniformApp.ViewModel
             TasteCheckHandler = new TasteCheckHandler();
             CreateTasteCheckCommand = new RelayCommand(TasteCheckHandler.CreateTasteCheckHandler);
             _newTasteCheck = new TasteCheck();
+
+            LabelCheckHandler = new LabelCheckHandler();
+            CreateLabelCheckCommand = new RelayCommand(LabelCheckHandler.CreateLabelCheck);
+            _newLabelCheck = new LabelCheck();
+
+            PressureCheckHandler = new PressureCheckHandler();
+            CreatePressureCheckCommand = new RelayCommand(PressureCheckHandler.CreatePressureCheck);
+            _newPressureCheck = new PressureCheck();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
