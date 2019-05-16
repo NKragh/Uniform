@@ -209,7 +209,7 @@
                 <TextBox PlaceholderText="Indtast middelværdi" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black"/>
                 <TextBox PlaceholderText="Indtast maximumsværdi" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" Foreground="Black"/>
 
-                <Button Name="REGISTRER" Content="REGISTRER" Grid.Row="2" Grid.Column="4" Height="100" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="35" Background="LightGreen" Foreground="Black"/>
+                <Button Name="REGISTRER" Content="REGISTRER" Command="{Binding CreatePressureCheckCommand}" Grid.Row="2" Grid.Column="4" Height="100" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="35" Background="LightGreen" Foreground="Black"/>
                 <Button Name="Return" Content="Tilbage" Grid.Row="4" Grid.Column="2" Height="100" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="35" Background="CornflowerBlue" Foreground="White"/>
             </Grid>
         </PivotItem>
@@ -255,7 +255,7 @@
                 <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="5" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
                 <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="6" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
 
-                <Button Name="REGISTRER2" Content="REGISTRER" Grid.Row="3" Grid.Column="4" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGreen" Foreground="Black" FontSize="30" FontWeight="Bold"/>
+                <Button Name="REGISTRER2" Content="REGISTRER" Command="{Binding CreatePressureCheck}"  Grid.Row="3" Grid.Column="4" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGreen" Foreground="Black" FontSize="30" FontWeight="Bold"/>
                 <Button Name="ResetData" Content="Nulstil" Grid.Row="3" Grid.Column="3" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Foreground="Black" FontSize="30" FontWeight="Bold"/>
             </Grid>
         </PivotItem>
@@ -308,7 +308,7 @@
                 <Button Name="EmployeeINIT" Content="Operatør" Grid.Row="3" Grid.Column="0" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="CornflowerBlue" Foreground="White" FontSize="25"/>
                 <TextBox PlaceholderText="####" Grid.Row="3" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Foreground="Black" FontSize="25"/>
 
-                <Button Name="REGISTRER3" Content="REGISTRER" Grid.Row="3" Grid.Column="4" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGreen" Foreground="Black" FontSize="30" FontWeight="Bold"/>
+                <Button Name="REGISTRER3" Content="REGISTRER" Command="{Binding }" Grid.Row="3" Grid.Column="4" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGreen" Foreground="Black" FontSize="30" FontWeight="Bold"/>
                 <Button Name="ResetData2" Content="Nulstil" Grid.Row="3" Grid.Column="3" Height="90" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Foreground="Black" FontSize="30" FontWeight="Bold"/>
 
             </Grid>

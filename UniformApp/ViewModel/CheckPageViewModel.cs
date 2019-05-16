@@ -30,6 +30,9 @@ namespace UniformApp.ViewModel
             set { _newPressureCheck = value; }
         }
 
+        /// <summary>
+        /// Adding relay command and binding PHandler with ViewModel. 
+        /// </summary>
         public CheckPageViewModel()
         {
             PressureCheckHandler = new PressureCheckHandler(this);
