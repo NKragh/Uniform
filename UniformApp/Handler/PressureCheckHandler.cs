@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using UniformApp.Model;
 using UniformApp.ViewModel;
 
@@ -23,6 +20,9 @@ namespace UniformApp.Handler
         /// </summary>
         public void CreatePressureCheck()
         {
+            var test = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PressureCheck>("PressureCheck",
+                CheckPageViewModel.NewPressureCheck);
+            Debug.WriteLine(test);
             throw new NotImplementedException();
         }
 
