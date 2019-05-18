@@ -60,5 +60,9 @@ namespace UniformWebservice.Models
         }
 
         public System.Data.Entity.DbSet<UniformWebservice.TasteCheck> TasteChecks { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.LabelCheck> LabelChecks { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.Label> Labels { get; set; }
     }
 }
