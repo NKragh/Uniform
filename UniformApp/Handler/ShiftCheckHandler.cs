@@ -34,7 +34,7 @@ namespace UniformApp.Handler
         {
             var Read =
                 Persistency.PersistencyService
-                    .ReadObjectsFromDatabaseAsync<ShiftCheck>("ShiftCheck", CheckPageViewModel.
+                    .ReadObjectsFromDatabaseAsync<ShiftCheck>("ShiftCheck", CheckPageViewModel.NewShiftCheck
                         );
         }
 
@@ -43,12 +43,15 @@ namespace UniformApp.Handler
             var Update =
                 Persistency.PersistencyService
                     .UpdateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck",
-                        CheckPageViewModel.);
+                        CheckPageViewModel);
         }
 
         public void DeleteShiftCheck()
         {
-            var Delete = Persistency.PersistencyService.DeleteObjectFromDatabaseAsync<ShiftCheck>("ShiftCheck", CheckPageViewModel.)
+            var Delete =
+                Persistency.PersistencyService
+                    .DeleteObjectFromDatabaseAsync<ShiftCheck>("ShiftCheck",
+                        CheckPageViewModel.NewShiftCheck);
         }
     }
 }
