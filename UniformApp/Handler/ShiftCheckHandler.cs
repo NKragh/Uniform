@@ -10,10 +10,12 @@ namespace UniformApp.Handler
 {
     class ShiftCheckHandler
     {
+        public CheckPageViewModel CheckPageViewModel { get; set; }
 
-        public ShiftCheckHandler()
+
+        public ShiftCheckHandler(CheckPageViewModel viewModel)
         {
-            throw new NotImplementedException();
+            CheckPageViewModel = viewModel;
         }
 
         // <summary>
@@ -22,7 +24,10 @@ namespace UniformApp.Handler
 
         public void CreateShiftCheck()
         {
-           var Create = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck", CheckPageViewModel.New
+            var Create =
+                Persistency.PersistencyService
+                    .CreateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck",
+                        CheckPageViewModel.NewShiftCheck);
         }
 
         public void ReadShiftCheck()
