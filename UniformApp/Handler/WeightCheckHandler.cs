@@ -26,6 +26,7 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewWeightCheck.ProductNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProductNo;
             CheckPageViewModel.NewWeightCheck.ProcessOrderNo =
                 ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
+            CheckPageViewModel.NewWeightCheck.CheckTime = DateTime.Now.TimeOfDay;
             var weightPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<WeightCheck>("WeightCheck", CheckPageViewModel.NewWeightCheck).Result;
         }
 
