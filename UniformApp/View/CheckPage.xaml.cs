@@ -31,5 +31,45 @@ namespace UniformApp.View
         {
             CheckPagePivot.SelectedIndex = 0;
         }
+
+        private void WeightCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 1;
+        }
+
+        private void TasteCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 2;
+        }
+
+        private void LabelCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 3;
+        }
+
+        private void SampleCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 4;
+        }
+
+        private void ShiftCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 5;
+        }
+
+        private void TorqueCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 6;
+        }
+
+        private void PressureCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 7;
+        }
+
+        private void PETCheck_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 8;
+        }
     }
 }

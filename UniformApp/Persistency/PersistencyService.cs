@@ -19,10 +19,13 @@ namespace UniformApp.Persistency
     {
         private const string Path = "http://localhost:55478";
 
+<<<<<<< HEAD
         internal static object CreateObjectToDatabaseAsync<T>(string v, T newPressureCheck)
         {
             throw new NotImplementedException();
         }
+=======
+>>>>>>> JonesBranch
 
         /// <summary>
         /// Post an object to the database.
@@ -31,11 +34,10 @@ namespace UniformApp.Persistency
         /// <param name="typeInput">Type of object as string.</param>
         /// <param name="objectInput">Object to add to database.</param>
         /// <returns></returns>
-        public static async Task<bool> CreateObjectToDatabaseAsync<T>(string typeInput, ProcessOrder objectInput)
+        public static async Task<bool> CreateObjectToDatabaseAsync<T>(string typeInput, Object objectInput)
         {
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
-            List<T> returnList = new List<T>();
 
 
             using (var client = new HttpClient(handler))
@@ -61,7 +63,6 @@ namespace UniformApp.Persistency
                     return false;
                 }
             }
-            //return returnList;
             return true;
         }
 
@@ -218,7 +219,6 @@ namespace UniformApp.Persistency
                 }
                 return returnList;
             }
-            //*/
         }
 
         /// <summary>
@@ -229,23 +229,71 @@ namespace UniformApp.Persistency
         /// <param name="objectInput">Object with new values.</param>
         /// <param name="identifierInput">Index of object to update.</param>
         /// <returns></returns>
-        public static async Task<T> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput, int identifierInput)
+        public static async Task<bool> UpdateObjectToDatabaseAsync<T>(string typeInput, dynamic objectInput, int identifierInput)
         {
-            throw new NotImplementedException();
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
+
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(Path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var content = JsonConvert.SerializeObject(objectInput);
+
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var response = client.PutAsync($"api/{typeInput}s", byteContent).Result;
+                    Debug.WriteLine(response);
+                    return response.IsSuccessStatusCode;
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                    return false;
+                }
+            }
         }
 
         /// <summary>
-        /// Delete an object from the database.
+        /// Delete an object from the database. CAUTION: This command cannot be reverted!
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="typeInput">Type of object as string.</param>
         /// <param name="identifierInput">Index to be deleted.</param>
         /// <returns></returns>
-        public static async Task<T> DeleteObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
+        public static async Task<bool> DeleteObjectFromDatabaseAsync<T>(string typeInput, dynamic identifierInput)
         {
-            throw new NotImplementedException();
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            List<T> returnList = new List<T>();
+
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(Path);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = client.DeleteAsync($"api/{typeInput}s/{identifierInput}").Result;
+                    Debug.WriteLine(response);
+                    return response.IsSuccessStatusCode;
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                    return false;
+                }
+            }
         }
     }
-
-
 }

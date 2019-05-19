@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
@@ -16,19 +17,12 @@ namespace UniformApp.Handler
         public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
             ProcessOrderViewModel = viewModel;
+            
         }
 
         public void CreateProcessOrder()
         {
-            var test = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderViewModel
-                .NewProcessOrder);
-            Debug.WriteLine(test);
-        }
-
-        public void ReadProcessOrder()
-        {
-            //var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrders");
-            throw new NotImplementedException();
+            var test = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderViewModel.NewProcessOrder).Result;
         }
 
         public void UpdateProcessOrder()
@@ -69,6 +63,7 @@ namespace UniformApp.Handler
         //    //    processOrder = await response.Content.ReadAsAsync<ProcessOrder>();
         //    //}
         //    //return processOrder;
-        //}
+        //
+        
     }
 }

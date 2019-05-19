@@ -22,7 +22,6 @@ namespace UniformWebservice.Models
         public int ProcessOrderNo { get; set; }
 
         [Required]
-        [StringLength(1)]
         public string BatchCode { get; set; }
 
         public bool IsComplete { get; set; }
@@ -32,6 +31,8 @@ namespace UniformWebservice.Models
         public int? ProductNo { get; set; }
 
         public int? EmployeeNo { get; set; }
+
+        public DateTime ProcessOrderDate { get; /*set;*/ }
 
         public virtual Employee Employee { get; set; }
 

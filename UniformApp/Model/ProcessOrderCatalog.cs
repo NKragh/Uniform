@@ -11,7 +11,17 @@ namespace UniformApp.Model
 {
     class ProcessOrderCatalog
     {
+
+        private ProcessOrder _targetProcessOrder;
+
+        public ProcessOrder TargetProcessOrder
+        {
+            get { return _targetProcessOrder; }
+            set { _targetProcessOrder = value; }
+        }
+
         private static ProcessOrderCatalog _instance = new ProcessOrderCatalog();
+
         public static ProcessOrderCatalog Instance
         {
             get => _instance;
@@ -26,7 +36,7 @@ namespace UniformApp.Model
         }
 
         //TODO skal igennem handleren?
-        private async void LoadProcessOrdersAsync()
+        public async void LoadProcessOrdersAsync()
         {
             
             var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrder");
@@ -39,8 +49,8 @@ namespace UniformApp.Model
             }
             else
             {
-                ProcessOrderList.Add(new ProcessOrder(1,/*DateTime.Now,*/"1", true, 1, 1, 1));
-                ProcessOrderList.Add(new ProcessOrder(2, /*DateTime.Now,*/ "2", true, 2, 2, 2));
+                ProcessOrderList.Add(new ProcessOrder(1, "1", true, 1, 1, 1));
+                ProcessOrderList.Add(new ProcessOrder(2, "2", true, 2, 2, 2));
             }
         }
     }

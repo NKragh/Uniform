@@ -11,7 +11,7 @@
     <AssemblyName>UniformApp</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -119,12 +119,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Handler\LabelCheckHandler.cs" />
     <Compile Include="Handler\PressureCheckHandler.cs" />
     <Compile Include="Common\ICheckable.cs" />
     <Compile Include="Handler\ProcessOrderHandler.cs" />
+    <Compile Include="Handler\TasteCheckHandler.cs" />
+    <Compile Include="Handler\WeightCheckHandler.cs" />
+    <Compile Include="Model\LabelCheck.cs" />
     <Compile Include="Model\PressureCheck.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />
+    <Compile Include="Model\TasteCheck.cs" />
+    <Compile Include="Model\WeightCheck.cs" />
     <Compile Include="Model\tempCheck.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />

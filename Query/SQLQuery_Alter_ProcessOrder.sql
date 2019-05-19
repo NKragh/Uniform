@@ -1,0 +1,2 @@
+﻿--ALTER TABLE dbo.ProcessOrder ALTER COLUMN BatchCode VARCHAR;
+ALTER TABLE dbo.ProcessOrder ADD ProcessOrderDate DATETIME DEFAULT(GETDATE()) NOT NULL;

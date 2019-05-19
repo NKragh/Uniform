@@ -15,13 +15,22 @@ namespace UniformApp.ViewModel
 {
     class ProcessOrderViewModel : INotifyPropertyChanged
     {
+
+        private ProcessOrder _targetProcessOrder;
+
+        public ProcessOrder TargetProcessOrder
+        {
+            get { return _targetProcessOrder; }
+            set { _targetProcessOrder = value; }
+        }
+
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public ProcessOrderHandler ProcessOrderHandler { get; set; }
        
         public ICommand CreateProcessOrderCommand { get; set; }
-        public ICommand ReadProcessOrderCommand { get; set; }
-        public ICommand UpdateProcessOrderCommand { get; set; }
         public ICommand DeleteProcessOrderCommand { get; set; }
+        public ICommand EditProcessOrderCommand { get; set; }
+        public ICommand ReadProcessOrderCommand { get; set; }
 
         private ProcessOrder _newProcessOrder;
         public ProcessOrder NewProcessOrder
@@ -38,7 +47,7 @@ namespace UniformApp.ViewModel
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             ProcessOrderHandler = new ProcessOrderHandler(this);
 
-            CreateProcessOrderCommand = new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
+            CreateProcessOrderCommand =new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
 
             _newProcessOrder = new ProcessOrder();
         }

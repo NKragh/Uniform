@@ -42,5 +42,10 @@ namespace UniformApp.View
         {
             ContentPivot.SelectedIndex = 0;
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CheckPage));
+        }
     }
 }

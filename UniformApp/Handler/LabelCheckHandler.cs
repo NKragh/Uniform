@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UniformApp.Common
+namespace UniformApp.Handler
 {
-    interface ICheckable
+    class LabelCheckHandler
     {
-        int ProcessOrderNo { get; set; }
-        DateTime CheckTime { get; }
+        public void CreateLabelCheck()
+        {
+
+        }
     }
 }
