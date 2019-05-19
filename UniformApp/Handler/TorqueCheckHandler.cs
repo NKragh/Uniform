@@ -23,7 +23,11 @@ namespace UniformApp.Handler
 
         public void CreateTorqueCheck()
         {
+            CheckPageViewModel.NewTorqueCheck.EmployeeNo = ProcessOrderCatalog.Instance.TargetProcessOrder.EmployeeNo;
+            CheckPageViewModel.NewTorqueCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
+            CheckPageViewModel.NewTorqueCheck.CheckTime = DateTime.Now.TimeOfDay; //TODO Johan/Ncraigh help
 
+            var TorquePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<TorqueCheck>("TorqueCheck", CheckPageViewModel.NewTorqueCheck);
         }
         public void ReadTorqueCheck()
         {
