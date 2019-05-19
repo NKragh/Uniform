@@ -19,13 +19,10 @@ namespace UniformApp.Persistency
     {
         private const string Path = "http://localhost:55478";
 
-<<<<<<< HEAD
         internal static object CreateObjectToDatabaseAsync<T>(string v, T newPressureCheck)
         {
             throw new NotImplementedException();
         }
-=======
->>>>>>> JonesBranch
 
         /// <summary>
         /// Post an object to the database.
@@ -157,7 +154,7 @@ namespace UniformApp.Persistency
 
                         //ProcessOrder blah = response.Content.ReadAsJsonAsync<ProcessOrder>().Result;
                         //Console.WriteLine(blah);
-                        //string blah2 = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(blah).ToString(); 
+                        //string blah2 = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(blah).ToString();
                         //ProcessOrder procesorderData =  response.Content.ReadAsAsync<ProcessOrder>().Result;
                         //foreach (ProcessOrder p in procesorderData)
                         //{

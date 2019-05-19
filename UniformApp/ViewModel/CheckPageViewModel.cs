@@ -87,18 +87,12 @@ namespace UniformApp.ViewModel
             set { _newPressureCheck = value; }
         }
 
-<<<<<<< HEAD
         /// <summary>
-        /// Adding relay command and binding PHandler with ViewModel. 
+        /// Adding relay command and binding PHandler with ViewModel.
         /// </summary>
         public CheckPageViewModel()
         {
             PressureCheckHandler = new PressureCheckHandler(this);
-=======
-
-        public CheckPageViewModel()
-        {
->>>>>>> JonesBranch
 
             WeightCheckHandler = new WeightCheckHandler(this);
             CreateWeightCheckCommand = new RelayCommand(WeightCheckHandler.CreateWeightCheck);
