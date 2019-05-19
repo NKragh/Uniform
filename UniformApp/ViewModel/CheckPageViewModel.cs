@@ -102,6 +102,21 @@ namespace UniformApp.ViewModel
             set { _newTorqueCheck = value; }
         }
 
+        public PETCheckHandler PETCheckHandler { get; set; }
+
+        public ICommand CreatePETCheckCommand { get; set; }
+        public ICommand ReadPETCheckCommand { get; set; }
+        public ICommand UpdatePETCheckCommand { get; set; }
+        public ICommand DeletePETCheckCommand { get; set; }
+
+        private PETCheck _newPETCheck;
+
+        public PETCheck NewPETCheck
+        {
+            get { return _newPETCheck; }
+            set { _newPETCheck = value; }
+        }
+
         /// <summary>
         /// Adding relay command and binding PHandler with ViewModel.
         /// </summary>
@@ -128,6 +143,10 @@ namespace UniformApp.ViewModel
             TorqueCheckHandler = new TorqueCheckHandler();
             CreateTorqueCheckCommand = new RelayCommand(TorqueCheckHandler.CreateTorqueCheck);
             _newTorqueCheck = new TorqueCheck();
+
+            PETCheckHandler = new PETCheckHandler();
+            CreatePETCheckCommand = new RelayCommand(PETCheckHandler.CreatePETCheck)¨;
+            _newPETCheck = new PETCheck();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
