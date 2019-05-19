@@ -119,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\URelayCommand.cs" />
     <Compile Include="Handler\LabelCheckHandler.cs" />
     <Compile Include="Handler\PressureCheckHandler.cs" />
     <Compile Include="Common\ICheckable.cs" />

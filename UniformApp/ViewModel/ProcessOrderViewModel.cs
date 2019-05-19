@@ -47,7 +47,7 @@ namespace UniformApp.ViewModel
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             ProcessOrderHandler = new ProcessOrderHandler(this);
 
-            CreateProcessOrderCommand =new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
+            CreateProcessOrderCommand = new RelayCommand(ProcessOrderHandler.CreateProcessOrder);
 
             _newProcessOrder = new ProcessOrder();
         }
