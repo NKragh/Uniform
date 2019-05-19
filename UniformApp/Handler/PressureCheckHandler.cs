@@ -15,15 +15,21 @@ namespace UniformApp.Handler
             CheckPageViewModel = viewModel;
         }
 
+        public PressureCheckHandler()
+        {
+        }
+
         /// <summary>
         /// Default C-R-U-D features for application 
         /// </summary>
         public void CreatePressureCheck()
         {
-            var test = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PressureCheck>("PressureCheck",
+            CheckPageViewModel.NewPressureCheck.EmployeeNo = ProcessOrderCatalog.Instance.TargetProcessOrder.EmployeeNo;
+            CheckPageViewModel.NewPressureCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
+            CheckPageViewModel.NewPressureCheck.CheckTime = DateTime.Now.TimeOfDay; //TODO Johan/Ncraigh help
+
+            var PressurePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PressureCheck>("PressureCheck",
                 CheckPageViewModel.NewPressureCheck);
-            Debug.WriteLine(test);
-            throw new NotImplementedException();
         }
 
         public void ReadPressureCheck()

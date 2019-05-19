@@ -87,6 +87,21 @@ namespace UniformApp.ViewModel
             set { _newPressureCheck = value; }
         }
 
+        public TorqueCheckHandler TorqueCheckHandler { get; set; }
+
+        public ICommand CreateTorqueCheckCommand { get; set; }
+        public ICommand ReadTorqueCheckCommand { get; set; }
+        public ICommand UpdateTorqueCheckCommand { get; set; }
+        public ICommand DeleteTorqueCheckCommand { get; set; }
+
+        private TorqueCheck _newTorqueCheck;
+
+        public TorqueCheck NewTorqueCheck
+        {
+            get { return _newTorqueCheck; }
+            set { _newTorqueCheck = value; }
+        }
+
         /// <summary>
         /// Adding relay command and binding PHandler with ViewModel.
         /// </summary>
@@ -109,6 +124,10 @@ namespace UniformApp.ViewModel
             PressureCheckHandler = new PressureCheckHandler();
             CreatePressureCheckCommand = new RelayCommand(PressureCheckHandler.CreatePressureCheck);
             _newPressureCheck = new PressureCheck();
+
+            TorqueCheckHandler = new TorqueCheckHandler();
+            CreateTorqueCheckCommand = new RelayCommand(TorqueCheckHandler.CreateTorqueCheck);
+            _newTorqueCheck = new TorqueCheck();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
