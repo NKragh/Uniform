@@ -125,6 +125,7 @@
     <Compile Include="Common\ICheckable.cs" />
     <Compile Include="Handler\ProcessOrderHandler.cs" />
     <Compile Include="Handler\ShiftCheckHandler.cs" />
+    <Compile Include="Model\SampleCheck.cs" />
     <Compile Include="Model\ShiftCheck.cs" />
     <Compile Include="Handler\TasteCheckHandler.cs" />
     <Compile Include="Handler\WeightCheckHandler.cs" />
