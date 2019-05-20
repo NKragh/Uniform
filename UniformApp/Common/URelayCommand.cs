@@ -17,6 +17,10 @@ namespace UniformApp.Common
     /// </summary>
     public class URelayCommand : ICommand
     {
+        public URelayCommand()
+        {
+            
+        }
         //TODO: Muligvis er hele denne klasse broken :))))))))))
         private Action<object> _action;
         private Func<object, bool> _canExecute;
@@ -30,9 +34,8 @@ namespace UniformApp.Common
         /// Creates a new command that can always action.
         /// </summary>
         /// <param name="action">The execution logic.</param>
-        public URelayCommand(Action<object> action)
+        public URelayCommand(Action<object> action) : this(action, null)
         {
-            _action = action;
         }
 
         /// <summary>

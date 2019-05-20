@@ -15,6 +15,7 @@
     <Pivot Name="CheckPagePivot">
         <PivotItem Name="MenuPage">
             <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
+            <!--Click="WeightCheck_OnClick"-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -30,7 +31,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1" Click="WeightCheck_OnClick" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=WeightCheck, Path=Name}"/>
+                <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=WeightCheck, Path=Name}"/>
                 <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1" Click="TasteCheck_OnClick" />
                 <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1" Click="LabelCheck_OnClick"/>
                 <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1" Click="SampleCheck_OnClick"/>

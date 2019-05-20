@@ -17,12 +17,16 @@ namespace UniformApp.Handler
         public ProcessOrderHandler(ProcessOrderViewModel viewModel)
         {
             ProcessOrderViewModel = viewModel;
-            
+
         }
 
         public void CreateProcessOrder()
         {
             var test = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderViewModel.NewProcessOrder).Result;
+            if (test)
+            {
+                ProcessOrderCatalog.Instance.ProcessOrderList.Add(ProcessOrderViewModel.NewProcessOrder);
+            }
         }
 
         public void UpdateProcessOrder()
@@ -64,6 +68,6 @@ namespace UniformApp.Handler
         //    //}
         //    //return processOrder;
         //
-        
+
     }
 }

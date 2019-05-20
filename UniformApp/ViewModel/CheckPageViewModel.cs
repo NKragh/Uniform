@@ -12,11 +12,14 @@ using UniformApp.Annotations;
 using UniformApp.Common;
 using UniformApp.Handler;
 using UniformApp.Model;
+using UniformApp.View;
 
 namespace UniformApp.ViewModel
 {
     class CheckPageViewModel : INotifyPropertyChanged
     {
+
+
         private ProcessOrder _targetProcessOrder;
 
         public ProcessOrder TargetProcessOrder
@@ -153,6 +156,7 @@ namespace UniformApp.ViewModel
                     throw new NullReferenceException();
                     break;
             }
+            
         }
 
 
