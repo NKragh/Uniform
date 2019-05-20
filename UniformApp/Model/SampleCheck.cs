@@ -38,6 +38,5 @@ namespace UniformApp.Model
         {
             
         }
-
     }
 }
