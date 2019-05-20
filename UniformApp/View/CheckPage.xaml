@@ -283,6 +283,9 @@
                 <TextBox PlaceholderText="Indtast OK/Ikke OK" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White"  PlaceholderForeground="DarkGray"/>
                 <Button Name="SampleInput4" Content="Tappe rør" Grid.Row="2" Grid.Column="3" Height="60" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
                 <TextBox PlaceholderText="Tapperør Ok el. Ikke Ok" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Background="White"  PlaceholderForeground="DarkGray" Margin="14,0,0,0"/>
+                <Button Name="PalletNoCheck" Content="Palle Nr Tjek" Grid.Row="2" Grid.Column="3" Height="60" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+                <TextBox PlaceholderText="Palle Nr" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Background="White"  PlaceholderForeground="DarkGray" Margin="14,0,0,0"/>
+
                 <Button Name="BackButton5" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
                 <Button Name="OpretKnap5" Content="Godkend" Command="{Binding }" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="3" Height="50" Width="100"/>
 

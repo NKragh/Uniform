@@ -52,10 +52,10 @@ namespace UniformApp.Handler
                 ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewShiftCheck.CheckTime = DateTime.Now.TimeOfDay;
 
-            var Update =
-                Persistency.PersistencyService
-                    .UpdateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck",
-                        CheckPageViewModel).Result;
+            //var Update =
+            //    Persistency.PersistencyService
+            //        .UpdateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck",
+            //            CheckPageViewModel).Result;
         }
 
         public void DeleteShiftCheck()
