@@ -5,12 +5,12 @@
     xmlns:local="using:UniformApp.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodel="using:UniformApp.ViewModel"
+    xmlns:viewModel="using:UniformApp.ViewModel"
     mc:Ignorable="d"
     Background="#16503F">
 
     <Page.DataContext>
-        <viewmodel:CheckPageViewModel/>
+        <viewModel:CheckPageViewModel/>
     </Page.DataContext>
     <Pivot Name="CheckPagePivot">
         <PivotItem Name="MenuPage">
@@ -173,87 +173,40 @@
             </Grid>
         </PivotItem>
 
-        <PivotItem Name="SampleCheckPage"/>
-        <PivotItem Name="ShiftCheckPage"/>
-        <PivotItem Name="TorqueCheckPage">
+        <PivotItem Name="SampleCheckPage">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
-                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
-                <TextBlock Text="ROYAL UNIBREW" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
-                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
+            <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
+            <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
+            <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+            <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
 
-                <TextBlock Text="Skruelågsinformationer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
-                <Button Name="TorqueNumber" Content="Råvarenummer" Grid.Row="2" Grid.Column="0" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="white" FontSize="35"/>
-                <Button Name="MinimumValue" Content="Minimumsværdi" Grid.Row="2" Grid.Column="1" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
-                <Button Name="MiddleValue" Content="Middelværdi" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
-                <Button Name="MaximumValue" Content="Maximumsværdi" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+            <TextBlock Text="Labortorie Prøve" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
+            <Button Name="SampleInput" Content="Prøve Indtastning" Grid.Row="2" Grid.Column="2" Height="60" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+            <TextBox PlaceholderText="Indtast Prøve Værdier" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" PlaceholderForeground="DarkGray"/>
 
-                <Button Name="SampleRegister" Content="REGISTRER" Grid.Row="3" Grid.Column="2" Height="80" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="35" Background="Red" Foreground="Black"/>
-
-            </Grid>
-        </PivotItem>
-        <PivotItem Name="SampleCheckPivot">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
-                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
-                <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
-                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
-
-                <TextBlock Text="Labortorie Prøve" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
-                <Button Name="SampleInput" Content="Prøve Indtastning" Grid.Row="2" Grid.Column="2" Height="60" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
-                <TextBox PlaceholderText="Indtast Prøve Værdier" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" PlaceholderForeground="DarkGray"/>
+            <Button Name="SampleRegister" Content="REGISTRER" Grid.Row="3" Grid.Column="2" Height="80" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="35" Background="Red" Foreground="Black" Click="{Binding }"/>
 
                 <Button Name="BackButton4" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
-
-                <Button Name="ProcessOrderNumber" Content="Procesordrenummer" Grid.Row="2" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
-                <Button Name="Time" Content="Tid" Grid.Row="2" Grid.Column="2" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
-                <Button Name="PresetNumber" Content="Preform råvarenummber" Grid.Row="2" Grid.Column="3" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
-                <Button Name="ShapeNumber" Content="Form nummer" Grid.Row="2" Grid.Column="4" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
-                <Button Name="EndBar" Content="Slutbar" Grid.Row="2" Grid.Column="5" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
-                <Button Name="BlowPoint" Content="Sprængningspunkt" Grid.Row="2" Grid.Column="6" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
-
-                <TextBox PlaceholderText="####" Grid.Row="2" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
-                <TextBox PlaceholderText="##:##" Grid.Row="2" Grid.Column="2" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
-                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="3" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
-                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="4" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
-                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="5" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
-                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="6" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
-
             </Grid>
         </PivotItem>
-        <PivotItem Name="ShiftCheckPivot">
+
+        <PivotItem Name="ShiftCheckPage">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -283,11 +236,84 @@
                 <TextBox PlaceholderText="Indtast OK/Ikke OK" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White"  PlaceholderForeground="DarkGray"/>
                 <Button Name="SampleInput4" Content="Tappe rør" Grid.Row="2" Grid.Column="3" Height="60" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
                 <TextBox PlaceholderText="Tapperør Ok el. Ikke Ok" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Background="White"  PlaceholderForeground="DarkGray" Margin="14,0,0,0"/>
-                <Button Name="PalletNoCheck" Content="Palle Nr Tjek" Grid.Row="2" Grid.Column="3" Height="60" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
-                <TextBox PlaceholderText="Palle Nr" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Background="White"  PlaceholderForeground="DarkGray" Margin="14,0,0,0"/>
+                <Button Name="PalletNoCheck" Content="Palle Nr Tjek" Grid.Row="2" Grid.Column="4" Height="60" Width="290" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+                <TextBox PlaceholderText="Palle Nr" Grid.Row="2" Grid.Column="4" Height="70" Width="280" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Background="White"  PlaceholderForeground="DarkGray" Margin="14,0,0,0"/>
 
                 <Button Name="BackButton5" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick"/>
-                <Button Name="OpretKnap5" Content="Godkend" Command="{Binding }" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="3" Height="50" Width="100"/>
+                <Button Name="OpretKnap5" Content="Godkend" Command="{Binding CreateShiftCheckCommand}" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="3" Height="50" Width="100"/>
+
+            </Grid>
+        </PivotItem>
+
+        <PivotItem Name="TorqueCheckPage">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
+                <TextBlock Text="ROYAL UNIBREW" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
+
+                <TextBlock Text="Skruelågsinformationer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50"/>
+                <Button Name="TorqueNumber" Content="Råvarenummer" Grid.Row="2" Grid.Column="0" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="white" FontSize="35"/>
+                <Button Name="MinimumValue" Content="Minimumsværdi" Grid.Row="2" Grid.Column="1" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+                <Button Name="MiddleValue" Content="Middelværdi" Grid.Row="2" Grid.Column="2" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+                <Button Name="MaximumValue" Content="Maximumsværdi" Grid.Row="2" Grid.Column="3" Height="70" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="35"/>
+
+                <Button Name="Register" Content="REGISTRER" Grid.Row="3" Grid.Column="2" Height="80" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="35" Background="Red" Foreground="Black"/>
+
+            </Grid>
+        </PivotItem>
+        <PivotItem Name="SampleCheckPivot">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="0" Height="150" Width="150"/>
+                <Image Source="/Assets/Royal-Unibrew-Large.png" Grid.Row="0" Grid.Column="5" Height="150" Width="150"/>
+                <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+                <TextBlock Text="Our strategy - A solid foundation for the future" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontSize="20"/>
+
+                <Button Name="ProcessOrderNumber" Content="Procesordrenummer" Grid.Row="2" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+                <Button Name="Time" Content="Tid" Grid.Row="2" Grid.Column="2" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+                <Button Name="PresetNumber" Content="Preform råvarenummber" Grid.Row="2" Grid.Column="3" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+                <Button Name="ShapeNumber" Content="Form nummer" Grid.Row="2" Grid.Column="4" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+                <Button Name="EndBar" Content="Slutbar" Grid.Row="2" Grid.Column="5" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+                <Button Name="BlowPoint" Content="Sprængningspunkt" Grid.Row="2" Grid.Column="6" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Background="CornflowerBlue" Foreground="White" FontSize="14"/>
+
+                <TextBox PlaceholderText="####" Grid.Row="2" Grid.Column="1" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="##:##" Grid.Row="2" Grid.Column="2" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="3" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="4" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="5" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
+                <TextBox PlaceholderText="Indtast værdi" Grid.Row="2" Grid.Column="6" Height="75" Width="175" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Black" FontSize="25"/>
 
             </Grid>
         </PivotItem>

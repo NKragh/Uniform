@@ -123,7 +123,7 @@ namespace UniformApp.ViewModel
             CreateTasteCheckCommand = new RelayCommand(TasteCheckHandler.CreateTasteCheckHandler);
             _newTasteCheck = new TasteCheck();
 
-            ShiftCheckHandler = new ShiftCheckHandler();
+            ShiftCheckHandler = new ShiftCheckHandler(this);
 
             CreateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.CreateShiftCheck);
             ReadShiftCheckCommand = new RelayCommand(ShiftCheckHandler.ReadShiftCheck);
@@ -135,7 +135,7 @@ namespace UniformApp.ViewModel
             CreateLabelCheckCommand = new RelayCommand(LabelCheckHandler.CreateLabelCheck);
             _newLabelCheck = new LabelCheck();
 
-            PressureCheckHandler = new PressureCheckHandler();
+            PressureCheckHandler = new PressureCheckHandler(this);
             CreatePressureCheckCommand = new RelayCommand(PressureCheckHandler.CreatePressureCheck);
             _newPressureCheck = new PressureCheck();
 
