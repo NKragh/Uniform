@@ -183,6 +183,7 @@
     <Compile Include="Models\PressureCheck.cs" />
     <Compile Include="Models\ProcessOrder.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SampleCheck.cs" />
     <Compile Include="Models\ShiftCheck.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\UniformContext.cs" />

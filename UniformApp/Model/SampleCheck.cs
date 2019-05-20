@@ -14,9 +14,11 @@ namespace UniformApp.Model
         /// </summary>
         /// <param name="ProcessOrderNo">ProcessOrder number from ProcessOrder</param>
         /// <param name="Employee"> Employee number from Employee</param>
-        private int _processOrderNo { get; set; }
-        private TimeSpan _checkTime { get; set; }
-        private int _employeeNo { get; set; }
+        private int _processOrderNo;
+
+        private bool _sampleCheck;
+        private TimeSpan _checkTime;
+        private int _employeeNo; 
 
         public int ProcessOrderNo
         {
@@ -32,11 +34,18 @@ namespace UniformApp.Model
             set => _employeeNo = value;
         }
 
+        public bool Check
+        {
+            get { return _sampleCheck; }
+            set { _sampleCheck = value; }
+        }
+
 
         public SampleCheck(int processOrderNo, TimeSpan checkTime, bool sampleCheck, int employeeNo)
         {
             ProcessOrderNo = processOrderNo;
             CheckTime = checkTime;
+            Check = sampleCheck;
             EmployeeNo = employeeNo;
         }
 

@@ -173,7 +173,6 @@ namespace UniformApp.ViewModel
                     break;
                 default:
                     throw new NullReferenceException();
-                    break;
             }
         }
 

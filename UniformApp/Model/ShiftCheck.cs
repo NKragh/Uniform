@@ -18,13 +18,13 @@ namespace UniformApp.Model
         /// <param name="sugar"></param>
         /// <param name="palletNo"></param>
         /// <param name="employeeNo">Employee number from Employee</param>
-        private int _processOrderNo { get; set; }
-        private TimeSpan _checkTime { get; set; }
-        private bool _topLabel { get; set; }
-        private bool _tapPipe { get; set; }
-        private bool _suger { get; set; }
-        private int _palletNo { get; set; }
-        private int _employeeNo { get; set; }
+        private int _processOrderNo;
+        private TimeSpan _checkTime;
+        private bool _topLabel;
+        private bool _tapPipe;
+        private bool _suger;
+        private int _palletNo;
+        private int _employeeNo; 
 
 
         public  int ProcessOrderNo
@@ -65,7 +65,7 @@ namespace UniformApp.Model
         }
 
         public ShiftCheck(int processOrderNo, TimeSpan checkTime, bool topLabel, bool tapPipe,
-            bool sugar, int palletNo, int emplyeeNo)
+            bool sugar, int palletNo, int employeeNo)
         {
             ProcessOrderNo = processOrderNo;
             CheckTime = checkTime;
@@ -73,7 +73,7 @@ namespace UniformApp.Model
             TapPipe = tapPipe;
             Sugar = sugar;
             PalletNo = palletNo;
-            EmployeeNo = emplyeeNo;
+            EmployeeNo = employeeNo;
         }
 
         public ShiftCheck()

@@ -9,9 +9,9 @@
     mc:Ignorable="d"
     Background="#16503F">
 
-    <Page.DataContext>
+    <!--<Page.DataContext>
         <viewModel:CheckPageViewModel/>
-    </Page.DataContext>
+    </Page.DataContext>-->
     <Pivot Name="CheckPagePivot">
         <PivotItem Name="MenuPage">
             <!-- Gamle navn: CheckPage - Ændret grundet BackButton  -->
