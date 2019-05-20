@@ -145,7 +145,7 @@ namespace UniformApp.ViewModel
             _newTorqueCheck = new TorqueCheck();
 
             PETCheckHandler = new PETCheckHandler();
-            CreatePETCheckCommand = new RelayCommand(PETCheckHandler.CreatePETCheck)¨;
+            CreatePETCheckCommand = new RelayCommand(PETCheckHandler.CreatePETCheck);
             _newPETCheck = new PETCheck();
         }
 

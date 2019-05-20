@@ -19,11 +19,6 @@ namespace UniformApp.Persistency
     {
         private const string Path = "http://localhost:55478";
 
-        internal static object CreateObjectToDatabaseAsync<T>(string v, T newPressureCheck)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Post an object to the database.
         /// </summary>

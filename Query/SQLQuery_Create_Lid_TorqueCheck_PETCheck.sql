@@ -1,0 +1,30 @@
+﻿CREATE TABLE Lid(
+LidNo INT NOT NULL PRIMARY KEY,
+MinValue FLOAT NOT NULL,
+MidValue FLOAT NOT NULL,
+MaxValue FLOAT NOT NULL
+);
+
+CREATE TABLE TorqueCheck(
+ProcessOrderNo INT FOREIGN KEY REFERENCES ProcessOrder(ProcessOrderNo),
+CheckTime TIME NOT NULL DEFAULT (CONVERT (time, GETDATE())),
+PerformTemp FLOAT NOT NULL,
+Torque FLOAT NOT NULL,
+EmployeeNo INT FOREIGN KEY REFERENCES Employee(EmployeeNo),
+LidNo INT FOREIGN KEY REFERENCES Lid(LidNo),
+PreformNo INT FOREIGN KEY REFERENCES Preform(PreformNo),
+PRIMARY KEY (ProcessOrderNo, CheckTime)
+);
+
+CREATE TABLE PETCheck(
+ProcessOrderNo INT FOREIGN KEY REFERENCES ProcessOrder(ProcessOrderNo),
+CheckTime TIME NOT NULL DEFAULT (CONVERT (time, GETDATE())),
+FormNo INT NOT NULL,
+BottomValue FLOAT NOT NULL,
+MidValue FLOAT NOT NULL,
+TopValue FLOAT NOT NULL,
+Comment NVARCHAR (140) NOT NULL,
+EmployeeNo INT FOREIGN KEY REFERENCES Employee(EmployeeNo),
+PreformNo INT FOREIGN KEY REFERENCES Preform(PreformNo),
+PRIMARY KEY (ProcessOrderNo, CheckTime, FormNo)
+);

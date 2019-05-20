@@ -9,7 +9,7 @@ namespace UniformApp.Model
     class PETCheck
     {
         private int _processOrderNo;
-        private DateTime _checkTime;
+        private TimeSpan _checkTime;
         private int _formNo;
         private double _bottomValue;
         private double _midValue;
@@ -19,7 +19,7 @@ namespace UniformApp.Model
         private int _preformNo;
 
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
-        public DateTime CheckTime { get => _checkTime; set => _checkTime = value; }
+        public TimeSpan CheckTime { get => _checkTime; set => _checkTime = value; }
         public int FormNo { get => _formNo; set => _formNo = value; }
         public double BottomValue { get => _bottomValue; set => _bottomValue = value; }
         public double MidValue { get => _midValue; set => _midValue = value; }
@@ -28,7 +28,7 @@ namespace UniformApp.Model
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
         public int PreformNo { get => _preformNo; set => _preformNo = value; }
 
-        public PETCheck(int processOrderNo, DateTime checkTime, int formNo, double bottomValue, double midValue, double topValue, string comment, int employeeNo, int preformNo)
+        public PETCheck(int processOrderNo, TimeSpan checkTime, int formNo, double bottomValue, double midValue, double topValue, string comment, int employeeNo, int preformNo)
         {
             ProcessOrderNo = processOrderNo;
             CheckTime = checkTime;

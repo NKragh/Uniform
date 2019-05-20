@@ -26,9 +26,9 @@ namespace UniformApp.Handler
         {
             CheckPageViewModel.NewPETCheck.EmployeeNo = ProcessOrderCatalog.Instance.TargetProcessOrder.EmployeeNo;
             CheckPageViewModel.NewPETCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
-            CheckPageViewModel.NewPETCheck.CheckTime = DateTime.Now.TimeOfDay; //TODO Johan/Ncraigh help
+            CheckPageViewModel.NewPETCheck.CheckTime = DateTime.Now.TimeOfDay;
 
-            var PETPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.NewPETCheck); //Kan ikke få .result; her?? 
+            var PETPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.NewPETCheck).Result; //Kan ikke få .result; her?? 
         }
         public void ReadPETCheck()
         {
