@@ -9,7 +9,7 @@ namespace UniformApp.Model
     class TorqueCheck
     {
         private int _processOrderNo;
-        private DateTime _checkTime;
+        private TimeSpan _checkTime;
         private double _preformTemp;
         private double _torque;
         private int _employeeNo;
@@ -17,14 +17,14 @@ namespace UniformApp.Model
         private int _preformNo;
 
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
-        public DateTime CheckTime { get => _checkTime; set => _checkTime = value; }
+        public TimeSpan CheckTime { get => _checkTime; set => _checkTime = value; }
         public double PreformTemp { get => _preformTemp; set => _preformTemp = value; }
         public double Torque { get => _torque; set => _torque = value; }
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
         public int LidNo { get => _lidNo; set => _lidNo = value; }
         public int PreformNo { get => _preformNo; set => _preformNo = value; }
 
-        public TorqueCheck(int processOderNo, DateTime checkTime, double preformTemp, double torque, int employeeNo, int lidNo, int preformNo)
+        public TorqueCheck(int processOderNo, TimeSpan checkTime, double preformTemp, double torque, int employeeNo, int lidNo, int preformNo)
         {
             ProcessOrderNo = processOderNo;
             CheckTime = checkTime;

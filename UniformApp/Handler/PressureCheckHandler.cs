@@ -28,23 +28,29 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewPressureCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewPressureCheck.CheckTime = DateTime.Now.TimeOfDay; //TODO Johan/Ncraigh help
 
-            var PressurePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PressureCheck>("PressureCheck",
+            var CreatePressurePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PressureCheck>("PressureCheck",
                 CheckPageViewModel.NewPressureCheck);
         }
 
         public void ReadPressureCheck()
         {
-            throw new NotImplementedException();
+            var ReadPressurePersistency = Persistency.PersistencyService
+                .ReadObjectsFromDatabaseAsync<PressureCheck>("PerssureCheck",
+                    CheckPageViewModel.ReadPressureCheckCommand).Result;
         }
 
         public void UpdatePressureCheck()
         {
-            throw new NotImplementedException();
+            var UpdatePressurePersistency = Persistency.PersistencyService
+                .UpdateObjectToDatabaseAsync<PressureCheck>("PressureCheck",
+                    CheckPageViewModel.UpdatePressureCheckCommand).Result;
         }
 
         public void DeletePressureCheck()
         {
-            throw new NotImplementedException();
+            var DeletePressurePersistency = Persistency.PersistencyService
+                .DeleteObjectFromDatabaseAsync<PressureCheck>("PressureCheck",
+                    CheckPageViewModel.DeletePressureCheckCommand).Result;
         }
     }
 }

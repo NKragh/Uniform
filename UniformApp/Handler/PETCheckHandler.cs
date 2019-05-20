@@ -28,19 +28,22 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewPETCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewPETCheck.CheckTime = DateTime.Now.TimeOfDay;
 
-            var PETPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.NewPETCheck).Result; //Kan ikke få .result; her?? 
+            var CreatePETPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.NewPETCheck).Result; //Kan ikke få .result; her?? 
         }
         public void ReadPETCheck()
         {
-
+            var ReadPETPersistency = Persistency.PersistencyService
+                .ReadObjectsFromDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.ReadPETCheckCommand).Result;
         }
         public void UpdatePETCheck()
         {
-
+            var UpdatePETPersistency = Persistency.PersistencyService
+                .UpdateObjectToDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.UpdatePETCheckCommand).Result;
         }
         public void DeletePETCheck()
         {
-
+            var DeletePETPersistency = Persistency.PersistencyService
+                .DeleteObjectFromDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.DeletePETCheckCommand).Result;
         }
     }
 }

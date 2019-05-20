@@ -27,19 +27,26 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewTorqueCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewTorqueCheck.CheckTime = DateTime.Now.TimeOfDay; //TODO Johan/Ncraigh help
 
-            var TorquePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<TorqueCheck>("TorqueCheck", CheckPageViewModel.NewTorqueCheck).Result;
+            var CreateTorquePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<TorqueCheck>("TorqueCheck", CheckPageViewModel.NewTorqueCheck).Result;
         }
         public void ReadTorqueCheck()
         {
-
+            var ReadTorquePersistency = Persistency.PersistencyService
+                .ReadObjectsFromDatabaseAsync<TorqueCheck>("TorqueCheck", CheckPageViewModel.ReadTorqueCheckCommand)
+                .Result;
         }
         public void UpdateTorqueCheck()
         {
-
+            var UpdateTorquePersistency =
+                Persistency.PersistencyService
+                    .UpdateObjectToDatabaseAsync<TorqueCheck>("TorqueCheck",
+                        CheckPageViewModel.DeleteTorqueCheckCommand).Result;
         }
         public void DeleteTorqueCheck()
         {
-
+            var DeleteTorquePersistency = Persistency.PersistencyService
+                .DeleteObjectFromDatabaseAsync<TorqueCheck>("TorqueCheck", CheckPageViewModel.DeleteTorqueCheckCommand)
+                .Result;
         }
     }
 }
