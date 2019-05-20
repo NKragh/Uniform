@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UniformApp.Common;
 
 namespace UniformApp.Model
 {
-    class LabelCheck
+    class LabelCheck : ICheckable
     {
         private int _processOrderNo;
-        private DateTime _checkTime;
+        private TimeSpan _checkTime;
         private DateTime _expirationDate;
         private string _comment;
         private int _employeeNo;
         private int _labelNo;
 
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
-        public DateTime CheckTime { get => _checkTime; set => _checkTime = value; }
+        public TimeSpan CheckTime { get => _checkTime; set => _checkTime = value; }
         public DateTime ExpirationDate { get => _expirationDate; set => _expirationDate = value; }
         public string Comment { get => _comment; set => _comment = value; }
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
         public int LabelNo { get => _labelNo; set => _labelNo = value; }
 
-        public LabelCheck(int processOrderNo, DateTime checkTime, DateTime expirationDate, string comment, int employeeNo, int labelNo)
+        public LabelCheck(int processOrderNo, TimeSpan checkTime, DateTime expirationDate, string comment, int employeeNo, int labelNo)
         {
             _processOrderNo = processOrderNo;
             _checkTime = checkTime;

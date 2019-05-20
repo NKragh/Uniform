@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UniformApp.Common;
 
 namespace UniformApp.Model
 {
-    class WeightCheck
+    class WeightCheck : ICheckable
     {
         private int _processOrderNo;
         private TimeSpan _checkTime;
