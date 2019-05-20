@@ -8,6 +8,16 @@ namespace UniformApp.Model
 {
     class ShiftCheck
     {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="processOrderNo">Processorder number from Processorder</param>
+        /// <param name="toplabel"></param>
+        /// <param name="tapPipe"></param>
+        /// <param name="sugar"></param>
+        /// <param name="palletNo"></param>
+        /// <param name="employeeNo">Employee number from Employee</param>
         private int _processOrderNo { get; set; }
         private TimeSpan _checkTime { get; set; }
         private bool _topLabel { get; set; }

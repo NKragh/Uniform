@@ -8,6 +8,12 @@ namespace UniformApp.Model
 {
     class SampleCheck
     {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ProcessOrderNo">ProcessOrder number from ProcessOrder</param>
+        /// <param name="Employee"> Employee number from Employee</param>
         private int _processOrderNo { get; set; }
         private TimeSpan _checkTime { get; set; }
         private int _employeeNo { get; set; }
