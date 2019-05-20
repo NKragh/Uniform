@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using UniformApp.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -35,6 +36,9 @@ namespace UniformApp.View
         private void WeightCheck_OnClick(object sender, RoutedEventArgs e)
         {
             CheckPagePivot.SelectedIndex = 1;
+            var btn = sender as Button;
+            //TODO: Det her virker ikke helt godt...
+            btn.Command.Execute(btn.CommandParameter);
         }
 
         private void TasteCheck_OnClick(object sender, RoutedEventArgs e)
