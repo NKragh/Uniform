@@ -24,10 +24,16 @@ namespace UniformApp.Handler
 
         public void CreateShiftCheck()
         {
+            CheckPageViewModel.NewShiftCheck.EmployeeNo = ProcessOrderCatalog
+                .Instance.TargetProcessOrder.EmployeeNo;
+            CheckPageViewModel.NewShiftCheck.ProcessOrderNo =
+                ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
+            CheckPageViewModel.NewShiftCheck.CheckTime = DateTime.Now.TimeOfDay;
+
             var Create =
                 Persistency.PersistencyService
                     .CreateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck",
-                        CheckPageViewModel.NewShiftCheck);
+                        CheckPageViewModel.NewShiftCheck).Result;
         }
 
         public void ReadShiftCheck()
@@ -40,10 +46,16 @@ namespace UniformApp.Handler
 
         public void UpdateShiftCheck()
         {
+            CheckPageViewModel.NewShiftCheck.EmployeeNo = ProcessOrderCatalog
+                .Instance.TargetProcessOrder.EmployeeNo;
+            CheckPageViewModel.NewShiftCheck.ProcessOrderNo =
+                ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
+            CheckPageViewModel.NewShiftCheck.CheckTime = DateTime.Now.TimeOfDay;
+
             var Update =
                 Persistency.PersistencyService
                     .UpdateObjectToDatabaseAsync<ShiftCheck>("ShiftCheck",
-                        CheckPageViewModel);
+                        CheckPageViewModel).Result;
         }
 
         public void DeleteShiftCheck()

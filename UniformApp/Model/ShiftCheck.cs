@@ -9,7 +9,7 @@ namespace UniformApp.Model
     class ShiftCheck
     {
         private int _processOrderNo { get; set; }
-        //private DateTime _processDate;
+        private TimeSpan _checkTime { get; set; }
         private bool _topLabel { get; set; }
         private bool _tapPipe { get; set; }
         private bool _suger { get; set; }
@@ -23,7 +23,7 @@ namespace UniformApp.Model
             set => _processOrderNo = value;
         }
 
-        //public DateTime ProcessDate { get => _processDate; set => _processDate = value; }
+        public TimeSpan CheckTime{ get => _checkTime; set => _checkTime  = value; }
 
         public bool TopLabel
         {
@@ -54,10 +54,11 @@ namespace UniformApp.Model
             set => _employeeNo = value;
         }
 
-        public ShiftCheck(int processOrderNo, bool topLabel, bool tapPipe,
+        public ShiftCheck(int processOrderNo, TimeSpan checkTime, bool topLabel, bool tapPipe,
             bool sugar, int palletNo, int emplyeeNo)
         {
             ProcessOrderNo = processOrderNo;
+            CheckTime = checkTime;
             TopLabel = topLabel;
             TapPipe = tapPipe;
             Sugar = sugar;
