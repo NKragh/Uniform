@@ -18,16 +18,7 @@ namespace UniformApp.ViewModel
 {
     class CheckPageViewModel : INotifyPropertyChanged
     {
-
-
-        private ProcessOrder _targetProcessOrder;
-
-        public ProcessOrder TargetProcessOrder
-        {
-            get { return _targetProcessOrder; }
-            set { _targetProcessOrder = value; }
-        }
-
+        //TODO Clean
         #region Temp
 
         public WeightCheckHandler WeightCheckHandler { get; set; }
@@ -154,7 +145,6 @@ namespace UniformApp.ViewModel
                     break;
                 default:
                     throw new NullReferenceException();
-                    break;
             }
             
         }

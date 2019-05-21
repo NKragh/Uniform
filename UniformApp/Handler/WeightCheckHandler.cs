@@ -10,23 +10,20 @@ namespace UniformApp.Handler
 {
     class WeightCheckHandler
     {
-        /// <summary>
-        /// 
-        /// </summary>
-
         public CheckPageViewModel CheckPageViewModel { get; set; }
 
         public WeightCheckHandler(CheckPageViewModel viewModel)
         {
             CheckPageViewModel = viewModel;
         }
+
         public void CreateWeightCheck()
         {
             CheckPageViewModel.NewWeightCheck.EmployeeNo = ProcessOrderCatalog.Instance.TargetProcessOrder.EmployeeNo;
             CheckPageViewModel.NewWeightCheck.ProductNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProductNo;
-            CheckPageViewModel.NewWeightCheck.ProcessOrderNo =
-                ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
+            CheckPageViewModel.NewWeightCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewWeightCheck.CheckTime = DateTime.Now.TimeOfDay;
+            
             var weightPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<WeightCheck>("WeightCheck", CheckPageViewModel.NewWeightCheck).Result;
         }
 

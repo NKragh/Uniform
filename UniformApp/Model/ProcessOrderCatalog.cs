@@ -12,7 +12,6 @@ namespace UniformApp.Model
     class ProcessOrderCatalog
     {
         private ProcessOrder _targetProcessOrder;
-
         public ProcessOrder TargetProcessOrder
         {
             get { return _targetProcessOrder; }
@@ -36,7 +35,6 @@ namespace UniformApp.Model
         
         public async void LoadProcessOrdersAsync()
         {
-            
             var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrder");
             if (processOrders.Count != 0)
             {

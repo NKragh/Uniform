@@ -15,15 +15,7 @@ namespace UniformApp.ViewModel
 {
     class ProcessOrderViewModel : INotifyPropertyChanged
     {
-
-        private ProcessOrder _targetProcessOrder;
-
-        public ProcessOrder TargetProcessOrder
-        {
-            get { return _targetProcessOrder; }
-            set { _targetProcessOrder = value; }
-        }
-
+        public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog { get; set; }
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public ProcessOrderHandler ProcessOrderHandler { get; set; }
@@ -45,6 +37,7 @@ namespace UniformApp.ViewModel
 
         public ProcessOrderViewModel()
         {
+            EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             ProcessOrderHandler = new ProcessOrderHandler(this);

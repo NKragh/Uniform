@@ -9,9 +9,19 @@ namespace UniformApp.Model
 {
     class ProductCatalog
     {
+        private Product _targetProduct;
+        public Product TargetProduct
+        {
+            get { return _targetProduct; }
+            set { _targetProduct = value; }
+        }
+
         private static ProductCatalog _instance = new ProductCatalog();
 
-        public static ProductCatalog Instance { get => _instance; }
+        public static ProductCatalog Instance
+        {
+            get => _instance;
+        }
 
         public ObservableCollection<Product> ProductList { get; set; }
 

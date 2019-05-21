@@ -127,6 +127,7 @@
     <Compile Include="Handler\TasteCheckHandler.cs" />
     <Compile Include="Handler\WeightCheckHandler.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\EmployeeCatalog.cs" />
     <Compile Include="Model\LabelCheck.cs" />
     <Compile Include="Model\PressureCheck.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
