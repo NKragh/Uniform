@@ -23,11 +23,9 @@ namespace UniformApp.View
     /// </summary>
     public sealed partial class CheckPage : Page
     {
-        private CheckPageViewModel _viewModel;
         public CheckPage()
         {
             this.InitializeComponent();
-            _viewModel = new CheckPageViewModel();
         }
 
         private void BackButton_OnClick(object sender, RoutedEventArgs e)
@@ -37,7 +35,6 @@ namespace UniformApp.View
 
         private void WeightCheck_OnClick(object sender, RoutedEventArgs e)
         {
-            
             var btn = sender as Button;
             //TODO: Det her virker ikke helt godt...
             btn.Command.Execute(btn.CommandParameter);
