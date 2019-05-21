@@ -24,7 +24,7 @@
         </Style>
     </Page.Resources>
 
-    <Frame Name="ContentFrame2">
+    <Frame Name="ContentFrame">
 
         <!--TODO dynamic size, fixed size is a temporary solution-->
         <Grid Width="800" Height="600" VerticalAlignment="Top">

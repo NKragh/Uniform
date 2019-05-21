@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using UniformApp.Model;
+using UniformApp.View;
 using UniformApp.ViewModel;
 
 namespace UniformApp.Handler
@@ -22,6 +23,7 @@ namespace UniformApp.Handler
 
         public void CreateProcessOrder()
         {
+            ProcessOrderViewModel.NewProcessOrder.ColumnNo = ProcessOrderPage.ColumnChoice;
             ProcessOrderViewModel.NewProcessOrder.EmployeeNo = EmployeeCatalog.Instance.TargetEmployee.EmployeeNo;
             ProcessOrderViewModel.NewProcessOrder.ProductNo = ProductCatalog.Instance.TargetProduct.ProductNo;
 

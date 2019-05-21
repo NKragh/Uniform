@@ -93,7 +93,6 @@ namespace UniformApp.ViewModel
 
         public CheckPageViewModel()
         {
-
             WeightCheckHandler = new WeightCheckHandler(this);
             CreateWeightCheckCommand = new RelayCommand(WeightCheckHandler.CreateWeightCheck);
             _newWeightCheck = new WeightCheck();

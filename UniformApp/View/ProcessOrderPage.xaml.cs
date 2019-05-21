@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using UniformApp.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,11 +23,13 @@ namespace UniformApp.View
     /// </summary>
     public sealed partial class ProcessOrderPage : Page
     {
+        public static int ColumnChoice { get; set; }
+        
         public ProcessOrderPage()
         {
             this.InitializeComponent();
         }
-
+        
         private void NewButton_OnClick(object sender, RoutedEventArgs e)
         {
             ContentPivot.SelectedIndex = 1;
@@ -46,6 +49,13 @@ namespace UniformApp.View
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(CheckPage));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            string choiceStr = e.Parameter as string;
+            ColumnChoice = int.Parse(choiceStr);
+            base.OnNavigatedTo(e);
         }
     }
 }

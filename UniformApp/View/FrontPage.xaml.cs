@@ -34,7 +34,7 @@ namespace UniformApp.View
             if (sender is Button button)
             {
                 var choice = button.Tag;
-                ContentFrame2.Navigate(typeof(CheckPage), choice);
+                ContentFrame.Navigate(typeof(ProcessOrderPage), choice);
             }
         }
     }
