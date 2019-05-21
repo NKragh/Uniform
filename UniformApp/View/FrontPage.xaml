@@ -5,38 +5,57 @@
     xmlns:local="using:UniformApp.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:UniformApp.ViewModel"
     mc:Ignorable="d"
-    Background="#16503F">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <!--<Page.DataContext>
+        <viewModel:ProcessOrderViewModel />
+    </Page.DataContext>-->
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Page.Resources>
+        <Style x:Key="ButtonStyling" TargetType="Button">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+    </Page.Resources>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Frame Name="ContentFrame2">
 
-        <TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55"/>
-        <Button Name="K1" Content="K1" Grid.Column="0" Grid.Row="1" Foreground="White"  HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K2" Content="K2" Grid.Column="1" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K3" Content="K3" Grid.Column="2" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K4" Content="K4" Grid.Column="0" Grid.Row="2" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K5" Content="K5" Grid.Column="1" Grid.Row="2" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K6" Content="K6" Grid.Column="2" Grid.Row="2" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K7" Content="K7" Grid.Column="0" Grid.Row="3" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K8" Content="K8" Grid.Column="1" Grid.Row="3" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K9" Content="K9" Grid.Column="2" Grid.Row="3" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K10" Content="K10" Grid.Column="0" Grid.Row="4" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K11" Content="K11" Grid.Column="1" Grid.Row="4" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
-        <Button Name="K12" Content="K12" Grid.Column="2" Grid.Row="4" Foreground="White" HorizontalAlignment="Center" Height="70" Width="70" FontSize="30"></Button>
+        <!--TODO dynamic size, fixed size is a temporary solution-->
+        <Grid Width="800" Height="600" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
 
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <!--<RowDefinition Height="*"/>-->
+            </Grid.RowDefinitions>
+
+            <!--<TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55"/>-->
+            <Button Name="Column1Button" Content="K2" Grid.Column="1" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="1"/>
+            <Button Name="Column3Button" Content="K3" Grid.Column="2" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="2"/>
+            <Button Name="Column4Button" Content="K4" Grid.Column="0" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="3"/>
+            <Button Name="Column5Button" Content="K5" Grid.Column="1" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="4"/>
+            <Button Name="Column6Button" Content="K6" Grid.Column="2" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="5"/>
+            <Button Name="Column2Button" Content="K1" Grid.Column="0" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="6"/>
+            <Button Name="Column7Button" Content="K7" Grid.Column="0" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="7"/>
+            <Button Name="Column8Button" Content="K8" Grid.Column="1" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="8"/>
+            <Button Name="Column9Button" Content="K9" Grid.Column="2" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="9"/>
+            <Button Name="Column10Button" Content="K10" Grid.Column="0" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="10"/>
+            <Button Name="Column11Button" Content="K11" Grid.Column="1" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="11"/>
+            <Button Name="Column12Button" Content="K12" Grid.Column="2" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="12"/>
+
+        </Grid>
+    </Frame>
 </Page>

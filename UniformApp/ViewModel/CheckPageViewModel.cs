@@ -91,7 +91,6 @@ namespace UniformApp.ViewModel
         public ICommand UpdateCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
 
-
         public CheckPageViewModel()
         {
 
@@ -146,7 +145,6 @@ namespace UniformApp.ViewModel
                 default:
                     throw new NullReferenceException();
             }
-            
         }
 
 
