@@ -130,9 +130,10 @@
     <Compile Include="Model\PressureCheck.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductCatalog.cs" />
     <Compile Include="Model\TasteCheck.cs" />
     <Compile Include="Model\WeightCheck.cs" />
-    <Compile Include="Model\tempCheck.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

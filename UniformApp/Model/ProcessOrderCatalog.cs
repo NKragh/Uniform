@@ -11,7 +11,6 @@ namespace UniformApp.Model
 {
     class ProcessOrderCatalog
     {
-
         private ProcessOrder _targetProcessOrder;
 
         public ProcessOrder TargetProcessOrder
@@ -34,8 +33,7 @@ namespace UniformApp.Model
             ProcessOrderList = new ObservableCollection<ProcessOrder>();
             LoadProcessOrdersAsync();
         }
-
-        //TODO skal igennem handleren?
+        
         public async void LoadProcessOrdersAsync()
         {
             
