@@ -24,6 +24,7 @@ namespace UniformApp.ViewModel
             set { _targetProcessOrder = value; }
         }
 
+        public ProductCatalog ProductCatalog { get; set; }
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public ProcessOrderHandler ProcessOrderHandler { get; set; }
        
@@ -44,6 +45,7 @@ namespace UniformApp.ViewModel
 
         public ProcessOrderViewModel()
         {
+            ProductCatalog = ProductCatalog.Instance;
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             ProcessOrderHandler = new ProcessOrderHandler(this);
 
