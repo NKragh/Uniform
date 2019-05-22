@@ -16,7 +16,7 @@ namespace UniformWebservice.Models
         }
 
         [Key]
-        [StringLength(1)]
+        [StringLength(50)]
         public string SupplierName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

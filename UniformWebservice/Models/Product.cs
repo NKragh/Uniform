@@ -21,7 +21,7 @@ namespace UniformWebservice.Models
         public int ProductNo { get; set; }
 
         [Required]
-        [StringLength(1)]
+        [StringLength(50)]
         public string ProductName { get; set; }
 
         public bool Sugar { get; set; }

@@ -27,7 +27,7 @@ namespace UniformWebservice.Models
 
         public double MaxValue { get; set; }
 
-        [StringLength(1)]
+        [StringLength(50)]
         public string SupplierName { get; set; }
 
         public virtual Supplier Supplier { get; set; }

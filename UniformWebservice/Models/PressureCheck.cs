@@ -26,7 +26,7 @@ namespace UniformWebservice.Models
         public int Bar { get; set; }
 
         [Required]
-        [StringLength(1)]
+        [StringLength(10)]
         public string BreakPoint { get; set; }
 
         public int? EmployeeNo { get; set; }
