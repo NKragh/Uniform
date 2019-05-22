@@ -116,13 +116,9 @@ namespace UniformApp.ViewModel
             _newTasteCheck = new TasteCheck();
 
             ShiftCheckHandler = new ShiftCheckHandler(this);
-
             CreateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.CreateShiftCheck);
-            ReadShiftCheckCommand = new RelayCommand(ShiftCheckHandler.ReadShiftCheck);
-            UpdateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.UpdateShiftCheck);
-            DeleteShiftCheckCommand = new RelayCommand(ShiftCheckHandler.DeleteShiftCheck);
-
             _newShiftCheck = new ShiftCheck();
+
             LabelCheckHandler = new LabelCheckHandler();
             CreateLabelCheckCommand = new RelayCommand(LabelCheckHandler.CreateLabelCheck);
             _newLabelCheck = new LabelCheck();

@@ -48,7 +48,7 @@ namespace UniformApp.View
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(CheckPage));
+            //Frame.Navigate(typeof(CheckPage));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
