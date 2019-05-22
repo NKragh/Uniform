@@ -9,6 +9,6 @@ namespace UniformApp.Common
     interface ICheckable
     {
         int ProcessOrderNo { get; set; }
-        DateTime CheckTime { get; }
+        TimeSpan CheckTime { get; }
     }
 }

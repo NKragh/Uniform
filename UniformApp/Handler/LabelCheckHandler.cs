@@ -12,5 +12,10 @@ namespace UniformApp.Handler
         {
 
         }
+
+        public void ReadLabelCheck()
+        {
+
+        }
     }
 }

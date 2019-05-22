@@ -119,32 +119,42 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\URelayCommand.cs" />
     <Compile Include="Handler\LabelCheckHandler.cs" />
     <Compile Include="Handler\PressureCheckHandler.cs" />
     <Compile Include="Common\ICheckable.cs" />
     <Compile Include="Handler\ProcessOrderHandler.cs" />
+    <Compile Include="Handler\ShiftCheckHandler.cs" />
+    <Compile Include="Model\SampleCheck.cs" />
+    <Compile Include="Model\ShiftCheck.cs" />
     <Compile Include="Handler\TasteCheckHandler.cs" />
     <Compile Include="Handler\WeightCheckHandler.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\EmployeeCatalog.cs" />
     <Compile Include="Model\LabelCheck.cs" />
     <Compile Include="Model\PressureCheck.cs" />
     <Compile Include="Model\ProcessOrder.cs" />
     <Compile Include="Model\ProcessOrderCatalog.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductCatalog.cs" />
     <Compile Include="Model\TasteCheck.cs" />
     <Compile Include="Model\WeightCheck.cs" />
-    <Compile Include="Model\tempCheck.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CheckPageViewModel.cs" />
     <Compile Include="ViewModel\ProcessOrderViewModel.cs" />
+    <Compile Include="View\CheckPage.xaml.cs">
+      <DependentUpon>CheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContentFramePage.xaml.cs">
+      <DependentUpon>ContentFramePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FrontPage.xaml.cs">
       <DependentUpon>FrontPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProcessOrderPage.xaml.cs">
       <DependentUpon>ProcessOrderPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\CheckPage.xaml.cs">
-      <DependentUpon>CheckPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -169,15 +179,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\CheckPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ContentFramePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FrontPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProcessOrderPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\CheckPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

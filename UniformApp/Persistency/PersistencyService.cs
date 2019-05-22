@@ -78,7 +78,6 @@ namespace UniformApp.Persistency
                 client.BaseAddress = new Uri(Path);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
                 try
                 {
                     var response = client.GetStringAsync($"api/{typeInput}s/").Result;

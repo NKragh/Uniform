@@ -9,7 +9,10 @@ namespace UniformApp.Model
     class ProcessOrder
     {
         private int _processOrderNo;
+        //#pragma disables error list warning of default date - as it is intended
+#pragma warning disable 649
         private DateTime _processOrderDate /*= DateTime.Now*/;
+#pragma warning restore 649
         private string _batchCode;
         private bool _isComplete = false;
         private int _columnNo;
@@ -32,12 +35,12 @@ namespace UniformApp.Model
             IsComplete = isComplete;
             ColumnNo = columnNo;
             ProductNo = productNo;
-            EmployeeNo = employeeNo; 
+            EmployeeNo = employeeNo;
         }
 
         public ProcessOrder()
         {
-            
+
         }
     }
 }

@@ -9,17 +9,13 @@ using UniformApp.ViewModel;
 namespace UniformApp.Handler
 {
     class PressureCheckHandler
-    {
-        //TODO Bind the not yet written viewmodel for checks to this
-        
-        /*
+    {           
          public CheckPageViewModel CheckPageViewModel { get; set; }
 
         public PressureCheckHandler(CheckPageViewModel viewModel)
         {
             CheckPageViewModel = viewModel;
         }
-        */
 
         /// <summary>
         /// Default C-R-U-D features for application 
