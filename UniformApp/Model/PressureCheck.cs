@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +39,8 @@ namespace UniformApp.Model
             EmployeeNo = employeeNo;
             PreformNo = preformNo;
         }
+
+        //Instantiating class without parameters  
         public PressureCheck()
         {
             
