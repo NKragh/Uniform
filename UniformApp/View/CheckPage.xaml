@@ -146,13 +146,13 @@
                     <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="3" Height="200" Width="200" />
 
                     <TextBox Grid.Column="2" Grid.Row="1" Height="20" Width="200" Text="{Binding NewTasteCheck.TankNo, Mode=TwoWay}" />
-                    <ComboBox 
+                    <!--<ComboBox 
                         SelectedItem="{Binding NewShiftCheck.TopLabel, Mode=TwoWay}">
                         <ComboBox.Items>
                             <system:Boolean>True</system:Boolean>
                             <system:Boolean>False</system:Boolean>
                         </ComboBox.Items>
-                    </ComboBox>
+                    </ComboBox>-->
                     <ComboBox Name="EmployeeComboBox1" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"
                               ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
                               SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
@@ -228,12 +228,13 @@
                     <Button Name="SampleInput" Content="Prøve Indtastning" Grid.Row="2" Grid.Column="1" Height="60"
                             Width="290" HorizontalAlignment="Center" VerticalAlignment="Top"
                             Background="CornflowerBlue" Foreground="White" FontSize="35" />
-                    <ComboBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                        SelectedItem="{Binding NewShiftCheck.TopLabel, Mode=TwoWay}">
-                        <ComboBox.Items>
-                            <system:Boolean>True</system:Boolean>
-                            <system:Boolean>False</system:Boolean>
-                        </ComboBox.Items>
+                    <ComboBox Name="BooleanCombobox1" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                              ItemsSource="{Binding BooleanArray}" SelectedItem="{Binding NewSampleCheck.Check, Mode=TwoWay}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Mode=TwoWay}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
                     </ComboBox>
                     <ComboBox Name="EmployeeComboBox123" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"
                               Header="Employee"
@@ -287,13 +288,13 @@
 
                     <TextBlock Text="Vagt Skift" Grid.Row="1" Grid.Column="2"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50" />
-                    <ComboBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom"
+                    <!--<ComboBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom"
                         SelectedItem="{Binding NewShiftCheck.TopLabel, Mode=TwoWay}">
                         <ComboBox.Items>
                             <system:Boolean>True</system:Boolean>
                             <system:Boolean>False</system:Boolean>
                         </ComboBox.Items>
-                    </ComboBox>
+                    </ComboBox>-->
                     <TextBox PlaceholderText="Indtast OK/Ikke OK" Grid.Row="2" Grid.Column="1" Height="70" Width="280"
                              HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" Background="White" />
                     <TextBox PlaceholderText="Tapperør Ok el. Ikke Ok" Grid.Row="2" Grid.Column="2" Height="70"
@@ -366,7 +367,7 @@
                     <TextBox Text="{Binding NewTorqueCheck.Torque, Mode=TwoWay}" PlaceholderText="Tilspændingsmoment" Grid.Row="3" Grid.Column="1"/>
                     <TextBox Text="{Binding NewTorqueCheck.LidNo, Mode=TwoWay}" PlaceholderText="Skruelågs råvare-nummer" Grid.Row="3" Grid.Column="2"/>
                     <TextBox Text="{Binding NewTorqueCheck.PreformNo, Mode=TwoWay}" PlaceholderText="Preform No" Grid.Row="3" Grid.Column="3"/>
-                    
+
 
                     <Button Name="BackButton10" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
                     <Button Content="Opret" Grid.Row="5" Grid.Column="3" Command="{Binding CreateCommand}"/>

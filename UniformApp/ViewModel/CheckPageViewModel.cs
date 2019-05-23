@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -100,13 +101,14 @@ namespace UniformApp.ViewModel
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog{ get; set; }
-
+        public ObservableCollection<string> BooleanArray { get; set; }
 
         public CheckPageViewModel()
         {
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
+            BooleanArray = new ObservableCollection<string>() {true.ToString(), false.ToString()};
 
             WeightCheckHandler = new WeightCheckHandler(this);
             TasteCheckHandler = new TasteCheckHandler(this);

@@ -19,8 +19,8 @@ namespace UniformApp.Handler
             ProcessOrderViewModel.NewProcessOrder.EmployeeNo = EmployeeCatalog.Instance.TargetEmployee.EmployeeNo;
             ProcessOrderViewModel.NewProcessOrder.ProductNo = ProductCatalog.Instance.TargetProduct.ProductNo;
 
-            var test = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderViewModel.NewProcessOrder).Result;
-            if (test)
+            var processOrderPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderViewModel.NewProcessOrder).Result;
+            if (processOrderPersistency)
             {
                 ProcessOrderCatalog.Instance.ProcessOrderList.Add(ProcessOrderViewModel.NewProcessOrder);
             }
