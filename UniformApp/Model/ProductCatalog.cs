@@ -28,6 +28,7 @@ namespace UniformApp.Model
         public ProductCatalog()
         {
             ProductList = new ObservableCollection<Product>();
+            TargetProduct = new Product();
             LoadProductsAsync();
         }
 

@@ -30,6 +30,7 @@ namespace UniformApp.Model
         public ProcessOrderCatalog()
         {
             ProcessOrderList = new ObservableCollection<ProcessOrder>();
+            TargetProcessOrder = new ProcessOrder();
             LoadProcessOrdersAsync();
         }
         
