@@ -28,6 +28,7 @@ namespace UniformApp.Model
         public EmployeeCatalog()
         {
             EmployeeList = new ObservableCollection<Employee>();
+            TargetEmployee = new Employee();
             LoadEmployeesAsync();
         }
 
