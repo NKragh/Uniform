@@ -19,19 +19,19 @@ namespace UniformApp.Model
 
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
         public TimeSpan CheckTime { get => _checkTime; set => _checkTime = value; }
-        public bool TopLabel { get => _topLabel; set => _topLabel = value; }
-        public bool TapPipe { get => _tapPipe; set => _tapPipe = value; }
-        public bool Sugar { get => _sugar; set => _sugar = value; }
+        public bool TopLabel { get => _topLabel; set => _topLabel = Boolean.Parse(value.ToString()); }
+        public bool TapPipe { get => _tapPipe; set => _tapPipe = Boolean.Parse(value.ToString()); }
+        public bool Sugar { get => _sugar; set => _sugar = Boolean.Parse(value.ToString()); }
         public int PalletNo { get => _palletNo; set => _palletNo = value; }
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
 
-        public ShiftCheck(int processOrderNo, TimeSpan checkTime, bool topLabel, bool tapPipe, bool sugar, int palletNo, int employeeNo)
+        public ShiftCheck(int processOrderNo, TimeSpan checkTime, string topLabel, string tapPipe, string sugar, int palletNo, int employeeNo)
         {
             _processOrderNo = processOrderNo;
             _checkTime = checkTime;
-            _topLabel = topLabel;
-            _tapPipe = tapPipe;
-            _sugar = sugar;
+            _topLabel = Boolean.Parse(topLabel);
+            _tapPipe = Boolean.Parse(tapPipe);
+            _sugar = Boolean.Parse(sugar);
             _palletNo = palletNo;
             _employeeNo = employeeNo;
         }

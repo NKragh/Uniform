@@ -33,27 +33,13 @@ namespace UniformApp.Model
         public float Weight4 { get => _weight4; set => _weight4 = value; }
         public float Weight5 { get => _weight5; set => _weight5 = value; }
         public float Weight6 { get => _weight6; set => _weight6 = value; }
-        public bool Droptest { get => _droptest; set => _droptest = value; }
+        public bool Droptest { get => _droptest; set => _droptest = Boolean.Parse(value.ToString()); }
         public string Comment { get => _comment; set => _comment = value; }
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
         public int ProductNo { get => _productNo; set => _productNo = value; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="processOrderNo">Processorder number from Processorder</param>
-        /// <param name="weight1"></param>
-        /// <param name="weight2"></param>
-        /// <param name="weight3"></param>
-        /// <param name="weight4"></param>
-        /// <param name="weight5"></param>
-        /// <param name="weight6"></param>
-        /// <param name="droptest"></param>
-        /// <param name="comment"></param>
-        /// <param name="employeeNo"></param>
-        /// <param name="productNo"></param>
         public WeightCheck(int processOrderNo, float weight1, float weight2, float weight3,
-            float weight4, float weight5, float weight6, bool droptest, string comment, int employeeNo, int productNo, TimeSpan checkTime)
+            float weight4, float weight5, float weight6, string droptest, string comment, int employeeNo, int productNo, TimeSpan checkTime)
         {
             ProcessOrderNo = processOrderNo;
             Weight1 = weight1;
@@ -62,7 +48,7 @@ namespace UniformApp.Model
             Weight4 = weight4;
             Weight5 = weight5;
             Weight6 = weight6;
-            Droptest = droptest;
+            Droptest = Boolean.Parse(droptest);
             Comment = comment;
             EmployeeNo = employeeNo;
             ProductNo = productNo;

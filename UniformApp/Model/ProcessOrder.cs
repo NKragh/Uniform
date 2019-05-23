@@ -10,9 +10,9 @@ namespace UniformApp.Model
     {
         private int _processOrderNo;
         //#pragma disables error list warning of default date - as it is intended
-#pragma warning disable 649
+        #pragma warning disable 649
         private DateTime _processOrderDate /*= DateTime.Now*/;
-#pragma warning restore 649
+        #pragma warning restore 649
         private string _batchCode;
         private bool _isComplete = false;
         private int _columnNo;
