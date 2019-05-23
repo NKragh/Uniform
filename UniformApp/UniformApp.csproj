@@ -121,10 +121,14 @@
     </Compile>
     <Compile Include="Common\URelayCommand.cs" />
     <Compile Include="Handler\LabelCheckHandler.cs" />
+    <Compile Include="Handler\PETCheckHandler.cs" />
     <Compile Include="Handler\PressureCheckHandler.cs" />
     <Compile Include="Common\ICheckable.cs" />
     <Compile Include="Handler\ProcessOrderHandler.cs" />
+    <Compile Include="Handler\SampleCheckHandler.cs" />
     <Compile Include="Handler\ShiftCheckHandler.cs" />
+    <Compile Include="Handler\TorqueCheckHandler.cs" />
+    <Compile Include="Model\PETCheck.cs" />
     <Compile Include="Model\SampleCheck.cs" />
     <Compile Include="Model\ShiftCheck.cs" />
     <Compile Include="Handler\TasteCheckHandler.cs" />
@@ -138,6 +142,7 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductCatalog.cs" />
     <Compile Include="Model\TasteCheck.cs" />
+    <Compile Include="Model\TorqueCheck.cs" />
     <Compile Include="Model\WeightCheck.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -161,6 +166,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="DesignClassDiagramApp.cd" />
     <None Include="UniformApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

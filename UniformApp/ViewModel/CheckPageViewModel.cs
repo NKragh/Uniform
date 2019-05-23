@@ -18,34 +18,20 @@ namespace UniformApp.ViewModel
 {
     class CheckPageViewModel : INotifyPropertyChanged
     {
-        //TODO Clean
-        #region Temp
+        #region Properties
 
         public WeightCheckHandler WeightCheckHandler { get; set; }
 
-        public ICommand CreateWeightCheckCommand { get; set; }
-        public ICommand ReadWeightCheckCommand { get; set; }
-        public ICommand UpdateWeightCheckCommand { get; set; }
-        public ICommand DeleteWeightCheckCommand { get; set; }
-
         private WeightCheck _newWeightCheck;
-
         public WeightCheck NewWeightCheck
         {
             get { return _newWeightCheck; }
             set { _newWeightCheck = value; }
         }
 
-
         public TasteCheckHandler TasteCheckHandler { get; set; }
 
-        public ICommand CreateTasteCheckCommand { get; set; }
-        public ICommand ReadTasteCheckCommand { get; set; }
-        public ICommand UpdateTasteCheckCommand { get; set; }
-        public ICommand DeleteTasteCheckCommand { get; set; }
-
         private TasteCheck _newTasteCheck;
-
         public TasteCheck NewTasteCheck
         {
             get { return _newTasteCheck; }
@@ -53,14 +39,8 @@ namespace UniformApp.ViewModel
         }
 
         public ShiftCheckHandler ShiftCheckHandler { get; set; }
-
-        public ICommand CreateShiftCheckCommand { get; set; }
-        public ICommand ReadShiftCheckCommand { get; set; }
-        public ICommand UpdateShiftCheckCommand { get; set; }
-        public ICommand DeleteShiftCheckCommand { get; set; }
-
+        
         private ShiftCheck _newShiftCheck;
-
         public ShiftCheck NewShiftCheck
         {
             get { return _newShiftCheck; }
@@ -68,96 +48,114 @@ namespace UniformApp.ViewModel
         }
 
         public LabelCheckHandler LabelCheckHandler { get; set; }
-
-        public ICommand CreateLabelCheckCommand { get; set; }
-        public ICommand ReadLabelCheckCommand { get; set; }
-        public ICommand UpdateLabelCheckCommand { get; set; }
-        public ICommand DeleteLabelCheckCommand { get; set; }
-
+        
         private LabelCheck _newLabelCheck;
-
         public LabelCheck NewLabelCheck
         {
             get { return _newLabelCheck; }
             set { _newLabelCheck = value; }
         }
 
-
         public PressureCheckHandler PressureCheckHandler { get; set; }
-
-        public ICommand CreatePressureCheckCommand { get; set; }
-        public ICommand ReadPressureCheckCommand { get; set; }
-        public ICommand UpdatePressureCheckCommand { get; set; }
-        public ICommand DeletePressureCheckCommand { get; set; }
-
+        
         private PressureCheck _newPressureCheck;
-
         public PressureCheck NewPressureCheck
         {
             get { return _newPressureCheck; }
             set { _newPressureCheck = value; }
+        }
+        public SampleCheckHandler SampleCheckHandler { get; set; }
+
+        private SampleCheck _newSampleCheck;
+        public SampleCheck NewSampleCheck
+        {
+            get { return _newSampleCheck; }
+            set { _newSampleCheck = value; }
+        }
+
+        public TorqueCheckHandler TorqueCheckHandler { get; set; }
+        private TorqueCheck _newTorqueCheck;
+
+        public TorqueCheck NewTorqueCheck
+        {
+            get => _newTorqueCheck;
+            set => _newTorqueCheck = value;
+        }
+
+        public PETCheckHandler PETCheckHandler { get; set; }
+        private PETCheck _newPETCheck;
+        public PETCheck NewPETCheck
+        {
+            get => _newPETCheck;
+            set => _newPETCheck = value;
         }
 
         #endregion
 
         public ICommand CreateCommand { get; set; }
         public ICommand ReadCommand { get; set; }
-        public ICommand UpdateCommand { get; set; }
+        public ICommand ChangeCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
+
+        public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
+        public EmployeeCatalog EmployeeCatalog { get; set; }
+        public ProductCatalog ProductCatalog{ get; set; }
+
 
         public CheckPageViewModel()
         {
+            ProcessOrderCatalog = ProcessOrderCatalog.Instance;
+            EmployeeCatalog = EmployeeCatalog.Instance;
+            ProductCatalog = ProductCatalog.Instance;
+
             WeightCheckHandler = new WeightCheckHandler(this);
-            CreateWeightCheckCommand = new RelayCommand(WeightCheckHandler.CreateWeightCheck);
-            _newWeightCheck = new WeightCheck();
-
-            TasteCheckHandler = new TasteCheckHandler();
-            CreateTasteCheckCommand = new RelayCommand(TasteCheckHandler.CreateTasteCheckHandler);
-            _newTasteCheck = new TasteCheck();
-
+            TasteCheckHandler = new TasteCheckHandler(this);
             ShiftCheckHandler = new ShiftCheckHandler(this);
-            CreateShiftCheckCommand = new RelayCommand(ShiftCheckHandler.CreateShiftCheck);
-            _newShiftCheck = new ShiftCheck();
-
-            LabelCheckHandler = new LabelCheckHandler();
-            CreateLabelCheckCommand = new RelayCommand(LabelCheckHandler.CreateLabelCheck);
-            _newLabelCheck = new LabelCheck();
-
+            LabelCheckHandler = new LabelCheckHandler(this);
             PressureCheckHandler = new PressureCheckHandler(this);
-            CreatePressureCheckCommand = new RelayCommand(PressureCheckHandler.CreatePressureCheck);
-            _newPressureCheck = new PressureCheck();
+            SampleCheckHandler = new SampleCheckHandler(this);
+            TorqueCheckHandler = new TorqueCheckHandler(this);
+            PETCheckHandler = new PETCheckHandler(this);
 
-            UpdateCommand = new URelayCommand(ChangeCommand);
+            _newWeightCheck = new WeightCheck();
+            _newTasteCheck = new TasteCheck();
+            _newShiftCheck = new ShiftCheck();
+            _newLabelCheck = new LabelCheck();
+            _newPressureCheck = new PressureCheck();
+            _newSampleCheck = new SampleCheck();
+            _newTorqueCheck = new TorqueCheck();
+            _newPETCheck = new PETCheck();
+
+            ChangeCommand = new URelayCommand(ChooseCommand);
         }
 
-        public void ChangeCommand(object parameter)
+        public void ChooseCommand(object parameter)
         {
             switch (parameter)
             {
-                //TODO: Den går herind to gange for some reason...
                 case "WeightCheck":
                     CreateCommand = new RelayCommand(WeightCheckHandler.CreateWeightCheck);
                     break;
                 case "TasteCheck":
-                    CreateCommand = new RelayCommand(TasteCheckHandler.CreateTasteCheckHandler);
+                    CreateCommand = new RelayCommand(TasteCheckHandler.CreateTasteCheck);
                     break;
                 case "LabelCheck":
                     CreateCommand = new RelayCommand(LabelCheckHandler.CreateLabelCheck);
                     break;
                 case "SampleCheck":
-                    //CreateCommand = new RelayCommand();
+                    CreateCommand = new RelayCommand(SampleCheckHandler.CreateSampleCheck);
                     break;
                 case "ShiftCheck":
-                    //CreateCommand = new RelayCommand();
+                    CreateCommand = new RelayCommand(ShiftCheckHandler.CreateShiftCheck);
                     break;
                 case "TorqueCheck":
-                    //CreateCommand = new RelayCommand();
+                    CreateCommand = new RelayCommand(TorqueCheckHandler.CreateTorqueCheck);
                     break;
                 case "PressureCheck":
                     CreateCommand = new RelayCommand(PressureCheckHandler.CreatePressureCheck);
                     break;
                 case "PETCheck":
-                    //CreateCommand = new RelayCommand();
+                    CreateCommand = new RelayCommand(PETCheckHandler.CreatePETCheck);
                     break;
                 default:
                     throw new NullReferenceException();

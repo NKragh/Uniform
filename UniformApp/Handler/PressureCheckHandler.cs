@@ -16,28 +16,13 @@ namespace UniformApp.Handler
         {
             CheckPageViewModel = viewModel;
         }
-
-        /// <summary>
-        /// Default C-R-U-D features for application 
-        /// </summary>
         public void CreatePressureCheck()
         {
-            throw new NotImplementedException();
-        }
+            CheckPageViewModel.NewPressureCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
+            CheckPageViewModel.NewPressureCheck.EmployeeNo = EmployeeCatalog.Instance.TargetEmployee.EmployeeNo;
+            CheckPageViewModel.NewPressureCheck.CheckTime = DateTime.Now.TimeOfDay;
 
-        public void ReadPressureCheck()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdatePressureCheck()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeletePressureCheck()
-        {
-            throw new NotImplementedException();
+            var pressurePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PressureCheck>("PressureCheck", CheckPageViewModel.NewPressureCheck).Result;
         }
     }
 }

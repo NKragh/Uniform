@@ -175,8 +175,7 @@ namespace UniformApp.Persistency
                 return returnList;
             }
         }
-
-
+        
         /// <summary>
         /// Read single object from database indexed by identifier.
         /// </summary>

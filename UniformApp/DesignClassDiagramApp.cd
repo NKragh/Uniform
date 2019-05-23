@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="UniformApp.Model.Employee">
+    <Position X="15" Y="9" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACACQAAAAAAAAABAAAAAAAAQQA=</HashCode>
+      <FileName>Model\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.EmployeeCatalog">
+    <Position X="12.5" Y="13.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAIEAAAIAAAAAAAAAAEAAAAAAAAgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\EmployeeCatalog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.LabelCheck" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="9" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAASAEEAAACAAAAAAAKAAAQAAAAAIAAAQAAAQAAQA=</HashCode>
+      <FileName>Model\LabelCheck.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.Model.PressureCheck" BaseTypeListCollapsed="true">
+    <Position X="27" Y="9" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAhAAAAAAAAAKABAEAAAAQIAAAwAAAQAAUA=</HashCode>
+      <FileName>Model\PressureCheck.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.Model.ProcessOrder">
+    <Position X="17.25" Y="9" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAACAAgAAAACAAACALAAIAAAAYAAAAAAAQCAQA=</HashCode>
+      <FileName>Model\ProcessOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.ProcessOrderCatalog">
+    <Position X="16.25" Y="13.5" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAACAAAAAEAAAAAAQAAAAAQAAAAAQAAAA=</HashCode>
+      <FileName>Model\ProcessOrderCatalog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.Product">
+    <Position X="22.25" Y="9" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAQABAAIAAAAgAAAIAAABAAIAAgAAAAAAhgCAIAAA=</HashCode>
+      <FileName>Model\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.ProductCatalog">
+    <Position X="20.25" Y="13.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAEAAAAAABAAQAAAEAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\ProductCatalog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.SampleCheck">
+    <Position X="12.5" Y="9" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAACAAAAAAAKAAAAAAAAAIAAAQAAAQAAQA=</HashCode>
+      <FileName>Model\SampleCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.ShiftCheck">
+    <Position X="24.5" Y="9" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAIgAACQAAAAAKCgAAAAAAAIAEAQAAAQAAQA=</HashCode>
+      <FileName>Model\ShiftCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Model.TasteCheck" BaseTypeListCollapsed="true">
+    <Position X="32" Y="9" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAABAAKAAgAAAAAAIAAAQAAAQAAQA=</HashCode>
+      <FileName>Model\TasteCheck.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.Model.WeightCheck" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="9" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>INsABAAEMAgAAAAAgAQAKABAAIAAAAIAAAQAAAQAAQA=</HashCode>
+      <FileName>Model\WeightCheck.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.View.CheckPage" BaseTypeListCollapsed="true">
+    <Position X="8" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAAAAAAABBAAAIAAAAAAAAAAAAEBAAICAAAA=</HashCode>
+      <FileName>View\CheckPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.View.ContentFramePage" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ContentFramePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.View.FrontPage" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\FrontPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.View.ProcessOrderPage" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAQAAAAAAAAAQAAAAAACAAAEAAAAAAAAA=</HashCode>
+      <FileName>View\ProcessOrderPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.ViewModel.CheckPageViewModel">
+    <Position X="6.75" Y="9" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAiAEASAaIMAAXEZAAEQBAAkEAAAKIgAgBYAAQBDAg=</HashCode>
+      <FileName>ViewModel\CheckPageViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.ViewModel.ProcessOrderViewModel">
+    <Position X="3" Y="9" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABQAACAACAICAAAAAAhBABAAAAAAAAAAAACAI=</HashCode>
+      <FileName>ViewModel\ProcessOrderViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.Handler.LabelCheckHandler">
+    <Position X="16.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAA=</HashCode>
+      <FileName>Handler\LabelCheckHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Handler.PressureCheckHandler">
+    <Position X="18.75" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAKAAAAAAAgAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Handler\PressureCheckHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Handler.ProcessOrderHandler">
+    <Position X="12.75" Y="4.5" Width="3.5" />
+    <AssociationLine Name="ProcessOrderViewModel1" Type="UniformApp.ViewModel.ProcessOrderViewModel">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.191" Y="0.839" Height="0.182" Width="2.248" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACAAAAIAAAACAAACAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Handler\ProcessOrderHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProcessOrderViewModel1" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UniformApp.Handler.ShiftCheckHandler">
+    <Position X="22.25" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAIAAAAAAAAAAgAAAAAAAAQAAAAAIAAAAAAA=</HashCode>
+      <FileName>Handler\ShiftCheckHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Handler.TasteCheckHandler">
+    <Position X="25.75" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Handler\TasteCheckHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Handler.WeightCheckHandler">
+    <Position X="28.5" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Handler\WeightCheckHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniformApp.Common.URelayCommand">
+    <Position X="28.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEACAAQAAEAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Common\URelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UniformApp.Persistency.PersistencyService">
+    <Position X="19.5" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAIAgAAAAAAAAAAAAAAAAAAAAgAAABA=</HashCode>
+      <FileName>Persistency\PersistencyService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="UniformApp.Common.ICheckable">
+    <Position X="26.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Common\ICheckable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -23,6 +23,8 @@ namespace UniformApp.View
     /// </summary>
     public sealed partial class CheckPage : Page
     {
+        public static string ProcessOrderChoice { get; set; }
+
         public CheckPage()
         {
             this.InitializeComponent();
@@ -35,11 +37,6 @@ namespace UniformApp.View
 
         private void WeightCheck_OnClick(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
-            //TODO: Det her virker ikke helt godt...
-            btn.Command.Execute(btn.CommandParameter);
-
-
             CheckPagePivot.SelectedIndex = 1;
         }
 

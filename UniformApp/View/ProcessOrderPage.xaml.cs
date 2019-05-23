@@ -40,7 +40,6 @@ namespace UniformApp.View
             ContentPivot.SelectedIndex = 2;
         }
 
-
         private void BackButton_OnClick(object sender, RoutedEventArgs e)
         {
             ContentPivot.SelectedIndex = 0;
@@ -48,9 +47,9 @@ namespace UniformApp.View
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            //Frame.Navigate(typeof(CheckPage));
+            ContentFrame.Navigate(typeof(CheckPage));
         }
-
+        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             string choiceStr = e.Parameter as string;
