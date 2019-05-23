@@ -28,6 +28,7 @@ namespace UniformApp.View
         public ProcessOrderPage()
         {
             this.InitializeComponent();
+            ContentPivot.SelectedIndex = 0;
         }
         
         private void NewButton_OnClick(object sender, RoutedEventArgs e)

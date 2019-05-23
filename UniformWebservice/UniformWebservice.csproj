@@ -169,6 +169,7 @@
     <Compile Include="Controllers\PressureChecksController.cs" />
     <Compile Include="Controllers\ProcessOrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SampleChecksController.cs" />
     <Compile Include="Controllers\ShiftChecksController.cs" />
     <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Controllers\TasteChecksController.cs" />

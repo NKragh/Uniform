@@ -64,5 +64,7 @@ namespace UniformWebservice.Models
         public System.Data.Entity.DbSet<UniformWebservice.Models.LabelCheck> LabelChecks { get; set; }
 
         public System.Data.Entity.DbSet<UniformWebservice.Models.Label> Labels { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.SampleCheck> SampleChecks { get; set; }
     }
 }

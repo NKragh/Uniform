@@ -34,7 +34,7 @@
         </RelativePanel>
 
         <ScrollViewer Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0">
-            <Frame Name="ContentFrame"  Background="#ffffff"/>
+            <Frame Name="ContentFrame" Background="#FFFFFF"/>
         </ScrollViewer>
     </Grid>
 </Page>
