@@ -18,7 +18,7 @@ namespace UniformApp.Model
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
         public TimeSpan CheckTime { get => _checkTime; set => _checkTime = value; }
         public int TankNo { get => _tankNo; set => _tankNo = value; }
-        public bool TasteOk { get => _tasteOk; set => _tasteOk = Boolean.Parse(value.ToString());; }
+        public bool TasteOk { get => _tasteOk; set => _tasteOk = Boolean.Parse(value.ToString()); }
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
 
         public TasteCheck(int processOrderNo, TimeSpan checkTime, int tankNo, string tasteOk, int employeeNo)
