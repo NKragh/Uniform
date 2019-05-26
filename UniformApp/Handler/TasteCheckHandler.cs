@@ -17,6 +17,7 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewTasteCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewTasteCheck.EmployeeNo = EmployeeCatalog.Instance.TargetEmployee.EmployeeNo;
             CheckPageViewModel.NewTasteCheck.CheckTime = DateTime.Now.TimeOfDay;
+            CheckPageViewModel.NewTasteCheck.TasteOk = CheckPageViewModel.Sample;
 
             var tastePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<TasteCheck>("TasteCheck", CheckPageViewModel.NewTasteCheck).Result;
         }

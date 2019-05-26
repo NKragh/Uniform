@@ -133,14 +133,6 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-
-                    <StackPanel Name="MyStackPanel" Grid.Row="0" Grid.Column="1" Orientation="Horizontal" 
-                                HorizontalAlignment="Stretch" Height="{Binding ElementName=TextBlock1, Path=Height, Mode=TwoWay}">
-                        <TextBlock Name="TextBlock1" Text="ProcessOrderNo" Style="{StaticResource ListTextStyle}"/>
-                        <TextBlock Text="BatchCode" Style="{StaticResource ListTextStyle}"/>
-                        <TextBlock Text="ProductNo" Style="{StaticResource ListTextStyle}"/>
-                        <TextBlock Text="EmployeeNo" Style="{StaticResource ListTextStyle}"/>
-                    </StackPanel>
                     <ScrollViewer Grid.Row="1" Grid.Column="1">
                         <ListView Name="MyListView" HorizontalAlignment="Stretch" 
                                   ItemsSource="{Binding ProcessOrderCatalog.ProcessOrderList, Mode=TwoWay}"
@@ -155,7 +147,7 @@
                                             <TextBlock Text="EmployeeNo"/>
                                         </StackPanel>
                                         <StackPanel Width="{Binding ElementName=MyListView, Path=ActualWidth}">
-                                            <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}" />
+                                            <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}"/>
                                             <TextBlock Text="{Binding BatchCode, Mode=TwoWay}" />
                                             <TextBlock Text="{Binding ProductNo, Mode=TwoWay}" />
                                             <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}" />
