@@ -89,7 +89,6 @@
                     </StackPanel>
                     <Button Name="OpretKnap" Content="Opret" Command="{Binding CreateProcessOrderCommand}"
                             Grid.Column="3" Grid.Row="5" Height="50" Width="100" />
-                    <Button Name="BackButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
                 </Grid>
             </PivotItem>
             <!--Existing ProcessOrder Page-->

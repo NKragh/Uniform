@@ -137,7 +137,7 @@
                         <TextBox Height="50" Width="200" TextAlignment="Center" Text="{Binding NewWeightCheck.Weight4, Mode=TwoWay}" />
                         <TextBox Height="50" Width="200" TextAlignment="Center" Text="{Binding NewWeightCheck.Weight5, Mode=TwoWay}" />
                         <TextBox Height="50" Width="200" TextAlignment="Center" Text="{Binding NewWeightCheck.Weight6, Mode=TwoWay}" />
-                        <ComboBox Name="BooleanCombobox1232" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        <ComboBox Name="BooleanCombobox1232" HorizontalAlignment="Center" VerticalAlignment="Center"
                                   ItemsSource="{Binding BooleanArray, Mode=TwoWay}" SelectedItem="{Binding NewWeightCheck.Droptest, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>

@@ -101,14 +101,15 @@ namespace UniformApp.ViewModel
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog{ get; set; }
-        public ObservableCollection<string> BooleanArray { get; set; }
+
+        public ObservableCollection<bool> BooleanArray { get; set; }
 
         public CheckPageViewModel()
         {
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
-            BooleanArray = new ObservableCollection<string>() {true.ToString(), false.ToString()};
+            BooleanArray = new ObservableCollection<bool>() {true, false};
 
             WeightCheckHandler = new WeightCheckHandler(this);
             TasteCheckHandler = new TasteCheckHandler(this);

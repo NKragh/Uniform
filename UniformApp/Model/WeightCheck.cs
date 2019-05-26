@@ -33,7 +33,12 @@ namespace UniformApp.Model
         public float Weight4 { get => _weight4; set => _weight4 = value; }
         public float Weight5 { get => _weight5; set => _weight5 = value; }
         public float Weight6 { get => _weight6; set => _weight6 = value; }
-        public bool Droptest { get => _droptest; set => _droptest = Boolean.Parse(value.ToString()); }
+
+        public bool Droptest
+        {
+            get => _droptest;
+            set => _droptest = Boolean.Parse(value.ToString());
+        }
         public string Comment { get => _comment; set => _comment = value; }
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
         public int ProductNo { get => _productNo; set => _productNo = value; }
