@@ -41,11 +41,12 @@ namespace UniformApp.Model
             var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrder");
             if (processOrders.Count != 0)
             {
-                foreach (var p in processOrders)
+                IEnumerable<ProcessOrder> tmp = processOrders.Where(c => c.ColumnNo == 12 && !c.IsComplete);
+                foreach (var p in tmp)
                 {
                     //TODO display eller hent kun dem der matcher kolonne og ikke er complete
-                    if (!p.IsComplete && p.ColumnNo == checkme)
-                        ProcessOrderList.Add(p);
+                    //if (!p.IsComplete && p.ColumnNo == checkme)
+                    ProcessOrderList.Add(p);
                 }
             }
             else
