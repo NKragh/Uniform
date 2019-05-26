@@ -21,7 +21,6 @@ namespace UniformApp.Common
         {
             
         }
-        //TODO: Muligvis er hele denne klasse broken :))))))))))
         private Action<object> _action;
         private Func<object, bool> _canExecute;
 

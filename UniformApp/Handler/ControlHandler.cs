@@ -86,6 +86,7 @@ namespace UniformApp.Handler
         {
             var id = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             ProcessOrderCatalog.Instance.TargetProcessOrder.IsComplete = true;
+            //TODO StatusCode: 405, ReasonPhrase: 'Method Not Allowed', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
             var tmp = PersistencyService.UpdateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderCatalog.Instance.TargetProcessOrder, id).Result;
         }
 
