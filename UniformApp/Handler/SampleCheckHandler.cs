@@ -22,6 +22,7 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewSampleCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewSampleCheck.EmployeeNo = EmployeeCatalog.Instance.TargetEmployee.EmployeeNo;
             CheckPageViewModel.NewSampleCheck.CheckTime = DateTime.Now.TimeOfDay;
+            CheckPageViewModel.NewSampleCheck.Sample = CheckPageViewModel.Sample;
 
             var samplePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<SampleCheck>("SampleCheck", CheckPageViewModel.NewSampleCheck).Result;
         }

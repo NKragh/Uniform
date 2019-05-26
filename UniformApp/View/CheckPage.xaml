@@ -34,7 +34,7 @@
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontSize" Value="50"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Height" Value="auto"/>
             <Setter Property="TextAlignment" Value="Center"/>
         </Style>
@@ -62,18 +62,16 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <TextBlock Text="Vælg et check" Grid.Row="0" Grid.Column="1" 
+                               Style="{StaticResource TitleTextStyle}"/>
 
                     <!--#region Test med command i Resource-->
 
@@ -89,33 +87,26 @@
 
                     <!--#endregion-->
 
-                    <Button Name="WeightCheck" Content="Weight Check" Grid.Column="1" Grid.Row="1" Click="WeightCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=WeightCheck, Path=Name}"/>
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <Button Name="WeightCheck" Content="Weight Check" Click="WeightCheck_OnClick" 
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=WeightCheck, Path=Name}"/>
+                        <Button Name="TasteCheck" Content="Taste Check" Click="TasteCheck_OnClick"
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=TasteCheck, Path=Name}" />
+                        <Button Name="LabelCheck" Content="Label Check" Click="LabelCheck_OnClick"
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=LabelCheck, Path=Name}" />
+                        <Button Name="SampleCheck" Content="Sample Check" Click="SampleCheck_OnClick"
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=SampleCheck, Path=Name}" />
+                        <Button Name="ShiftCheck" Content="Shift Check" Click="ShiftCheck_OnClick"
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=ShiftCheck, Path=Name}" />
+                        <Button Name="TorqueCheck" Content="Torque Check" Click="TorqueCheck_OnClick"
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=TorqueCheck, Path=Name}" />
+                        <Button Name="PressureCheck" Content="Pressure Check" Click="PressureCheck_OnClick"
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PressureCheck, Path=Name}" />
+                        <Button Name="PETCheck" Content="Pet Check" Click="PETCheck_OnClick"
+                                Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PETCheck, Path=Name}" />
+                    </StackPanel>
 
-                    <Button Name="TasteCheck" Content="Taste Check" Grid.Column="2" Grid.Row="1" Click="TasteCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=TasteCheck, Path=Name}"/>
-
-                    <Button Name="LabelCheck" Content="Label Check" Grid.Column="3" Grid.Row="1" Click="LabelCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=LabelCheck, Path=Name}"/>
-
-                    <Button Name="SampleCheck" Content="Sample Check" Grid.Column="4" Grid.Row="1" Click="SampleCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=SampleCheck, Path=Name}"/>
-
-                    <Button Name="ShiftCheck" Content="Shift Check" Grid.Column="1" Grid.Row="2" Click="ShiftCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=ShiftCheck, Path=Name}"/>
-
-                    <Button Name="TorqueCheck" Content="Torque Check" Grid.Column="2" Grid.Row="2" Click="TorqueCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=TorqueCheck, Path=Name}"/>
-
-                    <Button Name="PressureCheck" Content="Pressure Check" Grid.Column="3" Grid.Row="2" Click="PressureCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PressureCheck, Path=Name}"/>
-
-                    <Button Name="PETCheck" Content="Pet Check" Grid.Column="4" Grid.Row="2" Click="PETCheck_OnClick" HorizontalAlignment="Center"
-                            Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PETCheck, Path=Name}"/>
-
-                    <Button Name="BackButton" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
-
-                    <Button Name="CompleteCheckButton" Content="Færdigvarekontrol" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                    <Button Name="CompleteCheckButton" Content="Færdigvarekontrol" Grid.Column="1" Grid.Row="2"
                             Click="CompleteCheckButton_OnClick" Command="{Binding ChangeCommand}" CommandParameter="CheckComplete"/>
                 </Grid>
             </PivotItem>
@@ -129,10 +120,12 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <TextBlock Text="Vægt kontrol" Grid.Column="1" Grid.ColumnSpan="2"
+                               Style="{StaticResource TitleTextStyle}"/>
 
                     <StackPanel Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Employee" Style="{StaticResource ListTextStyle}"/>
@@ -147,8 +140,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Grid.Row="1">
-                        <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center"
-                                  ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
+                        <ComboBox ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
                                   SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
@@ -162,12 +154,11 @@
                         <TextBox TextAlignment="Center" Text="{Binding NewWeightCheck.Weight4, Mode=TwoWay}" />
                         <TextBox TextAlignment="Center" Text="{Binding NewWeightCheck.Weight5, Mode=TwoWay}" />
                         <TextBox TextAlignment="Center" Text="{Binding NewWeightCheck.Weight6, Mode=TwoWay}" />
-                        <ComboBox HorizontalAlignment="Stretch"
-                                  SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
+                        <ComboBox SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
                             <ComboBoxItem Content="OK"/>
                             <ComboBoxItem Content="Ikke OK"/>
                         </ComboBox>
-                        <TextBox TextAlignment="Center" Text="{Binding NewWeightCheck.Comment, Mode=TwoWay}" />
+                        <TextBox Text="{Binding NewWeightCheck.Comment, Mode=TwoWay}" />
                     </StackPanel>
 
                     <Button Name="BackButton1" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
@@ -185,15 +176,17 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <TextBlock Text="Samgsprøve kontrol" Grid.Column="1" Grid.ColumnSpan="2"
+                               Style="{StaticResource TitleTextStyle}"/>
 
                     <StackPanel Grid.Row="1" Grid.Column="1">
-                        <TextBlock Text="TankNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200" />
-                        <TextBlock Text="TasteOk" Grid.Column="1" Grid.Row="2" Height="200" Width="200" />
-                        <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="3" Height="200" Width="200" />
+                        <TextBlock Text="TankNo" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="TasteOk" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="EmployeeNo" Style="{StaticResource ListTextStyle}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="2">
@@ -228,10 +221,12 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <TextBlock Text="Etikette Check" Grid.Column="1" Grid.ColumnSpan="2"
+                               Style="{StaticResource TitleTextStyle}"/>
 
                     <StackPanel Grid.Row="1" Grid.Column="1">
                         <TextBlock Text="ExpirationDate" Style="{StaticResource ListTextStyle}"/>
@@ -241,7 +236,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="2">
-                        <DatePicker Date="{Binding NewLabelCheck.ExpirationDate, Mode=TwoWay}"/>
+                        <DatePicker Date="{Binding NewLabelCheck.ExpirationDate, Mode=TwoWay}" />
                         <TextBox Text="{Binding NewLabelCheck.LabelNo, Mode=TwoWay}" />
                         <ComboBox ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
                                   SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
@@ -254,8 +249,10 @@
                         <TextBox Text="{Binding NewLabelCheck.Comment, Mode=TwoWay}"/>
                     </StackPanel>
 
-                    <Button Name="BackButton3" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
-                    <Button Name="OpretKnap3" Content="Opret" Click="OpretKnap_OnClick_" Command="{Binding CreateCommand}" Grid.Column="3" Grid.Row="2"/>
+                    <Button Name="BackButton3" Content="Back" Grid.Column="0" Grid.Row="0" 
+                            Click="BackButton_OnClick" />
+                    <Button Name="OpretKnap3" Content="Opret" Click="OpretKnap_OnClick_" 
+                            Command="{Binding CreateCommand}" Grid.Column="3" Grid.Row="2"/>
                 </Grid>
             </PivotItem>
 
@@ -265,36 +262,38 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Laboratorie Prøve" Grid.Row="1" Grid.Column="1" 
-                               HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50" />
-                    <Button Name="SampleInput" Content="Prøve Indtastning" Grid.Row="2" Grid.Column="1" Height="60"
-                            Width="290" HorizontalAlignment="Center" VerticalAlignment="Top"
-                            Background="CornflowerBlue" Foreground="White" FontSize="35" />
-                    <ComboBox Name="OKeydokeybokeyComboBoxWeight" HorizontalAlignment="Center" Width="200" Height="50"
+                    <TextBlock Text="Laboratorie Prøve" Grid.Column="1" Grid.ColumnSpan="2"
+                               Style="{StaticResource TitleTextStyle}"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="SampleCheck" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Employee" Style="{StaticResource ListTextStyle}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="2">
+                        <ComboBox Name="ComboBoxSample" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom"
                               SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
-                        <ComboBoxItem Content="OK"/>
-                        <ComboBoxItem Content="Ikke OK"/>
-                    </ComboBox>
-                    <ComboBox Name="EmployeeComboBox123" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"
-                              Header="Employee"
+                            <ComboBoxItem Content="OK"/>
+                            <ComboBoxItem Content="Ikke OK"/>
+                        </ComboBox>
+                        <ComboBox Name="EmployeeComboBox123"
                               ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}" 
                               SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Initials}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Initials}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
 
                     <Button Name="BackButton4" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
                     <Button Name="Opretknap123" Content="Opret" Grid.Column="2" Grid.Row="3" Command="{Binding CreateCommand}" HorizontalAlignment="Center"/>
@@ -310,9 +309,9 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="3*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
 
@@ -327,26 +326,23 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="2">
-                        <ComboBox Name="CBTopLabel" HorizontalAlignment="Stretch" Height="50" 
+                        <ComboBox Name="CBTopLabel"
                                   SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
                             <ComboBoxItem Content="OK"/>
                             <ComboBoxItem Content="Ikke OK"/>
                         </ComboBox>
-                        <ComboBox Name="CBTapPipe" HorizontalAlignment="Stretch" Height="50" 
+                        <ComboBox Name="CBTapPipe"
                                   SelectedValuePath="Content" SelectedValue="{Binding IsChecked2, Mode=TwoWay}">
                             <ComboBoxItem Content="OK"/>
                             <ComboBoxItem Content="Ikke OK"/>
                         </ComboBox>
-                        <ComboBox Name="CBSugar" HorizontalAlignment="Stretch" Height="50" 
+                        <ComboBox Name="CBSugar" 
                                   SelectedValuePath="Content" SelectedValue="{Binding IsChecked3, Mode=TwoWay}">
                             <ComboBoxItem Content="OK"/>
                             <ComboBoxItem Content="Ikke OK"/>
                         </ComboBox>
-
-                        <TextBox PlaceholderText="Palle Nr" Height="50" 
-                                 HorizontalAlignment="Stretch" Text="{Binding NewShiftCheck.PalletNo}"/>
-
-                        <ComboBox Name="EmployeeComboBox1234" HorizontalAlignment="Stretch" Height="50" 
+                        <TextBox Text="{Binding NewShiftCheck.PalletNo, Mode=TwoWay}"/>
+                        <ComboBox Name="EmployeeComboBox1234"
                                   ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}" 
                                   SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
@@ -370,42 +366,41 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Skruelågsinformationer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
-                               HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50" />
+                    <TextBlock Text="Skruelågsinformationer" Grid.Column="1" Grid.ColumnSpan="2"
+                               Style="{StaticResource TitleTextStyle}"/>
 
-                    <Button Name="PreformTemp" Content="Preform temperatur" Grid.Row="2" Grid.Column="0"/>
-                    <Button Name="TorqueNo" Content="Tilspændingsmoment" Grid.Row="2" Grid.Column="1"/>
-                    <Button Name="LidNo" Content="Råvarenummer" Grid.Row="2" Grid.Column="2"/>
-                    <Button Name="PreformNo" Content="Preform råvare-nummer" Grid.Row="2" Grid.Column="3"/>
-                    <Button Name="EmployeeNo" Content="Medarbejder" Grid.Row="2" Grid.Column="4"/>
-
-                    <TextBox Text="{Binding NewTorqueCheck.PreformTemp, Mode=TwoWay}" Grid.Row="3" Grid.Column="0"/>
-                    <TextBox Text="{Binding NewTorqueCheck.Torque, Mode=TwoWay}" Grid.Row="3" Grid.Column="1"/>
-                    <TextBox Text="{Binding NewTorqueCheck.LidNo, Mode=TwoWay}" Grid.Row="3" Grid.Column="2"/>
-                    <TextBox Text="{Binding NewTorqueCheck.PreformNo, Mode=TwoWay}" Grid.Row="3" Grid.Column="3"/>
-                    <ComboBox Name="EmployeeComboBox1234567890" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                              ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}" 
-                              SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Initials}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Name="PreformTemp" Text="Preform temperatur" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Name="TorqueNo" Text="Tilspændingsmoment" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Name="LidNo" Text="Råvarenummer" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Name="PreformNo" Text="Preform råvare-nummer" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Name="EmployeeNo" Text="Medarbejder" Style="{StaticResource ListTextStyle}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="2">
+                        <TextBox Text="{Binding NewTorqueCheck.PreformTemp, Mode=TwoWay}" />
+                        <TextBox Text="{Binding NewTorqueCheck.Torque, Mode=TwoWay}" />
+                        <TextBox Text="{Binding NewTorqueCheck.LidNo, Mode=TwoWay}" />
+                        <TextBox Text="{Binding NewTorqueCheck.PreformNo, Mode=TwoWay}" />
+                        <ComboBox Name="EmployeeComboBoxTorque" 
+                                  ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
+                                  SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Initials}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
 
                     <Button Name="BackButton10" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
-                    <Button Content="Opret" Grid.Row="5" Grid.Column="3" Command="{Binding CreateCommand}"/>
+                    <Button Content="Opret" Grid.Row="2" Grid.Column="3" Command="{Binding CreateCommand}"/>
                 </Grid>
             </PivotItem>
 
@@ -418,10 +413,12 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <TextBlock Text="Flasketryk kontrol" Grid.Column="1" Grid.ColumnSpan="2"
+                               Style="{StaticResource TitleTextStyle}"/>
 
                     <StackPanel Grid.Row="1" Grid.Column="1">
                         <TextBlock Text="PreformNo" Style="{StaticResource ListTextStyle}"/>
@@ -451,10 +448,13 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <TextBlock Text="PET kontrol" Grid.Column="1" Grid.ColumnSpan="2" 
+                               Style="{StaticResource TitleTextStyle}"/>
+
                     <StackPanel Grid.Row="1" Grid.Column="1">
                         <TextBlock Text="FormNo" Style="{StaticResource ListTextStyle}"/>
                         <TextBlock Text="BottomValue" Style="{StaticResource ListTextStyle}"/>
@@ -490,32 +490,34 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <TextBlock Text="Færdigvare kontrol" Grid.Column="1" Grid.ColumnSpan="2"
+                               Style="{StaticResource TitleTextStyle}"/>
+
                     <StackPanel Grid.Row="1" Grid.Column="1">
-                        <TextBlock Text="Varenr"/>
-                        <TextBlock Text="Etiket nr"/>
-                        <TextBlock Text="Kapsel nr"/>
-                        <TextBlock Text="Processordrenr"/>
-                        <TextBlock Text="Batch kode"/>
-                        <TextBlock Text="Preform"/>
-                        <TextBlock Text="Palle nr"/>
+                        <TextBlock Text="Varenr" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Etiket nr" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Kapsel nr" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Processordrenr" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Batch kode" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Preform" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Palle nr" Style="{StaticResource ListTextStyle}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="2">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductNo, Mode=TwoWay}"/>
+                        <StackPanel Orientation="Horizontal" Margin="5" Height="50">
+                            <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductNo, Mode=TwoWay}" />
                             <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductName, Mode=TwoWay}" />
                         </StackPanel>
-                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LabelNo, Mode=TwoWay}"/>
-                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LidNo, Mode=TwoWay}"/>
-                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProcessOrderNo, Mode=TwoWay}"/>
-                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.BatchCode, Mode=TwoWay}"/>
-                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PreformNo, Mode=TwoWay}"/>
-                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PalletNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LabelNo, Mode=TwoWay}" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LidNo, Mode=TwoWay}" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProcessOrderNo, Mode=TwoWay}" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.BatchCode, Mode=TwoWay}" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PreformNo, Mode=TwoWay}" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PalletNo, Mode=TwoWay}" Style="{StaticResource ListTextStyle}"/>
                     </StackPanel>
 
                     <Button Grid.Row="2" Grid.Column="2" Content="{Binding CompleteControlColumn, Mode=TwoWay}" Command="{Binding CreateCommand}"/>
