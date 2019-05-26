@@ -175,13 +175,10 @@
                     <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="3" Height="200" Width="200" />
 
                     <TextBox Grid.Column="2" Grid.Row="1" Height="20" Width="200" Text="{Binding NewTasteCheck.TankNo, Mode=TwoWay}" />
-                    <ComboBox Name="BooleanCombobox2" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                              ItemsSource="{Binding BooleanArray, Mode=TwoWay}" SelectedItem="{Binding NewTasteCheck.TasteOk, Mode=TwoWay}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Mode=TwoWay}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
+                    <ComboBox Name="OKeydokeyComboBoxWeight" HorizontalAlignment="Center" Width="200" Height="50"
+                              SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
+                        <ComboBoxItem Content="OK"/>
+                        <ComboBoxItem Content="Ikke OK"/>
                     </ComboBox>
                     <ComboBox Name="EmployeeComboBox1" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"
                               ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
@@ -220,7 +217,7 @@
                     <TextBlock Text="Employee" Grid.Column="1" Grid.Row="3"/>
                     <TextBlock Text="Comment" Grid.Column="1" Grid.Row="4"/>
 
-                    <DatePicker Grid.Column="2" Grid.Row="1" Date="{Binding NewLabelCheck.ExpirationDate, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <DatePicker Grid.Column="2" Grid.Row="1" Date="{Binding NewLabelCheck.ExpirationDate, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding NewLabelCheck.LabelNo, Mode=TwoWay}"/>
                     <ComboBox Name="EmployeeComboBox" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"
                               ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}" 
@@ -259,13 +256,10 @@
                     <Button Name="SampleInput" Content="Prøve Indtastning" Grid.Row="2" Grid.Column="1" Height="60"
                             Width="290" HorizontalAlignment="Center" VerticalAlignment="Top"
                             Background="CornflowerBlue" Foreground="White" FontSize="35" />
-                    <ComboBox Name="BooleanCombobox4" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                              ItemsSource="{Binding BooleanArray}" SelectedItem="{Binding NewSampleCheck.Sample, Mode=TwoWay}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Mode=TwoWay}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
+                    <ComboBox Name="OKeydokeybokeyComboBoxWeight" HorizontalAlignment="Center" Width="200" Height="50"
+                              SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
+                        <ComboBoxItem Content="OK"/>
+                        <ComboBoxItem Content="Ikke OK"/>
                     </ComboBox>
                     <ComboBox Name="EmployeeComboBox123" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"
                               Header="Employee"
@@ -320,29 +314,20 @@
                     <TextBlock Text="Vagt Skift" Grid.Row="1" Grid.Column="2"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50" />
 
-                    <ComboBox Name="BooleanCombobox6" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                              ItemsSource="{Binding BooleanArray}" SelectedItem="{Binding NewShiftCheck.TopLabel, Mode=TwoWay}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Mode=TwoWay}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
+                    <ComboBox Name="OKeydokeybokeyComboBoxWeight2" HorizontalAlignment="Center" Width="200" Height="50"
+                              SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
+                        <ComboBoxItem Content="OK"/>
+                        <ComboBoxItem Content="Ikke OK"/>
                     </ComboBox>
-                    <ComboBox Name="BooleanCombobox66" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                              ItemsSource="{Binding BooleanArray}" SelectedItem="{Binding NewShiftCheck.Sugar, Mode=TwoWay}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Mode=TwoWay}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
+                    <ComboBox Name="OKeydokeybokeyComboBoxWeight1" HorizontalAlignment="Center" Width="200" Height="50"
+                              SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
+                        <ComboBoxItem Content="OK"/>
+                        <ComboBoxItem Content="Ikke OK"/>
                     </ComboBox>
-                    <ComboBox Name="BooleanCombobox666" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                              ItemsSource="{Binding BooleanArray}" SelectedItem="{Binding NewShiftCheck.TapPipe, Mode=TwoWay}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Mode=TwoWay}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
+                    <ComboBox Name="OKeydokeybokeyComboBoxWeight3" HorizontalAlignment="Center" Width="200" Height="50"
+                              SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
+                        <ComboBoxItem Content="OK"/>
+                        <ComboBoxItem Content="Ikke OK"/>
                     </ComboBox>
                     <TextBox PlaceholderText="Palle Nr" Grid.Row="2" Grid.Column="3" Height="70" Width="280"
                              HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="25" Background="White"
