@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniformApp.Handler;
+using UniformApp.View;
 using UniformApp.ViewModel;
 
 namespace UniformApp.Model
@@ -31,23 +32,26 @@ namespace UniformApp.Model
         {
             ProcessOrderList = new ObservableCollection<ProcessOrder>();
             TargetProcessOrder = new ProcessOrder();
-            LoadProcessOrdersAsync();
+            //LoadProcessOrdersAsync();
         }
-        
+
         public async void LoadProcessOrdersAsync()
         {
+            int checkme = ProcessOrderPage.ColumnChoice;
             var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrder");
             if (processOrders.Count != 0)
             {
                 foreach (var p in processOrders)
                 {
-                    ProcessOrderList.Add(p);
+                    //TODO display eller hent kun dem der matcher kolonne og ikke er complete
+                    if (!p.IsComplete && p.ColumnNo == checkme)
+                        ProcessOrderList.Add(p);
                 }
             }
             else
             {
-                ProcessOrderList.Add(new ProcessOrder(1, "1", true, 1, 1, 1));
                 ProcessOrderList.Add(new ProcessOrder(2, "2", true, 2, 2, 2));
+                ProcessOrderList.Add(new ProcessOrder(1, "1", true, 1, 1, 1));
             }
         }
     }
