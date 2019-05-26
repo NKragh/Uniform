@@ -66,5 +66,11 @@ namespace UniformWebservice.Models
         public System.Data.Entity.DbSet<UniformWebservice.Models.Label> Labels { get; set; }
 
         public System.Data.Entity.DbSet<UniformWebservice.Models.SampleCheck> SampleChecks { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.PETCheck> PETChecks { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.TorqueCheck> TorqueChecks { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.Lid> Lids { get; set; }
     }
 }

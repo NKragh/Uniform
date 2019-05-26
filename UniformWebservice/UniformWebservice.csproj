@@ -165,6 +165,8 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\LabelChecksController.cs" />
     <Compile Include="Controllers\LabelsController.cs" />
+    <Compile Include="Controllers\LidsController.cs" />
+    <Compile Include="Controllers\PETChecksController.cs" />
     <Compile Include="Controllers\PreformsController.cs" />
     <Compile Include="Controllers\PressureChecksController.cs" />
     <Compile Include="Controllers\ProcessOrdersController.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="Controllers\ShiftChecksController.cs" />
     <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Controllers\TasteChecksController.cs" />
+    <Compile Include="Controllers\TorqueChecksController.cs" />
     <Compile Include="Controllers\WeightChecksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +183,8 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Label.cs" />
     <Compile Include="Models\LabelCheck.cs" />
+    <Compile Include="Models\Lid.cs" />
+    <Compile Include="Models\PETCheck.cs" />
     <Compile Include="Models\Preform.cs" />
     <Compile Include="Models\PressureCheck.cs" />
     <Compile Include="Models\ProcessOrder.cs" />
@@ -187,6 +192,7 @@
     <Compile Include="Models\SampleCheck.cs" />
     <Compile Include="Models\ShiftCheck.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\TorqueCheck.cs" />
     <Compile Include="Models\UniformContext.cs" />
     <Compile Include="Models\WeightCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -222,21 +228,21 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
