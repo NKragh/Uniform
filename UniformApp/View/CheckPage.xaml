@@ -125,7 +125,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Grid.Row="1">
-                        <ComboBox Name="EmployeeComboBoxWeight" HorizontalAlignment="Center" Width="200" Height="50"
+                        <ComboBox Name="EmployeeComboBoxIDontEvenKnowWhatNumberWeGoTo" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"
                                   ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
                                   SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
@@ -140,13 +140,10 @@
                         <TextBox Height="50" Width="200" TextAlignment="Center" Text="{Binding NewWeightCheck.Weight4, Mode=TwoWay}" />
                         <TextBox Height="50" Width="200" TextAlignment="Center" Text="{Binding NewWeightCheck.Weight5, Mode=TwoWay}" />
                         <TextBox Height="50" Width="200" TextAlignment="Center" Text="{Binding NewWeightCheck.Weight6, Mode=TwoWay}" />
-                        <ComboBox Name="BooleanCombobox1232" HorizontalAlignment="Center" VerticalAlignment="Center"
-                                  ItemsSource="{Binding BooleanArray, Mode=TwoWay}" SelectedItem="{Binding NewWeightCheck.Droptest, Mode=TwoWay}">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Mode=TwoWay}"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
+                        <ComboBox Name="OKComboBoxWeight" HorizontalAlignment="Center" Width="200" Height="50"
+                                  SelectedValuePath="Content" SelectedValue="{Binding IsChecked, Mode=TwoWay}">
+                            <ComboBoxItem Content="OK"/>
+                            <ComboBoxItem Content="Ikke OK"/>
                         </ComboBox>
                         <TextBox Height="50" Width="200" TextAlignment="Center" Text="{Binding NewWeightCheck.Comment, Mode=TwoWay}" />
                     </StackPanel>
