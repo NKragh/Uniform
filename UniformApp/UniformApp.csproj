@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Common\DateTimeConverter.cs" />
     <Compile Include="Common\URelayCommand.cs" />
+    <Compile Include="Handler\ControlHandler.cs" />
     <Compile Include="Handler\LabelCheckHandler.cs" />
     <Compile Include="Handler\PETCheckHandler.cs" />
     <Compile Include="Handler\PressureCheckHandler.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Handler\SampleCheckHandler.cs" />
     <Compile Include="Handler\ShiftCheckHandler.cs" />
     <Compile Include="Handler\TorqueCheckHandler.cs" />
+    <Compile Include="Model\CompleteCheckView.cs" />
     <Compile Include="Model\PETCheck.cs" />
     <Compile Include="Model\SampleCheck.cs" />
     <Compile Include="Model\ShiftCheck.cs" />
@@ -215,6 +217,9 @@
     </PackageReference>
     <PackageReference Include="RelayCommand">
       <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="System.Diagnostics.Process">
+      <Version>4.1.0</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

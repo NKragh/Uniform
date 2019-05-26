@@ -116,7 +116,7 @@
                     <Button Name="BackButton" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
 
                     <Button Name="CompleteCheckButton" Content="Færdigvarekontrol" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center"
-                            Click="CompleteCheckButton_OnClick"/>
+                            Click="CompleteCheckButton_OnClick" Command="{Binding ChangeCommand}" CommandParameter="CheckComplete"/>
                 </Grid>
             </PivotItem>
 
@@ -481,7 +481,47 @@
             </PivotItem>
 
             <PivotItem Name="CompleteCheckPage">
-                <TextBlock Text="commit test"></TextBlock>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Varenr"/>
+                        <TextBlock Text="Etiket nr"/>
+                        <TextBlock Text="Kapsel nr"/>
+                        <TextBlock Text="Processordrenr"/>
+                        <TextBlock Text="Batch kode"/>
+                        <TextBlock Text="Preform"/>
+                        <TextBlock Text="Palle nr"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="2">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductNo, Mode=TwoWay}"/>
+                            <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductName, Mode=TwoWay}" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LabelNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LidNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProcessOrderNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.BatchCode, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PreformNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PalletNo, Mode=TwoWay}"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="2" Grid.Column="2" Content="{Binding CompleteControlColumn, Mode=TwoWay}" Command="{Binding CreateCommand}"/>
+
+                    <Button Name="Back2TheButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
+                </Grid>
             </PivotItem>
         </Pivot>
     </Frame>

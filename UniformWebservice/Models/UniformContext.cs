@@ -72,5 +72,7 @@ namespace UniformWebservice.Models
         public System.Data.Entity.DbSet<UniformWebservice.Models.TorqueCheck> TorqueChecks { get; set; }
 
         public System.Data.Entity.DbSet<UniformWebservice.Models.Lid> Lids { get; set; }
+
+        public System.Data.Entity.DbSet<UniformWebservice.Models.CompleteCheckView> CompleteCheckViews { get; set; }
     }
 }

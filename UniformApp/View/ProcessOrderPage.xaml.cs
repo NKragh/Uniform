@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using UniformApp.Model;
 using UniformApp.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -28,6 +29,7 @@ namespace UniformApp.View
         public ProcessOrderPage()
         {
             this.InitializeComponent();
+            ProcessOrderCatalog.Instance.LoadProcessOrdersAsync();
             ContentPivot.SelectedIndex = 0;
         }
         

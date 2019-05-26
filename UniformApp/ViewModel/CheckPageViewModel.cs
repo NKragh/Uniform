@@ -19,8 +19,6 @@ namespace UniformApp.ViewModel
 {
     class CheckPageViewModel : INotifyPropertyChanged
     {
-
-
         public bool Sample;
         private string _isChecked;
 
@@ -61,7 +59,13 @@ namespace UniformApp.ViewModel
             }
         }
 
+        private string _completeControlColumn = "Færdigvarekontrol K." + ProcessOrderPage.ColumnChoice;
+        public string CompleteControlColumn
+        {
+            get { return _completeControlColumn; }
+        }
         #region Properties
+        public ControlHandler ControlHandler { get; set; }
 
         public WeightCheckHandler WeightCheckHandler { get; set; }
 
@@ -143,16 +147,17 @@ namespace UniformApp.ViewModel
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog { get; set; }
+        //public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
 
-
         public CheckPageViewModel()
         {
+            //CompleteCheckViewCatalog = CompleteCheckViewCatalog.Instance;
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
-            BooleanArray = new ObservableCollection<bool>() { true, false };
+            //BooleanArray = new ObservableCollection<bool>() {true, false}; //old but gold 3
 
             WeightCheckHandler = new WeightCheckHandler(this);
             TasteCheckHandler = new TasteCheckHandler(this);
@@ -162,6 +167,7 @@ namespace UniformApp.ViewModel
             SampleCheckHandler = new SampleCheckHandler(this);
             TorqueCheckHandler = new TorqueCheckHandler(this);
             PETCheckHandler = new PETCheckHandler(this);
+            ControlHandler = new ControlHandler(this);
 
             _newWeightCheck = new WeightCheck();
             _newTasteCheck = new TasteCheck();
@@ -173,6 +179,7 @@ namespace UniformApp.ViewModel
             _newPETCheck = new PETCheck();
 
             ChangeCommand = new URelayCommand(ChooseCommand);
+            //ControlCommand = new RelayCommand(ControlHandler.PostToCompletion);
         }
 
         public void ChooseCommand(object parameter)
@@ -202,6 +209,10 @@ namespace UniformApp.ViewModel
                     break;
                 case "PETCheck":
                     CreateCommand = new RelayCommand(PETCheckHandler.CreatePETCheck);
+                    break;
+                case "CheckComplete":
+                    CreateCommand = new RelayCommand(ControlHandler.PostToCompletion);
+                    ControlHandler.LoadCompleteCheckViewsAsync();
                     break;
                 default:
                     throw new NullReferenceException();
