@@ -129,6 +129,7 @@
     <Compile Include="Handler\SampleCheckHandler.cs" />
     <Compile Include="Handler\ShiftCheckHandler.cs" />
     <Compile Include="Handler\TorqueCheckHandler.cs" />
+    <Compile Include="Model\CompleteCheckView.cs" />
     <Compile Include="Model\PETCheck.cs" />
     <Compile Include="Model\SampleCheck.cs" />
     <Compile Include="Model\ShiftCheck.cs" />

@@ -34,14 +34,14 @@
             <Setter Property="Height" Value="50"/>
         </Style>
         <Style TargetType="TextBlock">
-            
+
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Height" Value="50"/>
         </Style>
     </Page.Resources>
-    
+
     <Frame Name="ContentFrame">
         <Pivot Name="CheckPagePivot">
             <PivotItem Name="MenuPage">
@@ -491,7 +491,45 @@
             </PivotItem>
 
             <PivotItem Name="CompleteCheckPage">
-                <TextBlock Text="commit test"></TextBlock>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Varenr"/>
+                        <TextBlock Text="Etiket nr"/>
+                        <TextBlock Text="Kapsel nr"/>
+                        <TextBlock Text="Processordrenr"/>
+                        <TextBlock Text="Batch kode"/>
+                        <TextBlock Text="Preform"/>
+                        <TextBlock Text="Palle nr"/>
+                    </StackPanel>
+
+                    <!--TODO bind me, daddy -->
+                    <StackPanel Grid.Row="1" Grid.Column="2">
+                        <StackPanel>
+                            <TextBox Text="{}"/>
+                            <TextBox Text="{}" />
+                        </StackPanel>
+                        <TextBox Text="{}"/>
+                        <TextBox Text="{}"/>
+                        <TextBox Text="{}"/>
+                        <TextBox Text="{}"/>
+                        <TextBox Text="{}"/>
+                        <TextBox Text="{}"/>
+                    </StackPanel>
+
+                    <Button Name="Back2TheButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
+                </Grid>
             </PivotItem>
         </Pivot>
     </Frame>

@@ -19,8 +19,6 @@ namespace UniformApp.ViewModel
 {
     class CheckPageViewModel : INotifyPropertyChanged
     {
-        
-
         public bool Sample;
         private string _isChecked;
 
@@ -117,16 +115,18 @@ namespace UniformApp.ViewModel
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog{ get; set; }
+        public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
 
 
         public CheckPageViewModel()
         {
+            CompleteCheckViewCatalog = CompleteCheckViewCatalog.Instance;
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
-            BooleanArray = new ObservableCollection<bool>() {true, false};
+            //BooleanArray = new ObservableCollection<bool>() {true, false}; //old but gold 3
 
             WeightCheckHandler = new WeightCheckHandler(this);
             TasteCheckHandler = new TasteCheckHandler(this);
