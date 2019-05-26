@@ -117,7 +117,6 @@ namespace UniformApp.ViewModel
         public ICommand ReadCommand { get; set; }
         public ICommand ChangeCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
-        public ICommand ControlCommand { get; set; }
 
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
@@ -125,7 +124,6 @@ namespace UniformApp.ViewModel
         //public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
-
 
         public CheckPageViewModel()
         {
@@ -155,7 +153,7 @@ namespace UniformApp.ViewModel
             _newPETCheck = new PETCheck();
 
             ChangeCommand = new URelayCommand(ChooseCommand);
-            ControlCommand = new RelayCommand(ControlHandler.LoadCompleteCheckViewsAsync);
+            //ControlCommand = new RelayCommand(ControlHandler.PostToCompletion);
         }
 
         public void ChooseCommand(object parameter)
@@ -185,6 +183,10 @@ namespace UniformApp.ViewModel
                     break;
                 case "PETCheck":
                     CreateCommand = new RelayCommand(PETCheckHandler.CreatePETCheck);
+                    break;
+                case "CheckComplete":
+                    CreateCommand = new RelayCommand(ControlHandler.PostToCompletion);
+                    ControlHandler.LoadCompleteCheckViewsAsync();
                     break;
                 default:
                     throw new NullReferenceException();

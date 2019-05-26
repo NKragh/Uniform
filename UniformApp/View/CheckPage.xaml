@@ -102,7 +102,7 @@
                     <Button Name="BackButton" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
 
                     <Button Name="CompleteCheckButton" Content="Færdigvarekontrol" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center"
-                            Click="CompleteCheckButton_OnClick" Command="{Binding ControlCommand}"/>
+                            Click="CompleteCheckButton_OnClick" Command="{Binding ChangeCommand}" CommandParameter="CheckComplete"/>
                 </Grid>
             </PivotItem>
 
@@ -528,7 +528,7 @@
                         <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PalletNo, Mode=TwoWay}"/>
                     </StackPanel>
 
-                    <Button Grid.Row="2" Grid.Column="2" Content="{Binding CompleteControlColumn, Mode=TwoWay}" />
+                    <Button Grid.Row="2" Grid.Column="2" Content="{Binding CompleteControlColumn, Mode=TwoWay}" Command="{Binding CreateCommand}"/>
 
                     <Button Name="Back2TheButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
                 </Grid>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UniformApp.Model;
 using UniformApp.ViewModel;
+using System.Diagnostics;
 
 namespace UniformApp.Handler
 {
@@ -22,6 +23,7 @@ namespace UniformApp.Handler
 
         public ControlHandler(CheckPageViewModel viewModel)
         {
+            TargetCompleteCheckView = new CompleteCheckView();
             CheckPageViewModel = viewModel;
         }
 
@@ -45,5 +47,52 @@ namespace UniformApp.Handler
             }
         }
 
+        public void PostToCompletion()
+        {
+            OpenBrowserExtension(TargetCompleteCheckView);
+            ChangeIsComplete();
+            //CreatePackageSlip();
+        }
+
+
+        /// <summary>
+        /// Opens the default browser at the associated URL
+        /// </summary>
+        /// <param name="input">CompleteCheckView data associated with the ProcessOrder</param>
+        private void OpenBrowserExtension(CompleteCheckView input)
+        {
+            string p = $"{input.ProductNo} {input.ProductName}";
+            string v = $"{input.ProcessOrderNo}";
+            string e = $"{input.LabelNo}";
+            string bk = $"{input.BatchCode}";
+            string kn = $"{input.LidNo}";
+            string pre = $"{input.PreformNo}";
+            string pa = $"{input.PalletNo}";
+
+            string url = "http://kvalitet/default.aspx?p=" + p + "&v=" + v + "&l=Faxe&kol=K12&BK=" + bk + "&KN=" + kn +
+                         "&E=" + e + "&pre=" + pre + "&pa=" + pa;
+#if DEBUG
+            url = "http://zealand.dk";
+#endif
+            //TODO fremtidig sprint
+            //System.Diagnostics.Process.Start("chrome.exe", url);
+        }
+
+        /// <summary>
+        /// Updates targeted ProcessOrders IsComplete status to complete.
+        /// </summary>
+        private void ChangeIsComplete()
+        {
+            ProcessOrderCatalog.Instance.TargetProcessOrder.IsComplete = true;
+        }
+
+        /// <summary>
+        /// Creates a Package Slip for the ProcessOrder production run
+        /// </summary>
+        private void CreatePackageSlip()
+        {
+            //TODO Implementer i fremtidigt sprint
+            throw new NotImplementedException();
+        }
     }
 }
