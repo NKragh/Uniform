@@ -503,6 +503,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="4*" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="1" Grid.Column="1">
                         <TextBlock Text="Varenr"/>
@@ -514,7 +515,6 @@
                         <TextBlock Text="Palle nr"/>
                     </StackPanel>
 
-                    <!--TODO bind me, daddy -->
                     <StackPanel Grid.Row="1" Grid.Column="2">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductNo, Mode=TwoWay}"/>
@@ -527,6 +527,8 @@
                         <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PreformNo, Mode=TwoWay}"/>
                         <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PalletNo, Mode=TwoWay}"/>
                     </StackPanel>
+
+                    <Button Grid.Row="2" Grid.Column="2" Content="{Binding CompleteControlColumn, Mode=TwoWay}" />
 
                     <Button Name="Back2TheButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
                 </Grid>

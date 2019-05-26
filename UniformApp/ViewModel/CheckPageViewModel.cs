@@ -32,6 +32,12 @@ namespace UniformApp.ViewModel
                 _isChecked = value;
             }
         }
+
+        private string _completeControlColumn = "Færdigvarekontrol K." + ProcessOrderPage.ColumnChoice;
+        public string CompleteControlColumn
+        {
+            get { return _completeControlColumn; }
+        }
         #region Properties
         public ControlHandler ControlHandler { get; set; }
 
@@ -54,7 +60,7 @@ namespace UniformApp.ViewModel
         }
 
         public ShiftCheckHandler ShiftCheckHandler { get; set; }
-        
+
         private ShiftCheck _newShiftCheck;
         public ShiftCheck NewShiftCheck
         {
@@ -63,7 +69,7 @@ namespace UniformApp.ViewModel
         }
 
         public LabelCheckHandler LabelCheckHandler { get; set; }
-        
+
         private LabelCheck _newLabelCheck;
         public LabelCheck NewLabelCheck
         {
@@ -72,7 +78,7 @@ namespace UniformApp.ViewModel
         }
 
         public PressureCheckHandler PressureCheckHandler { get; set; }
-        
+
         private PressureCheck _newPressureCheck;
         public PressureCheck NewPressureCheck
         {
@@ -115,7 +121,7 @@ namespace UniformApp.ViewModel
 
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
-        public ProductCatalog ProductCatalog{ get; set; }
+        public ProductCatalog ProductCatalog { get; set; }
         //public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
