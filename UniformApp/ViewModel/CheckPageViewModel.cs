@@ -21,6 +21,22 @@ namespace UniformApp.ViewModel
     {
         #region Properties
 
+        //private bool _check;
+        //private string _isChecked;
+        
+        //public string IsChecked
+        //{
+        //    get { return _isChecked; }
+        //    set
+        //    {
+        //        if (value is "OK") _check = true;
+        //        else if (value is "Ikke OK") _check = false;
+        //        _isChecked = value;
+        //    }
+        //}
+
+
+
         public WeightCheckHandler WeightCheckHandler { get; set; }
 
         private WeightCheck _newWeightCheck;
@@ -102,6 +118,7 @@ namespace UniformApp.ViewModel
         public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog{ get; set; }
         public ObservableCollection<string> BooleanArray { get; set; }
+
 
         public CheckPageViewModel()
         {
