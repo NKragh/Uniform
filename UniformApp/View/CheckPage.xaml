@@ -31,6 +31,14 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="50"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="50"/>
         </Style>
     </Page.Resources>
     
@@ -440,6 +448,44 @@
 
                     <Button Name="BackButton50" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
                     <Button Name="OpretKnap4" Content="Opret" Command="{Binding CreateCommand}" Grid.Column="3"
+                            Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Name="PETCheckPage">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="FormNo"/>
+                        <TextBlock Text="BottomValue"/>
+                        <TextBlock Text="MidValue"/>
+                        <TextBlock Text="TopValue"/>
+                        <TextBlock Text="Comment"/>
+                        <TextBlock Text="EmployeeNo"/>
+                        <TextBlock Text="PreformNo"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="2">
+                        <TextBox Text="{Binding NewPETCheck.FormNo}"/>
+                        <TextBox Text="{Binding NewPETCheck.BottomValue}"/>
+                        <TextBox Text="{Binding NewPETCheck.MidValue}"/>
+                        <TextBox Text="{Binding NewPETCheck.TopValue}"/>
+                        <TextBox Text="{Binding NewPETCheck.Comment}"/>
+                        <TextBox Text="{Binding NewPETCheck.EmployeeNo}"/>
+                        <TextBox Text="{Binding NewPETCheck.PreformNo}"/>
+                    </StackPanel>
+
+                    <Button Name="BackButton500" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
+                    <Button Name="OpretKnap40" Content="Opret" Command="{Binding CreateCommand}" Grid.Column="3"
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </PivotItem>
