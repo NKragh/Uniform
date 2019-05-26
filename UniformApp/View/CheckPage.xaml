@@ -102,7 +102,7 @@
                     <Button Name="BackButton" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
 
                     <Button Name="CompleteCheckButton" Content="Færdigvarekontrol" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center"
-                            Click="CompleteCheckButton_OnClick"/>
+                            Click="CompleteCheckButton_OnClick" Command="{Binding ControlCommand}"/>
                 </Grid>
             </PivotItem>
 
@@ -516,16 +516,16 @@
 
                     <!--TODO bind me, daddy -->
                     <StackPanel Grid.Row="1" Grid.Column="2">
-                        <StackPanel>
-                            <TextBox Text="{}"/>
-                            <TextBox Text="{}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductNo, Mode=TwoWay}"/>
+                            <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductName, Mode=TwoWay}" />
                         </StackPanel>
-                        <TextBox Text="{}"/>
-                        <TextBox Text="{}"/>
-                        <TextBox Text="{}"/>
-                        <TextBox Text="{}"/>
-                        <TextBox Text="{}"/>
-                        <TextBox Text="{}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LabelNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LidNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProcessOrderNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.BatchCode, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PreformNo, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.PalletNo, Mode=TwoWay}"/>
                     </StackPanel>
 
                     <Button Name="Back2TheButton" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />

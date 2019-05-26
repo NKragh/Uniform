@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Common\DateTimeConverter.cs" />
     <Compile Include="Common\URelayCommand.cs" />
+    <Compile Include="Handler\ControlHandler.cs" />
     <Compile Include="Handler\LabelCheckHandler.cs" />
     <Compile Include="Handler\PETCheckHandler.cs" />
     <Compile Include="Handler\PressureCheckHandler.cs" />

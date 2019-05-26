@@ -32,8 +32,8 @@ namespace UniformApp.ViewModel
                 _isChecked = value;
             }
         }
-
         #region Properties
+        public ControlHandler ControlHandler { get; set; }
 
         public WeightCheckHandler WeightCheckHandler { get; set; }
 
@@ -111,18 +111,19 @@ namespace UniformApp.ViewModel
         public ICommand ReadCommand { get; set; }
         public ICommand ChangeCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
+        public ICommand ControlCommand { get; set; }
 
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog{ get; set; }
-        public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
+        //public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
 
 
         public CheckPageViewModel()
         {
-            CompleteCheckViewCatalog = CompleteCheckViewCatalog.Instance;
+            //CompleteCheckViewCatalog = CompleteCheckViewCatalog.Instance;
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
@@ -136,6 +137,7 @@ namespace UniformApp.ViewModel
             SampleCheckHandler = new SampleCheckHandler(this);
             TorqueCheckHandler = new TorqueCheckHandler(this);
             PETCheckHandler = new PETCheckHandler(this);
+            ControlHandler = new ControlHandler(this);
 
             _newWeightCheck = new WeightCheck();
             _newTasteCheck = new TasteCheck();
@@ -147,6 +149,7 @@ namespace UniformApp.ViewModel
             _newPETCheck = new PETCheck();
 
             ChangeCommand = new URelayCommand(ChooseCommand);
+            ControlCommand = new RelayCommand(ControlHandler.LoadCompleteCheckViewsAsync);
         }
 
         public void ChooseCommand(object parameter)

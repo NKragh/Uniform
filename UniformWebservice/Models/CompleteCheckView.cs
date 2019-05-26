@@ -24,7 +24,7 @@ namespace UniformWebservice.Models
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id { get; set; }
+        public int ProcessOrderNo { get; set; }
 
         [StringLength(20)]
         public string BatchCode { get; set; }
