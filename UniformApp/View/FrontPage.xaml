@@ -6,8 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:UniformApp.ViewModel"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
     <!--<Page.DataContext>
         <viewModel:ProcessOrderViewModel />
@@ -18,20 +17,21 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Height" Value="100"/>
-            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
     </Page.Resources>
 
     <Frame Name="ContentFrame">
-
-        <!--TODO dynamic size, fixed size is a temporary solution-->
-        <Grid Width="800" Height="600" VerticalAlignment="Top">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -39,22 +39,21 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <!--<RowDefinition Height="*"/>-->
             </Grid.RowDefinitions>
 
             <!--<TextBlock Text="ROYAL UNIBREW" Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55"/>-->
-            <Button Name="Column2Button" Content="K1" Grid.Column="0" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="1" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column1Button" Content="K2" Grid.Column="1" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="2" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column3Button" Content="K3" Grid.Column="2" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="3" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column4Button" Content="K4" Grid.Column="0" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="4" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column5Button" Content="K5" Grid.Column="1" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="5" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column6Button" Content="K6" Grid.Column="2" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="6" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column7Button" Content="K7" Grid.Column="0" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="7" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column8Button" Content="K8" Grid.Column="1" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="8" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column9Button" Content="K9" Grid.Column="2" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="9" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column10Button" Content="K10" Grid.Column="0" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="10" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column11Button" Content="K11" Grid.Column="1" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="11" Click="ColumnChangeButtonOnClick"/>
-            <Button Name="Column12Button" Content="K12" Grid.Column="2" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="12" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column1Button" Content="K1" Grid.Column="1" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="1" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column2Button" Content="K2" Grid.Column="2" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="2" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column3Button" Content="K3" Grid.Column="3" Grid.Row="0" Style="{StaticResource ButtonStyling}" Tag="3" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column4Button" Content="K4" Grid.Column="1" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="4" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column5Button" Content="K5" Grid.Column="2" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="5" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column6Button" Content="K6" Grid.Column="3" Grid.Row="1" Style="{StaticResource ButtonStyling}" Tag="6" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column7Button" Content="K7" Grid.Column="1" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="7" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column8Button" Content="K8" Grid.Column="2" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="8" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column9Button" Content="K9" Grid.Column="3" Grid.Row="2" Style="{StaticResource ButtonStyling}" Tag="9" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column10Button" Content="K10" Grid.Column="1" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="10" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column11Button" Content="K11" Grid.Column="2" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="11" Click="ColumnChangeButtonOnClick"/>
+            <Button Name="Column12Button" Content="K12" Grid.Column="3" Grid.Row="3" Style="{StaticResource ButtonStyling}" Tag="12" Click="ColumnChangeButtonOnClick"/>
 
         </Grid>
     </Frame>

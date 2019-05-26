@@ -79,5 +79,10 @@ namespace UniformApp.View
         {
             CheckPagePivot.SelectedIndex = 9;
         }
+
+        private void OpretKnap_OnClick_(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 0;
+        }
     }
 }

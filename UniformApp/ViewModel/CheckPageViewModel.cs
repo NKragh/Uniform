@@ -19,7 +19,7 @@ namespace UniformApp.ViewModel
 {
     class CheckPageViewModel : INotifyPropertyChanged
     {
-        
+
 
         public bool Sample;
         private string _isChecked;
@@ -32,6 +32,32 @@ namespace UniformApp.ViewModel
                 if (value is "OK") Sample = true;
                 else if (value is "Ikke OK") Sample = false;
                 _isChecked = value;
+            }
+        }
+        public bool Sample2;
+        private string _isChecked2;
+
+        public string IsChecked2
+        {
+            get { return _isChecked2; }
+            set
+            {
+                if (value is "OK") Sample2 = true;
+                else if (value is "Ikke OK") Sample2 = false;
+                _isChecked2 = value;
+            }
+        }
+        public bool Sample3;
+        private string _isChecked3;
+
+        public string IsChecked3
+        {
+            get { return _isChecked3; }
+            set
+            {
+                if (value is "OK") Sample3 = true;
+                else if (value is "Ikke OK") Sample3 = false;
+                _isChecked3 = value;
             }
         }
 
@@ -56,7 +82,7 @@ namespace UniformApp.ViewModel
         }
 
         public ShiftCheckHandler ShiftCheckHandler { get; set; }
-        
+
         private ShiftCheck _newShiftCheck;
         public ShiftCheck NewShiftCheck
         {
@@ -65,7 +91,7 @@ namespace UniformApp.ViewModel
         }
 
         public LabelCheckHandler LabelCheckHandler { get; set; }
-        
+
         private LabelCheck _newLabelCheck;
         public LabelCheck NewLabelCheck
         {
@@ -74,7 +100,7 @@ namespace UniformApp.ViewModel
         }
 
         public PressureCheckHandler PressureCheckHandler { get; set; }
-        
+
         private PressureCheck _newPressureCheck;
         public PressureCheck NewPressureCheck
         {
@@ -116,7 +142,7 @@ namespace UniformApp.ViewModel
 
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
-        public ProductCatalog ProductCatalog{ get; set; }
+        public ProductCatalog ProductCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
 
@@ -126,7 +152,7 @@ namespace UniformApp.ViewModel
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
-            BooleanArray = new ObservableCollection<bool>() {true, false};
+            BooleanArray = new ObservableCollection<bool>() { true, false };
 
             WeightCheckHandler = new WeightCheckHandler(this);
             TasteCheckHandler = new TasteCheckHandler(this);
@@ -191,5 +217,37 @@ namespace UniformApp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public void ClearCheck(string parameter)
+        {
+            switch (parameter)
+            {
+                case "WeightCheck":
+                    NewWeightCheck = new WeightCheck();
+                    break;
+                case "TasteCheck":
+                    NewTasteCheck = new TasteCheck();
+                    break;
+                case "LabelCheck":
+                    _newLabelCheck = new LabelCheck();
+                    break;
+                case "SampleCheck":
+                    _newSampleCheck = new SampleCheck();
+                    break;
+                case "ShiftCheck":
+                    _newShiftCheck = new ShiftCheck();
+                    break;
+                case "TorqueCheck":
+                    _newTorqueCheck = new TorqueCheck();
+                    break;
+                case "PressureCheck":
+                    _newPressureCheck = new PressureCheck();
+                    break;
+                case "PETCheck":
+                    _newPETCheck = new PETCheck();
+                    break;
+                default:
+                    throw new NullReferenceException();
+            }
+        }
     }
 }

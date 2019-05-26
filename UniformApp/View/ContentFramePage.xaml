@@ -5,8 +5,7 @@
     xmlns:local="using:UniformApp.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
     <Grid Background="#16503F" >
         <Grid.RowDefinitions>
@@ -34,7 +33,7 @@
         </RelativePanel>
 
         <ScrollViewer Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0">
-            <Frame Name="ContentFrame" Background="#FFFFFF"/>
+            <Frame Name="ContentFrame" Background="#FFFFCC"/>
         </ScrollViewer>
     </Grid>
 </Page>
