@@ -92,6 +92,9 @@
                             Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PETCheck, Path=Name}"/>
 
                     <Button Name="BackButton" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
+
+                    <Button Name="CompleteCheckButton" Content="Færdigvarekontrol" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                            Click="CompleteCheckButton_OnClick"/>
                 </Grid>
             </PivotItem>
 
@@ -169,6 +172,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
+
                     <TextBlock Text="TankNo" Grid.Column="1" Grid.Row="1" Height="200" Width="200" />
                     <TextBlock Text="TasteOk" Grid.Column="1" Grid.Row="2" Height="200" Width="200" />
                     <TextBlock Text="EmployeeNo" Grid.Column="1" Grid.Row="3" Height="200" Width="200" />
@@ -213,6 +217,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
+
                     <TextBlock Text="ExpirationDate" Grid.Column="1" Grid.Row="1"/>
                     <TextBlock Text="LabelNo" Grid.Column="1" Grid.Row="2"/>
                     <TextBlock Text="Employee" Grid.Column="1" Grid.Row="3"/>
@@ -379,6 +384,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
+
                     <TextBlock Text="Skruelågsinformationer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50" />
 
@@ -454,6 +460,10 @@
                     <Button Name="OpretKnap4" Content="Opret" Command="{Binding CreateCommand}" Grid.Column="3"
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
+            </PivotItem>
+
+            <PivotItem Name="CompleteCheckPage">
+                <TextBlock Text="commit test"></TextBlock>
             </PivotItem>
         </Pivot>
     </Frame>

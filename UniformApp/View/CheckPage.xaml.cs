@@ -74,5 +74,10 @@ namespace UniformApp.View
         {
             CheckPagePivot.SelectedIndex = 8;
         }
+
+        private void CompleteCheckButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            CheckPagePivot.SelectedIndex = 9;
+        }
     }
 }
