@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UniformApp.Model;
 using UniformApp.ViewModel;
 using System.Diagnostics;
+using UniformApp.Persistency;
 
 namespace UniformApp.Handler
 {
@@ -83,7 +84,9 @@ namespace UniformApp.Handler
         /// </summary>
         private void ChangeIsComplete()
         {
+            var id = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             ProcessOrderCatalog.Instance.TargetProcessOrder.IsComplete = true;
+            var tmp = PersistencyService.UpdateObjectToDatabaseAsync<ProcessOrder>("ProcessOrder", ProcessOrderCatalog.Instance.TargetProcessOrder, id).Result;
         }
 
         /// <summary>

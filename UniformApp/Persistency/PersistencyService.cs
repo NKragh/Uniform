@@ -65,10 +65,8 @@ namespace UniformApp.Persistency
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="typeInput">Type of object as string.</param>
         /// <returns></returns>
-        //TODO: find på bedre navne til både metoder og parametre -.-
         public static async Task<List<T>> ReadObjectsFromDatabaseAsync<T>(string typeInput)
         {
-            //TODO kan være vi skal flytte den ud af metoden / finde ud af noget med det defaultCredentials
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
             List<T> returnList = new List<T>();
