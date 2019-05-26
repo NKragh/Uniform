@@ -27,6 +27,10 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewWeightCheck.Droptest = CheckPageViewModel.Sample;
             
             var weightPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<WeightCheck>("WeightCheck", CheckPageViewModel.NewWeightCheck).Result;
+            if (weightPersistency)
+            {
+                CheckPageViewModel.ClearCheck("WeightCheck");
+            }
         }
     }
 }

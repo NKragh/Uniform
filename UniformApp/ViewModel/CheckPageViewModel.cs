@@ -32,6 +32,32 @@ namespace UniformApp.ViewModel
                 _isChecked = value;
             }
         }
+        public bool Sample2;
+        private string _isChecked2;
+
+        public string IsChecked2
+        {
+            get { return _isChecked2; }
+            set
+            {
+                if (value is "OK") Sample2 = true;
+                else if (value is "Ikke OK") Sample2 = false;
+                _isChecked2 = value;
+            }
+        }
+        public bool Sample3;
+        private string _isChecked3;
+
+        public string IsChecked3
+        {
+            get { return _isChecked3; }
+            set
+            {
+                if (value is "OK") Sample3 = true;
+                else if (value is "Ikke OK") Sample3 = false;
+                _isChecked3 = value;
+            }
+        }
 
         private string _completeControlColumn = "Færdigvarekontrol K." + ProcessOrderPage.ColumnChoice;
         public string CompleteControlColumn
@@ -202,5 +228,37 @@ namespace UniformApp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public void ClearCheck(string parameter)
+        {
+            switch (parameter)
+            {
+                case "WeightCheck":
+                    NewWeightCheck = new WeightCheck();
+                    break;
+                case "TasteCheck":
+                    NewTasteCheck = new TasteCheck();
+                    break;
+                case "LabelCheck":
+                    _newLabelCheck = new LabelCheck();
+                    break;
+                case "SampleCheck":
+                    _newSampleCheck = new SampleCheck();
+                    break;
+                case "ShiftCheck":
+                    _newShiftCheck = new ShiftCheck();
+                    break;
+                case "TorqueCheck":
+                    _newTorqueCheck = new TorqueCheck();
+                    break;
+                case "PressureCheck":
+                    _newPressureCheck = new PressureCheck();
+                    break;
+                case "PETCheck":
+                    _newPETCheck = new PETCheck();
+                    break;
+                default:
+                    throw new NullReferenceException();
+            }
+        }
     }
 }
