@@ -17,11 +17,6 @@ namespace UniformApp.Common
     /// </summary>
     public class URelayCommand : ICommand
     {
-        public URelayCommand()
-        {
-            
-        }
-        //TODO: Muligvis er hele denne klasse broken :))))))))))
         private Action<object> _action;
         private Func<object, bool> _canExecute;
 
@@ -45,9 +40,7 @@ namespace UniformApp.Common
         /// <param name="canExecute">The execution status logic.</param>
         public URelayCommand(Action<object> action, Func<object, bool> canExecute)
         {
-            if (action == null)
-                throw new ArgumentNullException("action");
-            _action = action;
+            _action = action ?? throw new ArgumentNullException("action");
             _canExecute = canExecute;
         }
 
