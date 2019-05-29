@@ -88,21 +88,21 @@
                     <!--#endregion-->
 
                     <StackPanel Grid.Column="1" Grid.Row="1">
-                        <Button Name="WeightCheck" Content="Weight Check" Click="WeightCheck_OnClick" 
+                        <Button Name="WeightCheck" Content="Kontrolvejning" Click="WeightCheck_OnClick" 
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=WeightCheck, Path=Name}"/>
-                        <Button Name="TasteCheck" Content="Taste Check" Click="TasteCheck_OnClick"
+                        <Button Name="TasteCheck" Content="Smagt ved skift" Click="TasteCheck_OnClick"
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=TasteCheck, Path=Name}" />
-                        <Button Name="LabelCheck" Content="Label Check" Click="LabelCheck_OnClick"
+                        <Button Name="LabelCheck" Content="Label kontrol" Click="LabelCheck_OnClick"
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=LabelCheck, Path=Name}" />
-                        <Button Name="SampleCheck" Content="Sample Check" Click="SampleCheck_OnClick"
+                        <Button Name="SampleCheck" Content="Udtag prøve" Click="SampleCheck_OnClick"
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=SampleCheck, Path=Name}" />
-                        <Button Name="ShiftCheck" Content="Shift Check" Click="ShiftCheck_OnClick"
+                        <Button Name="ShiftCheck" Content="Skift kontrol" Click="ShiftCheck_OnClick"
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=ShiftCheck, Path=Name}" />
-                        <Button Name="TorqueCheck" Content="Torque Check" Click="TorqueCheck_OnClick"
+                        <Button Name="TorqueCheck" Content="Tilspændingsmoment" Click="TorqueCheck_OnClick"
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=TorqueCheck, Path=Name}" />
-                        <Button Name="PressureCheck" Content="Pressure Check" Click="PressureCheck_OnClick"
+                        <Button Name="PressureCheck" Content="Tryk kontrol Check" Click="PressureCheck_OnClick"
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PressureCheck, Path=Name}" />
-                        <Button Name="PETCheck" Content="Pet Check" Click="PETCheck_OnClick"
+                        <Button Name="PETCheck" Content="PET kontrol" Click="PETCheck_OnClick"
                                 Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PETCheck, Path=Name}" />
                     </StackPanel>
 
@@ -180,7 +180,7 @@
                         <RowDefinition Height="4*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Samgsprøve kontrol" Grid.Column="1" Grid.ColumnSpan="2"
+                    <TextBlock Text="Smagsprøve kontrol" Grid.Column="1" Grid.ColumnSpan="2"
                                Style="{StaticResource TitleTextStyle}"/>
 
                     <StackPanel Grid.Row="1" Grid.Column="1">
@@ -251,7 +251,7 @@
 
                     <Button Name="BackButton3" Content="Back" Grid.Column="0" Grid.Row="0" 
                             Click="BackButton_OnClick" />
-                    <Button Name="OpretKnap3" Content="Opret" Click="OpretKnap_OnClick_" 
+                    <Button Name="OpretKnap3" Content="Opret" 
                             Command="{Binding CreateCommand}" Grid.Column="3" Grid.Row="2"/>
                 </Grid>
             </PivotItem>
