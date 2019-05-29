@@ -41,7 +41,7 @@ namespace UniformApp.Model
             var processOrders = await Persistency.PersistencyService.ReadObjectsFromDatabaseAsync<ProcessOrder>("ProcessOrder");
             if (processOrders.Count != 0)
             {
-                IEnumerable<ProcessOrder> ps = processOrders.Where(c => c.ColumnNo == 12 && !c.IsComplete);
+                IEnumerable<ProcessOrder> ps = processOrders.Where(c => c.ColumnNo == 12 && !c.IsComplete); //TODO columnChoice virker ikke -.-
                 foreach (var p in ps)
                 {
                     ProcessOrderList.Add(p);
