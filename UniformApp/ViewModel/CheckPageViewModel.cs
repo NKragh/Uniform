@@ -73,7 +73,11 @@ namespace UniformApp.ViewModel
         public WeightCheck NewWeightCheck
         {
             get { return _newWeightCheck; }
-            set { _newWeightCheck = value; }
+            set
+            {
+                _newWeightCheck = value;
+                OnPropertyChanged();
+            }
         }
 
         public TasteCheckHandler TasteCheckHandler { get; set; }
