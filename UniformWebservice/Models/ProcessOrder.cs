@@ -12,6 +12,7 @@ namespace UniformWebservice.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProcessOrder()
         {
+            //TODO: Hvorfor er kun nogle af klasserne her?
             PressureCheck = new HashSet<PressureCheck>();
             ShiftCheck = new HashSet<ShiftCheck>();
             WeightCheck = new HashSet<WeightCheck>();

@@ -9,6 +9,13 @@ namespace UniformUnitTest
         [TestMethod]
         public void TestMethod1()
         {
+            //arrange
+            var current = "";
+            var expected = "hejsa";
+            //act
+            current.Method();
+            //assert
+            Assert.Equals(expected, current);
         }
     }
 }

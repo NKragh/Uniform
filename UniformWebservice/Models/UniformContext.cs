@@ -10,7 +10,7 @@ namespace UniformWebservice.Models
         {
             base.Configuration.ProxyCreationEnabled = false;
         }
-
+        //TODO: Hvorfor er alle klasserne ikke her?
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Preform> Preform { get; set; }
         public virtual DbSet<PressureCheck> PressureCheck { get; set; }
