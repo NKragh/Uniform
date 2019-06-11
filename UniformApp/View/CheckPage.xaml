@@ -187,7 +187,7 @@
                         <RowDefinition Height="4*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Samgsprøve kontrol" Grid.Column="1" Grid.ColumnSpan="2"
+                    <TextBlock Text="Smagsprøve kontrol" Grid.Column="1" Grid.ColumnSpan="2"
                                Style="{StaticResource TitleTextStyle}"/>
 
                     <StackPanel Grid.Row="1" Grid.Column="1">
@@ -258,7 +258,7 @@
 
                     <Button Name="BackButton3" Content="Back" Grid.Column="0" Grid.Row="0" 
                             Click="BackButton_OnClick" />
-                    <Button Name="OpretKnap3" Content="Opret" Click="OpretKnap_OnClick_" 
+                    <Button Name="OpretKnap3" Content="Opret" 
                             Command="{Binding CreateCommand}" Grid.Column="3" Grid.Row="2"/>
                 </Grid>
             </PivotItem>
