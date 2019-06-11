@@ -2,6 +2,7 @@ using System;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+
 namespace UniformWebservice.Models
 {
     public partial class UniformContext : DbContext
@@ -10,7 +11,6 @@ namespace UniformWebservice.Models
         {
             base.Configuration.ProxyCreationEnabled = false;
         }
-        //TODO: Hvorfor er alle klasserne ikke her?
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Preform> Preform { get; set; }
         public virtual DbSet<PressureCheck> PressureCheck { get; set; }
@@ -19,6 +19,14 @@ namespace UniformWebservice.Models
         public virtual DbSet<ShiftCheck> ShiftCheck { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<WeightCheck> WeightCheck { get; set; }
+        public DbSet<TasteCheck> TasteChecks { get; set; }
+        public DbSet<LabelCheck> LabelChecks { get; set; }
+        public DbSet<Label> Labels { get; set; }
+        public DbSet<SampleCheck> SampleChecks { get; set; }
+        public DbSet<PETCheck> PETChecks { get; set; }
+        public DbSet<TorqueCheck> TorqueChecks { get; set; }
+        public DbSet<Lid> Lids { get; set; }
+        public DbSet<CompleteCheckView> CompleteCheckViews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -58,21 +66,5 @@ namespace UniformWebservice.Models
                 .Property(e => e.FluidCode)
                 .IsUnicode(false);
         }
-
-        public System.Data.Entity.DbSet<UniformWebservice.TasteCheck> TasteChecks { get; set; }
-
-        public System.Data.Entity.DbSet<UniformWebservice.Models.LabelCheck> LabelChecks { get; set; }
-
-        public System.Data.Entity.DbSet<UniformWebservice.Models.Label> Labels { get; set; }
-
-        public System.Data.Entity.DbSet<UniformWebservice.Models.SampleCheck> SampleChecks { get; set; }
-
-        public System.Data.Entity.DbSet<UniformWebservice.Models.PETCheck> PETChecks { get; set; }
-
-        public System.Data.Entity.DbSet<UniformWebservice.Models.TorqueCheck> TorqueChecks { get; set; }
-
-        public System.Data.Entity.DbSet<UniformWebservice.Models.Lid> Lids { get; set; }
-
-        public System.Data.Entity.DbSet<UniformWebservice.Models.CompleteCheckView> CompleteCheckViews { get; set; }
     }
 }
