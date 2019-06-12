@@ -31,7 +31,7 @@ namespace UniformApp.Persistency
         {
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
-
+            HttpResponseMessage response;
 
             using (var client = new HttpClient(handler))
             {
@@ -47,7 +47,7 @@ namespace UniformApp.Persistency
                     var byteContent = new ByteArrayContent(buffer);
                     byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                    var response = client.PostAsync($"api/{typeInput}s", byteContent).Result;
+                    response = client.PostAsync($"api/{typeInput}s", byteContent).Result;
                     Debug.WriteLine(response);
                 }
                 catch (Exception e)
@@ -56,7 +56,9 @@ namespace UniformApp.Persistency
                     return false;
                 }
             }
-            return true;
+
+            bool result = (response.IsSuccessStatusCode) ? true : false;
+            return result;
         }
 
         /// <summary>
@@ -133,7 +135,7 @@ namespace UniformApp.Persistency
         //    tempProcessOrder.Employee = Convert.ToInt32(resarr3[i + 5]);
         //    targetList.Add(tempProcessOrder);
         //}
-        
+
 
 
         //var o = response.Content.ReadAsAsync<ProcessOrder>(new[] {new JsonMediaTypeFormatter()});

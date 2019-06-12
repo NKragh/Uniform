@@ -151,6 +151,7 @@ namespace UniformApp.ViewModel
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
         public EmployeeCatalog EmployeeCatalog { get; set; }
         public ProductCatalog ProductCatalog { get; set; }
+        public LabelCatalog LabelCatalog { get; set; }
         //public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
@@ -161,6 +162,7 @@ namespace UniformApp.ViewModel
             ProcessOrderCatalog = ProcessOrderCatalog.Instance;
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
+            LabelCatalog = LabelCatalog.Instance;
             //BooleanArray = new ObservableCollection<bool>() {true, false}; //old but gold 3
 
             WeightCheckHandler = new WeightCheckHandler(this);

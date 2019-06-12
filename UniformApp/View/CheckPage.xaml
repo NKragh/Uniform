@@ -236,15 +236,23 @@
                                Style="{StaticResource TitleTextStyle}"/>
 
                     <StackPanel Grid.Row="1" Grid.Column="1">
-                        <TextBlock Text="ExpirationDate" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="{Binding ElementName=LabelDatePicker, Path=Date.DateTime}" Style="{StaticResource ListTextStyle}"/>
                         <TextBlock Text="LabelNo" Style="{StaticResource ListTextStyle}"/>
                         <TextBlock Text="EmployeeNo" Style="{StaticResource ListTextStyle}"/>
                         <TextBlock Text="Comment" Style="{StaticResource ListTextStyle}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="2">
-                        <DatePicker Date="{Binding NewLabelCheck.ExpirationDate, Mode=TwoWay}" />
-                        <TextBox Text="{Binding NewLabelCheck.LabelNo, Mode=TwoWay}" />
+                        <DatePicker x:Name="LabelDatePicker" Date="{Binding NewLabelCheck.ExpirationDate, Mode=TwoWay}" />
+                        <!--<TextBox Text="{Binding NewLabelCheck.LabelNo, Mode=TwoWay}" />-->
+                        <ComboBox ItemsSource="{Binding LabelCatalog.LabelList, Mode=TwoWay}"
+                                  SelectedItem="{Binding LabelCatalog.TargetLabel, Mode=TwoWay}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding LabelNo}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                         <ComboBox ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
                                   SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
@@ -260,6 +268,7 @@
                             Click="BackButton_OnClick" />
                     <Button Name="OpretKnap3" Content="Opret" 
                             Command="{Binding CreateCommand}" Grid.Column="3" Grid.Row="2"/>
+                    <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding LabelCheckHandler.LabelPersistency, Mode=TwoWay}"/>
                 </Grid>
             </PivotItem>
 
@@ -410,7 +419,7 @@
                     <Button Content="Opret" Grid.Row="2" Grid.Column="3" Command="{Binding CreateCommand}"/>
                 </Grid>
             </PivotItem>
-
+<!--TODO: Lave en combobox til PreformNo-->
             <PivotItem Name="PressureCheckPage">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -445,7 +454,7 @@
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </PivotItem>
-
+<!--TODO: Lave en combobox til PreformNo-->
             <PivotItem Name="PETCheckPage">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -486,7 +495,7 @@
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </PivotItem>
-
+<!--TODO: Lave en combobox til PreformNo-->
             <PivotItem Name="CompleteCheckPage">
 
                 <Grid>

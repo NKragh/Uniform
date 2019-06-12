@@ -11,14 +11,14 @@ namespace UniformApp.Model
     {
         private int _processOrderNo;
         private TimeSpan _checkTime;
-        private DateTime _expirationDate;
+        private DateTimeOffset _expirationDate = DateTimeOffset.Now;
         private string _comment;
         private int _employeeNo;
         private int _labelNo;
 
         public int ProcessOrderNo { get => _processOrderNo; set => _processOrderNo = value; }
         public TimeSpan CheckTime { get => _checkTime; set => _checkTime = value; }
-        public DateTime ExpirationDate { get => _expirationDate; set => _expirationDate = value; }
+        public DateTimeOffset ExpirationDate { get => _expirationDate; set => _expirationDate = value.Date; }
         public string Comment { get => _comment; set => _comment = value; }
         public int EmployeeNo { get => _employeeNo; set => _employeeNo = value; }
         public int LabelNo { get => _labelNo; set => _labelNo = value; }
