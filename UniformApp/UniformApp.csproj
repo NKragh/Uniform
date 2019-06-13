@@ -133,7 +133,11 @@
     <Compile Include="Model\CompleteCheckView.cs" />
     <Compile Include="Model\Label.cs" />
     <Compile Include="Model\LabelCatalog.cs" />
+    <Compile Include="Model\Lid.cs" />
+    <Compile Include="Model\LidCatalog.cs" />
     <Compile Include="Model\PETCheck.cs" />
+    <Compile Include="Model\Preform.cs" />
+    <Compile Include="Model\PreformCatalog.cs" />
     <Compile Include="Model\SampleCheck.cs" />
     <Compile Include="Model\ShiftCheck.cs" />
     <Compile Include="Handler\TasteCheckHandler.cs" />
@@ -146,6 +150,8 @@
     <Compile Include="Model\ProcessOrderCatalog.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductCatalog.cs" />
+    <Compile Include="Model\Supplier.cs" />
+    <Compile Include="Model\SupplierCatalog.cs" />
     <Compile Include="Model\TasteCheck.cs" />
     <Compile Include="Model\TorqueCheck.cs" />
     <Compile Include="Model\WeightCheck.cs" />

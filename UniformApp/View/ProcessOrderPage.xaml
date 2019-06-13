@@ -97,8 +97,8 @@
 
                     <StackPanel Grid.Row="1" Grid.Column="2">
                         <TextBox Text="{Binding NewProcessOrder.ProcessOrderNo, Mode=TwoWay}" />
-                        <ComboBox ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
-                                  SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
+                        <ComboBox ItemsSource="{Binding PreformCatalog.EmployeeList, Mode=TwoWay}"
+                                  SelectedItem="{Binding PreformCatalog.TargetEmployee, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Initials}" />

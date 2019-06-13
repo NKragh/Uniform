@@ -64,6 +64,7 @@ namespace UniformApp.ViewModel
         {
             get { return _completeControlColumn; }
         }
+        
         #region Properties
         public ControlHandler ControlHandler { get; set; }
 
@@ -149,9 +150,12 @@ namespace UniformApp.ViewModel
         public ICommand DeleteCommand { get; set; }
 
         public ProcessOrderCatalog ProcessOrderCatalog { get; set; }
-        public EmployeeCatalog EmployeeCatalog { get; set; }
+        public EmployeeCatalog EmployeeCatalog{ get; set; }
         public ProductCatalog ProductCatalog { get; set; }
         public LabelCatalog LabelCatalog { get; set; }
+        public LidCatalog LidCatalog { get; set; }
+        public SupplierCatalog SupplierCatalog { get; set; }
+        public PreformCatalog PreformCatalog { get; set; }
         //public CompleteCheckViewCatalog CompleteCheckViewCatalog { get; set; }
 
         public ObservableCollection<bool> BooleanArray { get; set; }
@@ -163,6 +167,9 @@ namespace UniformApp.ViewModel
             EmployeeCatalog = EmployeeCatalog.Instance;
             ProductCatalog = ProductCatalog.Instance;
             LabelCatalog = LabelCatalog.Instance;
+            PreformCatalog = PreformCatalog.Instance;
+            LidCatalog = LidCatalog.Instance;
+            SupplierCatalog = SupplierCatalog.Instance;
             //BooleanArray = new ObservableCollection<bool>() {true, false}; //old but gold 3
 
             WeightCheckHandler = new WeightCheckHandler(this);

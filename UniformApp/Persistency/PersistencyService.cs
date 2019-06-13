@@ -56,9 +56,7 @@ namespace UniformApp.Persistency
                     return false;
                 }
             }
-
-            bool result = (response.IsSuccessStatusCode) ? true : false;
-            return result;
+            return (response.IsSuccessStatusCode);
         }
 
         /// <summary>

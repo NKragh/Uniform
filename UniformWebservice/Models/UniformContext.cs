@@ -19,14 +19,14 @@ namespace UniformWebservice.Models
         public virtual DbSet<ShiftCheck> ShiftCheck { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<WeightCheck> WeightCheck { get; set; }
-        public DbSet<TasteCheck> TasteChecks { get; set; }
-        public DbSet<LabelCheck> LabelChecks { get; set; }
-        public DbSet<Label> Labels { get; set; }
-        public DbSet<SampleCheck> SampleChecks { get; set; }
-        public DbSet<PETCheck> PETChecks { get; set; }
-        public DbSet<TorqueCheck> TorqueChecks { get; set; }
-        public DbSet<Lid> Lids { get; set; }
-        public DbSet<CompleteCheckView> CompleteCheckViews { get; set; }
+        public virtual DbSet<TasteCheck> TasteChecks { get; set; }
+        public virtual DbSet<LabelCheck> LabelChecks { get; set; }
+        public virtual DbSet<Label> Labels { get; set; }
+        public virtual DbSet<SampleCheck> SampleChecks { get; set; }
+        public virtual DbSet<PETCheck> PETChecks { get; set; }
+        public virtual DbSet<TorqueCheck> TorqueChecks { get; set; }
+        public virtual DbSet<Lid> Lids { get; set; }
+        public virtual DbSet<CompleteCheckView> CompleteCheckViews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

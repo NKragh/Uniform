@@ -6,7 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:UniformApp.ViewModel"
-    xmlns:system="using:System"
     mc:Ignorable="d">
 
     <Page.DataContext>
@@ -402,10 +401,23 @@
                     <StackPanel Grid.Row="1" Grid.Column="2">
                         <TextBox Text="{Binding NewTorqueCheck.PreformTemp, Mode=TwoWay}" />
                         <TextBox Text="{Binding NewTorqueCheck.Torque, Mode=TwoWay}" />
-                        <TextBox Text="{Binding NewTorqueCheck.LidNo, Mode=TwoWay}" />
-                        <TextBox Text="{Binding NewTorqueCheck.PreformNo, Mode=TwoWay}" />
-                        <ComboBox Name="EmployeeComboBoxTorque" 
-                                  ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
+                        <ComboBox ItemsSource="{Binding LidCatalog.LidList, Mode=TwoWay}"
+                                  SelectedItem="{Binding LidCatalog.TargetLid, Mode=TwoWay}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding LidNo}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <ComboBox ItemsSource="{Binding PreformCatalog.PreformList}"
+                                  SelectedItem="{Binding PreformCatalog.TargetPreform}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding PreformNo}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <ComboBox ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
                                   SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
@@ -419,7 +431,7 @@
                     <Button Content="Opret" Grid.Row="2" Grid.Column="3" Command="{Binding CreateCommand}"/>
                 </Grid>
             </PivotItem>
-<!--TODO: Lave en combobox til PreformNo-->
+
             <PivotItem Name="PressureCheckPage">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -443,7 +455,14 @@
                         <TextBlock Text="BreakPoint" Style="{StaticResource ListTextStyle}"/>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.Column="2">
-                        <TextBox Text="{Binding NewPressureCheck.PreformNo, Mode=TwoWay}" />
+                        <ComboBox ItemsSource="{Binding PreformCatalog.PreformList}"
+                                  SelectedItem="{Binding PreformCatalog.TargetPreform}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding PreformNo}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                         <TextBox Text="{Binding NewPressureCheck.FormNo, Mode=TwoWay}" />
                         <TextBox Text="{Binding NewPressureCheck.Bar, Mode=TwoWay}" />
                         <TextBox Text="{Binding NewPressureCheck.BreakPoint, Mode=TwoWay}" />
@@ -454,7 +473,7 @@
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </PivotItem>
-<!--TODO: Lave en combobox til PreformNo-->
+            <!--TODO: Lave en combobox til PreformNo-->
             <PivotItem Name="PETCheckPage">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -486,8 +505,22 @@
                         <TextBox Text="{Binding NewPETCheck.MidValue, Mode=TwoWay}"/>
                         <TextBox Text="{Binding NewPETCheck.TopValue, Mode=TwoWay}"/>
                         <TextBox Text="{Binding NewPETCheck.Comment, Mode=TwoWay}"/>
-                        <TextBox Text="{Binding NewPETCheck.EmployeeNo, Mode=TwoWay}"/>
-                        <TextBox Text="{Binding NewPETCheck.PreformNo, Mode=TwoWay}"/>
+                        <ComboBox ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}"
+                                  SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Initials}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <ComboBox ItemsSource="{Binding PreformCatalog.PreformList}"
+                                  SelectedItem="{Binding PreformCatalog.TargetPreform}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding PreformNo}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </StackPanel>
 
                     <Button Name="BackButton500" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
@@ -495,7 +528,7 @@
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </PivotItem>
-<!--TODO: Lave en combobox til PreformNo-->
+
             <PivotItem Name="CompleteCheckPage">
 
                 <Grid>
