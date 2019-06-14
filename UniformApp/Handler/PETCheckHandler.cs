@@ -22,6 +22,7 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewPETCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewPETCheck.EmployeeNo = EmployeeCatalog.Instance.TargetEmployee.EmployeeNo;
             CheckPageViewModel.NewPETCheck.CheckTime = DateTime.Now.TimeOfDay;
+            CheckPageViewModel.NewPETCheck.PreformNo = PreformCatalog.Instance.TargetPreform.PreformNo;
 
             var PETPersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<PETCheck>("PETCheck", CheckPageViewModel.NewPETCheck).Result;
         }

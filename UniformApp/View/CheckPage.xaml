@@ -410,7 +410,7 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                         <ComboBox ItemsSource="{Binding PreformCatalog.PreformList}"
-                                  SelectedItem="{Binding PreformCatalog.TargetPreform}">
+                                  SelectedItem="{Binding PreformCatalog.TargetPreform, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding PreformNo}"/>
@@ -453,10 +453,11 @@
                         <TextBlock Text="FormNo" Style="{StaticResource ListTextStyle}"/>
                         <TextBlock Text="EndBar" Style="{StaticResource ListTextStyle}"/>
                         <TextBlock Text="BreakPoint" Style="{StaticResource ListTextStyle}"/>
+                        <TextBlock Text="Employee" Style="{StaticResource ListTextStyle}"/>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.Column="2">
                         <ComboBox ItemsSource="{Binding PreformCatalog.PreformList}"
-                                  SelectedItem="{Binding PreformCatalog.TargetPreform}">
+                                  SelectedItem="{Binding PreformCatalog.TargetPreform, Mode=TwoWay}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding PreformNo}"/>
@@ -466,6 +467,14 @@
                         <TextBox Text="{Binding NewPressureCheck.FormNo, Mode=TwoWay}" />
                         <TextBox Text="{Binding NewPressureCheck.Bar, Mode=TwoWay}" />
                         <TextBox Text="{Binding NewPressureCheck.BreakPoint, Mode=TwoWay}" />
+                        <ComboBox ItemsSource="{Binding EmployeeCatalog.EmployeeList, Mode=TwoWay}" 
+                                  SelectedItem="{Binding EmployeeCatalog.TargetEmployee, Mode=TwoWay}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Initials}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </StackPanel>
 
                     <Button Name="BackButton50" Content="Back" Grid.Column="0" Grid.Row="0" Click="BackButton_OnClick" />
@@ -473,7 +482,7 @@
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </PivotItem>
-
+            
             <PivotItem Name="PETCheckPage">
                 <Grid>
                     <Grid.ColumnDefinitions>
