@@ -22,6 +22,8 @@ namespace UniformApp.Handler
             CheckPageViewModel.NewTorqueCheck.ProcessOrderNo = ProcessOrderCatalog.Instance.TargetProcessOrder.ProcessOrderNo;
             CheckPageViewModel.NewTorqueCheck.EmployeeNo = EmployeeCatalog.Instance.TargetEmployee.EmployeeNo;
             CheckPageViewModel.NewTorqueCheck.CheckTime = DateTime.Now.TimeOfDay;
+            CheckPageViewModel.NewTorqueCheck.LidNo = LidCatalog.Instance.TargetLid.LidNo;
+            CheckPageViewModel.NewTorqueCheck.PreformNo = PreformCatalog.Instance.TargetPreform.PreformNo;
 
             var torquePersistency = Persistency.PersistencyService.CreateObjectToDatabaseAsync<TorqueCheck>("TorqueCheck", CheckPageViewModel.NewTorqueCheck).Result;
         }

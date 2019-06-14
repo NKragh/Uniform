@@ -72,6 +72,7 @@ namespace UniformApp.View
 
         private void PETCheck_OnClick(object sender, RoutedEventArgs e)
         {
+
             CheckPagePivot.SelectedIndex = 8;
         }
 

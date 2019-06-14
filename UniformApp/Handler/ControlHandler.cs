@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniformApp.Model;
 using UniformApp.ViewModel;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UniformApp.Annotations;
 using UniformApp.Persistency;
 
 namespace UniformApp.Handler
 {
-    class ControlHandler
+    class ControlHandler : INotifyPropertyChanged
     {
         public CheckPageViewModel CheckPageViewModel { get; set; }
 
@@ -19,7 +22,11 @@ namespace UniformApp.Handler
         public CompleteCheckView TargetCompleteCheckView
         {
             get { return _targetCompleteCheckView; }
-            set { _targetCompleteCheckView = value; }
+            set
+            {
+                _targetCompleteCheckView = value; 
+                OnPropertyChanged();
+            }
         }
 
         public ControlHandler(CheckPageViewModel viewModel)
@@ -97,6 +104,14 @@ namespace UniformApp.Handler
         {
             //TODO Implementer i fremtidigt sprint
             throw new NotImplementedException();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
