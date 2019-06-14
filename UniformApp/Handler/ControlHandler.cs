@@ -82,8 +82,8 @@ namespace UniformApp.Handler
 #if DEBUG
             url = "http://zealand.dk";
 #endif
-            //TODO fremtidig sprint
-            //System.Diagnostics.Process.Start("chrome.exe", url);
+            var uri = new Uri(url);
+            Windows.System.Launcher.LaunchUriAsync(uri);
         }
 
         /// <summary>
