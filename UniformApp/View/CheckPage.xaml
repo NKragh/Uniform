@@ -568,6 +568,7 @@
                     <StackPanel Grid.Row="1" Grid.Column="2">
                         <StackPanel Orientation="Horizontal" Margin="5" Height="50">
                             <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductNo, Mode=TwoWay}" />
+                            <TextBlock Text=" - " Padding="5,0,5,0"/>
                             <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.ProductName, Mode=TwoWay}" />
                         </StackPanel>
                         <TextBlock Text="{Binding ControlHandler.TargetCompleteCheckView.LabelNo, Mode=TwoWay}" Style="{StaticResource ListTextStyle}"/>
