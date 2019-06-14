@@ -30,17 +30,7 @@ namespace UniformApp.Model
         [StringLength(20)] 
         public string BatchCode { get => _batchCode; set => _batchCode = value; }
         public int PreformNo { get => _preformNo; set => _preformNo = value; }
-
-        public int PalletNo
-        {
-            get => _palletNo;
-            set
-            {
-                if (value == _palletNo) return;
-                _palletNo = value;
-                OnPropertyChanged();
-            }
-        }
+        public int PalletNo { get => _palletNo; set => _palletNo = value; }
 
         public CompleteCheckView(string productName, int productNo, int labelNo, int lidNo, int processOrderNo, string batchCode, int preformNo, int palletNo)
         {
