@@ -29,7 +29,6 @@ namespace UniformApp.View
         public ProcessOrderPage()
         {
             this.InitializeComponent();
-            ProcessOrderCatalog.Instance.LoadProcessOrdersAsync();
             ContentPivot.SelectedIndex = 0;
         }
         

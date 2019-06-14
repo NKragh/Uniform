@@ -147,12 +147,14 @@
                                             <TextBlock Text="Batchcode"/>
                                             <TextBlock Text="ProductNo"/>
                                             <TextBlock Text="EmployeeNo"/>
+                                            <TextBlock Text="ColumnNo"/>
                                         </StackPanel>
                                         <StackPanel Width="{Binding ElementName=MyListView, Path=ActualWidth}">
                                             <TextBlock Text="{Binding ProcessOrderNo, Mode=TwoWay}"/>
                                             <TextBlock Text="{Binding BatchCode, Mode=TwoWay}" />
                                             <TextBlock Text="{Binding ProductNo, Mode=TwoWay}" />
                                             <TextBlock Text="{Binding EmployeeNo, Mode=TwoWay}" />
+                                            <TextBlock Text="{Binding ColumnNo, Mode=TwoWay}" />
                                         </StackPanel>
                                     </StackPanel>
                                 </DataTemplate>

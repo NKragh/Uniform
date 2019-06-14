@@ -32,7 +32,7 @@ namespace UniformApp.Model
         {
             ProcessOrderList = new ObservableCollection<ProcessOrder>();
             TargetProcessOrder = new ProcessOrder();
-            //LoadProcessOrdersAsync();
+            LoadProcessOrdersAsync();
         }
 
         public async void LoadProcessOrdersAsync()

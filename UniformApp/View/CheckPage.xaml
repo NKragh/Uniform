@@ -473,7 +473,7 @@
                             Grid.Row="5" Height="50" Width="100" HorizontalAlignment="Center"/>
                 </Grid>
             </PivotItem>
-            <!--TODO: Lave en combobox til PreformNo-->
+
             <PivotItem Name="PETCheckPage">
                 <Grid>
                     <Grid.ColumnDefinitions>
